@@ -17,8 +17,6 @@ class User < ActiveRecord::Base
 
     unless user
       user = User.create(name: data["name"], email: data["email"], password: Devise.friendly_token[0,20], image: data["image"])
-      EmailList.create(name: user.name, email: user.email, creator_id: user.id)
-      
     end
     user
   end
