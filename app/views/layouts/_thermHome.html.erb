@@ -1,0 +1,68 @@
+    <div class="navbar-header">
+    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+      <span class="sr-only"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <strong><%= link_to "Thermotrack!", root_path, class: 'navbar-brand', title: "Click to go to home page", style: "font-size: 40px;" %></strong>
+    </div>
+
+    <%if user_signed_in? %>
+    
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="dropdown navbar-btn">
+        <%= link_to '#', class: 'btn btn-small navbar-btn dropdown-toggle', 'data-toggle' => 'dropdown', title: "These are names available to be added to a thermometer's notifications list", style: "font-weight: bold;" do %>
+           Notifications List <span class="caret"></span>
+        <%end%>
+        <ul class="dropdown-menu" role="menu">
+          <% EmailList.all.each do |email| %>
+            <% if email.creator_id == current_user.id %>
+            <li class="text-center">
+              <strong><%= link_to email.name, email_list_path(email)%></strong> 
+            </li>
+            <% end %>
+          <% end %>
+          <li class="divider"></li>
+          <li>
+      <!-- Here we're using link_to with a block code -->
+        <%= link_to(new_email_list_path) do %>
+            <i class="icon-plus"></i>
+            <strong>Add New Member</strong>
+          </li>
+        </ul>
+        <% end %>
+      </ul>
+
+      <ul class="nav navbar-nav" style="float:right;">
+        
+        <li class="navbar-btn">
+          <%= link_to "Add New Thermometer", new_house_thermometer_path(@house), id: "add",class: "btn btn-small navbar-btn", title:"Click to add new thermometer",style: "font-weight: bold;", remote: true%>
+        </li>
+
+        <li class="navbar-btn">
+          <%= link_to 'Temperature Logs', house_thermometer_readings_path(@house, @house.thermometers), class: "btn btn-small navbar-btn", title: "Click to see temperature logs from all thermometers that were turned on.", style: "font-weight: bold;" %>
+        </li>
+
+        <li class="dropdown pull-right">
+            <%= link_to '#', class: 'btn btn-small navbar-btn dropdown-toggle', 'data-toggle' => 'dropdown', style: "font-weight: bold;" do %>
+              <%= image_tag(current_user.image ? current_user.image : current_user.gravatar_url, height: '50', width: '50') %> Signed in as <%= current_user.name  %>
+              <span class="caret"></span>
+            <% end %>
+            <ul class="dropdown-menu" role="menu">
+              <li>
+                <%= link_to edit_user_registration_path(current_user) do %>
+                  <i class="icon-pencil"></i>
+                  <strong>Edit Profile</strong>
+                <% end %>
+              </li>
+              <li>
+                <%= link_to(destroy_user_session_path, method: 'delete') do %>
+                  <i class="icon-circle-arrow-left"></i>
+                  <strong>Logout</strong>
+                <% end %>
+              </li>
+            </ul>
+        </li>
+        <%end%>
+    </div>

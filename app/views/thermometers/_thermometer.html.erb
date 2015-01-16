@@ -1,0 +1,28 @@
+<%= div_for(thermometer) do %>
+  <div class="row col-md-6" style="margin-right: 15px;">
+  <%= link_to(image_tag("thermo.png", height: '160', width: '160', align: 'left'), edit_house_thermometer_path(thermometer.house,thermometer), title: "Click to edit this thermometer.", remote: true) %>
+  <%= link_to(image_tag("trash.png", height: '50', width: '50', align: 'right'), [thermometer.house,thermometer], title: "Click to delete this thermometer.", method: :delete,  data: {confirm: "Are you sure? Deleting this thermometer can not be reversed."}, remote: true) %>
+  <div class="span8 well">
+    <h4><strong><%= link_to thermometer.name, house_thermometer_path(thermometer.house, thermometer), title: "Click to see temperature logs for #{thermometer.name}'s thermometer."%></strong> </h4>
+    <strong>Current Temperature:</strong> 
+      <% if thermometer.curr_temp_fah %>
+        <strong><em style="color: purple;font-size:20px;"><%= thermometer.curr_temp_fah %></em> degrees</strong>
+      <% else %>
+        <strong><em style="color: purple;">No readings received as of yet.</em></strong>
+      <% end %>
+      <br/>
+      <div style="display:inline-block;">
+    <strong>Log Readings:</strong>
+      <div id="reading_<%=thermometer.id%>" style="display:inline-block;"> 
+          <% if thermometer.readings_on %>
+            <%= link_to image_tag('on.jpg', height:'25', width: '25'), upread_house_thermometer_path(thermometer.house, thermometer, format: :js), title: "Click to turn logs off.", method: 'post', remote: true %> <em style="font-weight:bold; color: blue;">On</em>
+          <% else %>
+            <%= link_to image_tag('off.jpg', height:'25', width: '25'), upread_house_thermometer_path(thermometer.house, thermometer, format: :js), title: "Click to turn logs on.",method: 'post', remote: true %> <em style="font-weight:bold; color: blue;">Off</em>
+          <% end %>
+      </div>
+      </div>
+      <hr/>
+        <strong title="The names on this list will receive notification emails for this thermometer.">Notifications list:</strong> <%= render thermometer.email_lists %>
+  </div>
+  </div>
+<% end %>

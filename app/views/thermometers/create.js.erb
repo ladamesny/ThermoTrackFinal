@@ -1,0 +1,4 @@
+$("#thermometers").prepend("<%= escape_javascript render(@thermometer) %>");
+$('#new_thermometer')[0].reset();
+$('#form_block').remove();
+$('#add').fadeIn();

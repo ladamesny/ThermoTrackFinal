@@ -1,0 +1,2 @@
+$('#reading_<%=@thermometer.id%>').replaceWith($("<%= escape_javascript render(file: 'thermometers/readingStatus.html.erb') %>"));
+$('#reading_<%=@thermometer.id%>').hide().fadeIn();

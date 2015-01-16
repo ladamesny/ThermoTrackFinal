@@ -1,0 +1,21 @@
+<%= render 'shared/content_title', title: "Thermometer Readings for #{@house.name}" %>
+
+<div class="table-responsive">
+  <table class="table table-striped">
+  <tr>
+    <th>
+      No.
+    </th>
+    <th>
+      Thermometer
+    </th>
+    <th>
+      Reading
+    </th>
+    <th>
+      Time of Reading
+    </th>
+  </tr>
+  <%= render @readings %>
+  </table>
+</div>

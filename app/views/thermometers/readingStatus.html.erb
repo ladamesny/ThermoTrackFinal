@@ -1,0 +1,7 @@
+ <div id="reading_<%=@thermometer.id%>" style="display:inline-block;"> 
+    <% if @thermometer.readings_on %>
+      <%= link_to image_tag('on.jpg', height:'25', width: '25'), upread_house_thermometer_path(@house, @thermometer), method: 'post', remote: true %> <em style="font-weight:bold; color: blue;">On</em>
+    <% else %>
+      <%= link_to image_tag('off.jpg', height:'25', width: '25'), upread_house_thermometer_path(@house, @thermometer),method: 'post', remote: true %> <em style="font-weight:bold; color: blue;">Off</em>
+    <% end %>
+</div>

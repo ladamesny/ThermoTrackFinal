@@ -1,0 +1,4 @@
+$("#houses").prepend("<%= escape_javascript render(@house) %>");
+$('#new_house')[0].reset();
+$('#form_block').remove();
+$('#add').fadeIn();

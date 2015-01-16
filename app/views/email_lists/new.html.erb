@@ -1,0 +1,20 @@
+<%= render 'shared/errors', obj: @email_list %>
+
+<h2 style="margin-left:40%;">Add email to notifications list</h2>
+<div class="well col-md-4" style="margin-top:50px; margin-left:40%;">
+  <%= form_for @email_list do |f| %>
+
+    <div class="form-group field">
+      <%= f.label :name, class: "control-label" %>
+      <%= f.text_field :name, autofocus: true, class: "form-control" %>
+    </div>
+
+    <div class="form-group field">
+      <%= f.label :email, class: "control-label" %>
+      <%= f.text_field :email, class: "form-control" %>
+    </div>
+
+    <%= f.submit "Add to list", class: "btn btn-success" %>
+    <%= link_to 'Cancel', :back, class: 'btn btn-warning' %>
+  <% end %>
+</div>

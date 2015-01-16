@@ -1,0 +1,4 @@
+$('.add').remove();
+$("<%= escape_javascript render(file: 'houses/new.html.erb') %>").insertBefore('#houses');
+$('#new_house').hide().slideDown();
+$('#add').fadeOut();

@@ -1,0 +1,40 @@
+<%= render 'shared/errors', obj: @thermometer %>
+
+<div class="well col-md-4" style="padding-top:50px; margin-left: 35%;">
+  <%= form_for [@house, @thermometer], remote: true, class: "row col-md-6" do |f| %>
+
+  <div class="form-group">
+    <%= f.label 'Thermometer Name', class: "control-label" %>
+    <%= f.text_field :name, autofocus: true, class: "form-control"%>
+  </div>
+  
+  <div style="display: inline;">
+    <div class="form-group col-sm-4 field">
+      <%= f.label "Max Temperature", class: "control-label"%>
+      <%= f.number_field :max_temp, class: "form-control" %>
+    </div>
+
+    <div class="form-group col-sm-4 field">
+      <%= f.label "Min Temperature", class: "control-label" %>
+      <%= f.number_field :min_temp, class: "form-control" %>
+    </div>
+  </div>
+  <br/>
+
+    <div class="form-group">
+      <div class="col-sm-offset-1 col-sm-10">
+        <div class="checkbox">
+            <strong>Email Notification List:</strong>
+            <%= f.collection_check_boxes :email_list_ids, user_email_list, :id, :name do |cb| %>
+              <% cb.label(class: "checkbox inline") {cb.check_box(class: "checkbox") + cb.text} %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+  <div class="form-group" style="margin-top: 50px;" >
+    <%= f.submit(@thermometer.new_record? ? 'Add Thermometer' : 'Update Thermometer', class: 'btn btn-small btn-success') %>
+    <%= link_to 'Cancel', house_thermometers_path, class: "btn btn-small btn-warning", style:"margin-left:20px;" %>
+  </div>
+  <% end %>
+</div>

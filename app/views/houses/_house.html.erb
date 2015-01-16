@@ -1,0 +1,14 @@
+<%= div_for(house) do %>
+  <div class="row col-md-6" style="margin-right: 15px;">
+  <%= link_to(image_tag("House-icon.jpg", height: '97', width: '97', align: 'left'), edit_house_path(house), title: "Click to edit this house.") %>
+  <%= link_to(image_tag("trash.png", height: '50', width: '50', align: 'right'), house, title: "Click to delete this house.", method: :delete,  data: {confirm: "Are you sure? Deleting this house, will delete all thermometers as well and can not be reversed."}, remote: true) %>
+  <div class="span6 well">
+    <h4 style="padding-left: 10px;"><strong><%= link_to house.name, house_thermometers_path(house), title: "Click to see all thermometers at #{house.name}."%></strong> </h4>
+      <% if house.thermometers.size > 0 %>
+        <strong><em style="color: purple;font-size:20px;"><%= house.thermometers.size %></em> <%= "thermometer".pluralize(house.thermometers.size) %> <%= house.thermometers.size > 1 ? "are" : "is" %> set in this house.</strong>
+      <% else %>
+        <strong><em style="color: purple;">No thermometers are set as of yet.</em></strong>
+      <% end %>
+  </div>
+  </div>
+<% end %>

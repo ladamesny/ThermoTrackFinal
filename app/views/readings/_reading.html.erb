@@ -1,0 +1,14 @@
+<tr class="allReadings">
+  <td>
+    <%=reading.id %>
+  </td>
+  <td>
+    <%= link_to Thermometer.find(reading.thermometer_id).name, house_thermometer_path(@house, reading.thermometer) %>
+  </td>
+  <td>
+    <%= reading.fahrenheit %>
+  </td>
+  <td>
+    <%= display_datetime(reading) %>
+  </td>
+</tr>

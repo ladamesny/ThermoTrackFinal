@@ -1,0 +1,26 @@
+<%= render 'shared/content_title', title: "Reading logs for #{@thermometer.name}'s thermometer" %>
+
+
+<div class="table-responsive">
+  <table class="table table-striped">
+  <tr>
+    <th>
+      No.
+    </th>
+    <th>
+      Thermometer
+    </th>
+    <th>
+      Reading
+    </th>
+    <th>
+      Time of Reading
+    </th>
+  </tr>
+  <% @readings.each do |reading| %>
+    <% if reading.thermometer_id == @thermometer.id %>
+      <%= render 'showreads', reading: reading %>
+    <% end %>    
+  <% end %>
+  </table>
+</div>

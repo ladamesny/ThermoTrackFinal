@@ -1,0 +1,9 @@
+Hi <%= @user.name %>,
+
+<% if @thermometer.curr_temp_fah > @thermometer.max_temp %>
+
+The thermometer in the <%= @thermometer.location %> is currently reading at <%= @thermometer.curr_temp_fah %> which is above your set max temperature setting of <%= @thermometer.max_temp %>.
+
+<% else %>
+The thermometer in the <%= @thermometer.location %> is currently reading at <%= @thermometer.curr_temp_fah %> which is below your set min temperature setting of <%= @thermometer.min_temp %>.
+<% end %> 
