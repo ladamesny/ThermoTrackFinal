@@ -8,9 +8,6 @@ class Reading < ActiveRecord::Base
         Reading.create(fahrenheit: reading['degrees'], thermometer_id: therm.id )
         therm.update(curr_temp_fah: reading['degrees'].to_i)
         therm.evaluate_reading
-      else 
-        reading = HTTParty.get('https://polar-dawn-2893.herokuapp.com/')
-        therm.update(curr_temp_fah: reading['degrees'].to_i)
       end
     end
   end
