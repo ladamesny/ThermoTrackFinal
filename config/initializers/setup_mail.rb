@@ -1,9 +1,9 @@
 ActionMailer::Base.smtp_settings = {
-  :address              => "smtp.gmail.com",
-  :port                 => 587,
-  :domain               => "google.com",
-  :user_name            => "rajatsubhrachatterjee.rkmv.xav",
-  :password             => "turntotech",
-  :authentication       => "plain",
+  :address              => "smtp.sendgrid.net",
+  :port                 => '587',
+  :domain               => "heroku.com",
+  :user_name            => ENV['SENDGRID_USERNAME'],
+  :password             => ENV['SENDGRID_PASSWORD'],
+  :authentication       => :plain,
   :enable_starttls_auto => true
 }
