@@ -52,3 +52,8 @@ gem 'capistrano-rails', group: :production
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+gem "capybara", "~> 2.4"
+group :development, :test do 
+	gem 'rspec-rails', "~> 3.1.0"
+	
+end
