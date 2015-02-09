@@ -23,12 +23,14 @@ class ThermometersController < ApplicationController
 
     if @thermometer.save
       respond_to do |format|
-        format.html {redirect_to house_thermometers_path, notice: "Thermometer was added!"}
+        flash.now[:notice] = "#{@thermometer.name} thermometer was added!"
+        format.html {redirect_to house_thermometers_path}
         format.js
       end
     else
       respond_to do |format|
-        format.html{ redirect_to house_thermometers_path, alert: 'Unable to add thermometer'}
+        flash.now[:alert] = "#{@thermometer.name} thermometer was not added!"
+        format.html{ redirect_to house_thermometers_path}
         format.js {render 'fail_create.js.erb'}
       end
     end
@@ -56,12 +58,14 @@ class ThermometersController < ApplicationController
   def destroy
       if @thermometer.destroy
         respond_to do |format|
-          format.html {redirect_to house_thermometers_path, alert: "Thermometer was deleted!"}
+          flash.now[:alert] = "#{@thermometer.name} thermometer was deleted!"
+          format.html {redirect_to house_thermometers_path}
           format.js
           end
       else
         respond_to do |format|
-          format.html {redirect_to house_thermometers_path, alert: "Unable to delete thermometer!"}
+          flash.now[:alert] = "#{@thermometer.name} thermometer could not be deleted!"
+          format.html {redirect_to house_thermometers_path}
           format.js { render 'fail_create.js.erb'}
           end        
       end
@@ -71,12 +75,14 @@ class ThermometersController < ApplicationController
     @thermometer.readings_on = !@thermometer.readings_on
     if @thermometer.save
       respond_to do |format|
-        format.html {redirect_to house_thermometers_path, notice: "Reading Status was changed!"}
+        flash.now[:notice] = "#{@thermometer.name}'s thermometer readings status was changed!"
+        format.html {redirect_to house_thermometers_path}
         format.js
       end
     else
       respond_to do |format|
-        format.html{ redirect_to house_thermometers_path, alert: 'Unable to change reading status'}
+        flash.now[:notice] = "#{@thermometer.name}'s thermometer readings status was not changed!"
+        format.html{ redirect_to house_thermometers_path}
         format.js {render 'fail_create.js.erb'}
       end
     end
@@ -85,6 +91,7 @@ class ThermometersController < ApplicationController
   def removereads
     @thermometer.delete_readings
     respond_to do |format|
+      flash.now[:alert] = "#{@thermometer.name}'s theremometer readings were deleted."
       format.js {render 'removereads.js.erb'}
     end
 

@@ -1,15 +1,15 @@
 require "rails_helper"
 
-RSpec.feature "Creating Houses" do 
-	before do
-		sign_in_as!(FactoryGirl.create(:user))
-		visit "/houses"
-		click_link "Add New House"
-	end
-	scenario "A user can create a new house" do
+RSpec.feature "Creating Houses" do
+	let!(:user) { FactoryGirl.create(:user)}
 
+	before do
+		login_as(user)
+	end
+	
+	scenario "A user can create a new House" do
+		within('nav') {click_link "Add New House"}
 		fill_in "Name of house", with: "Summer home"
-		click_button "Add house"
 
 		expect(page).to have_content("Summer home")
 	end

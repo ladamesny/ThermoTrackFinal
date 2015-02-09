@@ -1,6 +1,7 @@
 class HousesController < ApplicationController
   before_action :set_house, except: [:index, :new, :create]
   before_action :requrie_same_user, only: [:edit, :destroy]
+
   def index
     @houses = []
     House.all.each do |house|
@@ -22,11 +23,13 @@ class HousesController < ApplicationController
     @house = current_user.houses.build(house_params)
     if @house.save
       respond_to do |format|
-        format.html {redirect_to houses_path, notice: "House was added!"}
-        format.js
+        flash.now[:notice] = "#{@house.name} was added!"
+        format.html {redirect_to houses_path, notice: "#{@house.name} was added!"}
+        format.js 
       end
     else
       respond_to do |format|
+        flash.now[:alert] = "#{@house.name} was not added!"
         format.html{ redirect_to houses_path, alert: 'Unable to add House'}
         format.js {render 'fail_create.js.erb'}
       end
@@ -35,24 +38,25 @@ class HousesController < ApplicationController
   end
 
   def edit
-    
+    @house = House.find(params[:id])
   end
 
   def update
+    @house = House.find(params[:id])
     @house.update(house_params)
    if @house.save
       flash[:notice] = "#{@house.name} was updated!"
       redirect_to houses_path
     else
-      flash[:notice] = "Sorry, house could not be updated. Please try again."
+      flash[:alert] = "Sorry, house could not be updated. Please try again."
       render :edit
     end
   end
 
   def destroy
     @house.destroy
-    flash[:notice] = "House was deleted!"
     respond_to do |format|
+      flash.now[:alert] = "#{@house.name} was deleted!"
       format.html {redirect_to house_path}
       format.js
     end    

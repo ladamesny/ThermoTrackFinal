@@ -1,2 +1,3 @@
 $('#reading_<%=@thermometer.id%>').replaceWith($("<%= escape_javascript render(file: 'thermometers/readingStatus.html.erb') %>"));
 $('#reading_<%=@thermometer.id%>').hide().fadeIn();
+$("#notice").html("<%= escape_javascript(render :partial => 'layouts/messages' , :locals => { :flash => flash }).html_safe %>");

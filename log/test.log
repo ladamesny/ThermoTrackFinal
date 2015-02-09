@@ -254,3 +254,370 @@ Processing by Devise::SessionsController#new as HTML
   Rendered layouts/_messages.html.erb (0.2ms)
 Completed 200 OK in 31ms (Views: 29.7ms | ActiveRecord: 0.0ms)
   [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (1.5ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'sample@example.com' LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "name") VALUES ($1, $2, $3) RETURNING "id"[0m  [["email", "sample@example.com"], ["encrypted_password", "$2a$04$Bbok20vcNIcwSbAqyMWxHuiZONeePlTIUCOaHqGW9THNe8dqL1wIy"], ["name", "username"]]
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "email_lists" ("created_at", "creator_id", "email", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2015-02-06 22:13:54.971935"], ["creator_id", 10], ["email", "sample@example.com"], ["name", "username"], ["updated_at", "2015-02-06 22:13:54.971935"]]
+  [1m[36m (0.5ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/houses" for 127.0.0.1 at 2015-02-06 17:13:54 -0500
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.7ms)[0m  [1mUPDATE "users" SET "current_sign_in_at" = $1, "current_sign_in_ip" = $2, "last_sign_in_at" = $3, "last_sign_in_ip" = $4, "sign_in_count" = $5 WHERE "users"."id" = 10[0m  [["current_sign_in_at", "2015-02-06 22:13:55.000884"], ["current_sign_in_ip", "127.0.0.1/32"], ["last_sign_in_at", "2015-02-06 22:13:55.000884"], ["last_sign_in_ip", "127.0.0.1/32"], ["sign_in_count", 1]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by HousesController#index as HTML
+  [1m[36mHouse Load (0.8ms)[0m  [1mSELECT "houses".* FROM "houses"[0m
+  Rendered houses/index.html.erb within layouts/application (2.1ms)
+  [1m[35mEmailList Load (0.8ms)[0m  SELECT "email_lists".* FROM "email_lists"
+  Rendered layouts/_navigation.html.erb (5.7ms)
+  Rendered layouts/_messages.html.erb (0.8ms)
+Completed 200 OK in 72ms (Views: 58.1ms | ActiveRecord: 1.6ms)
+Started GET "/houses/new" for 127.0.0.1 at 2015-02-06 17:13:55 -0500
+Processing by HousesController#new as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 10  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered shared/_errors.html.erb (0.7ms)
+  Rendered houses/_form.html.erb (322.6ms)
+  Rendered houses/new.html.erb within layouts/application (323.9ms)
+  [1m[35mEmailList Load (0.7ms)[0m  SELECT "email_lists".* FROM "email_lists"
+  Rendered layouts/_navigation.html.erb (3.3ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 390ms (Views: 329.3ms | ActiveRecord: 6.3ms)
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (1.4ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'sample@example.com' LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "name") VALUES ($1, $2, $3) RETURNING "id"[0m  [["email", "sample@example.com"], ["encrypted_password", "$2a$04$vPD0ZwcsBMPV6hJONY6A3eczHbgiPeRduYqpowyWwm6Ry3B0UYevq"], ["name", "username"]]
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "email_lists" ("created_at", "creator_id", "email", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2015-02-06 22:14:14.106067"], ["creator_id", 11], ["email", "sample@example.com"], ["name", "username"], ["updated_at", "2015-02-06 22:14:14.106067"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/houses" for 127.0.0.1 at 2015-02-06 17:14:14 -0500
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "users" SET "current_sign_in_at" = $1, "current_sign_in_ip" = $2, "last_sign_in_at" = $3, "last_sign_in_ip" = $4, "sign_in_count" = $5 WHERE "users"."id" = 11[0m  [["current_sign_in_at", "2015-02-06 22:14:14.133996"], ["current_sign_in_ip", "127.0.0.1/32"], ["last_sign_in_at", "2015-02-06 22:14:14.133996"], ["last_sign_in_ip", "127.0.0.1/32"], ["sign_in_count", 1]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by HousesController#index as HTML
+  [1m[36mHouse Load (0.9ms)[0m  [1mSELECT "houses".* FROM "houses"[0m
+  Rendered houses/index.html.erb within layouts/application (2.1ms)
+  [1m[35mEmailList Load (0.7ms)[0m  SELECT "email_lists".* FROM "email_lists"
+  Rendered layouts/_navigation.html.erb (6.8ms)
+  Rendered layouts/_messages.html.erb (1.3ms)
+Completed 200 OK in 76ms (Views: 61.3ms | ActiveRecord: 1.6ms)
+Started GET "/houses/new" for 127.0.0.1 at 2015-02-06 17:14:14 -0500
+Processing by HousesController#new as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 11  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered shared/_errors.html.erb (0.6ms)
+  Rendered houses/_form.html.erb (316.0ms)
+  Rendered houses/new.html.erb within layouts/application (317.4ms)
+  [1m[35mEmailList Load (0.5ms)[0m  SELECT "email_lists".* FROM "email_lists"
+  Rendered layouts/_navigation.html.erb (3.1ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 358ms (Views: 322.8ms | ActiveRecord: 3.9ms)
+  [1m[36m (0.5ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (1.0ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'sample@example.com' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "name") VALUES ($1, $2, $3) RETURNING "id"[0m  [["email", "sample@example.com"], ["encrypted_password", "$2a$04$2bdddFIDes/SHdtcJMBScuziCoPFOj8xzauLSje6wfNIpSfXfpO4K"], ["name", "username"]]
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "email_lists" ("created_at", "creator_id", "email", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2015-02-06 22:14:36.640573"], ["creator_id", 12], ["email", "sample@example.com"], ["name", "username"], ["updated_at", "2015-02-06 22:14:36.640573"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (1.2ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'sample@example.com' LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "name") VALUES ($1, $2, $3) RETURNING "id"[0m  [["email", "sample@example.com"], ["encrypted_password", "$2a$04$//fuiHFdCVKBiSXKl9.Az.Tght2bpZZKzp2rAKGQ/TaxpcngLXhUy"], ["name", "username"]]
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "email_lists" ("created_at", "creator_id", "email", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2015-02-06 22:15:12.125079"], ["creator_id", 13], ["email", "sample@example.com"], ["name", "username"], ["updated_at", "2015-02-06 22:15:12.125079"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2015-02-06 17:15:12 -0500
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "users" SET "current_sign_in_at" = $1, "current_sign_in_ip" = $2, "last_sign_in_at" = $3, "last_sign_in_ip" = $4, "sign_in_count" = $5 WHERE "users"."id" = 13[0m  [["current_sign_in_at", "2015-02-06 22:15:12.152954"], ["current_sign_in_ip", "127.0.0.1/32"], ["last_sign_in_at", "2015-02-06 22:15:12.152954"], ["last_sign_in_ip", "127.0.0.1/32"], ["sign_in_count", 1]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by HomeController#index as HTML
+Redirected to http://www.example.com/houses
+Completed 302 Found in 6ms (ActiveRecord: 0.0ms)
+Started GET "/houses" for 127.0.0.1 at 2015-02-06 17:15:12 -0500
+Processing by HousesController#index as HTML
+  [1m[36mHouse Load (0.6ms)[0m  [1mSELECT "houses".* FROM "houses"[0m
+  Rendered houses/index.html.erb within layouts/application (2.2ms)
+  [1m[35mUser Load (0.9ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 13  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mEmailList Load (0.4ms)[0m  [1mSELECT "email_lists".* FROM "email_lists"[0m
+  Rendered layouts/_navigation.html.erb (13.1ms)
+  Rendered layouts/_messages.html.erb (0.8ms)
+Completed 200 OK in 76ms (Views: 65.7ms | ActiveRecord: 1.9ms)
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (1.5ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'sample@example.com' LIMIT 1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "name") VALUES ($1, $2, $3) RETURNING "id"[0m  [["email", "sample@example.com"], ["encrypted_password", "$2a$04$4VN2Dry0rbILQLs6qQU9VeKPLZMa5kgExihooM2WZKQ7nKRC9e.r."], ["name", "username"]]
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "email_lists" ("created_at", "creator_id", "email", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2015-02-06 22:15:38.899323"], ["creator_id", 14], ["email", "sample@example.com"], ["name", "username"], ["updated_at", "2015-02-06 22:15:38.899323"]]
+  [1m[36m (0.4ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2015-02-06 17:15:38 -0500
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE "users" SET "current_sign_in_at" = $1, "current_sign_in_ip" = $2, "last_sign_in_at" = $3, "last_sign_in_ip" = $4, "sign_in_count" = $5 WHERE "users"."id" = 14[0m  [["current_sign_in_at", "2015-02-06 22:15:38.928432"], ["current_sign_in_ip", "127.0.0.1/32"], ["last_sign_in_at", "2015-02-06 22:15:38.928432"], ["last_sign_in_ip", "127.0.0.1/32"], ["sign_in_count", 1]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by HomeController#index as HTML
+Redirected to http://www.example.com/houses
+Completed 302 Found in 6ms (ActiveRecord: 0.0ms)
+Started GET "/houses" for 127.0.0.1 at 2015-02-06 17:15:38 -0500
+Processing by HousesController#index as HTML
+  [1m[36mHouse Load (1.1ms)[0m  [1mSELECT "houses".* FROM "houses"[0m
+  Rendered houses/index.html.erb within layouts/application (2.1ms)
+  [1m[35mUser Load (1.5ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 14  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mEmailList Load (0.7ms)[0m  [1mSELECT "email_lists".* FROM "email_lists"[0m
+  Rendered layouts/_navigation.html.erb (13.3ms)
+  Rendered layouts/_messages.html.erb (0.9ms)
+Completed 200 OK in 76ms (Views: 64.0ms | ActiveRecord: 3.4ms)
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.9ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'sample@example.com' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "name") VALUES ($1, $2, $3) RETURNING "id"[0m  [["email", "sample@example.com"], ["encrypted_password", "$2a$04$eLO20OAmVdMTTXf2zFxo3OYfiTM3dUhal6tUAUdK2XsRxfDAkcPD6"], ["name", "username"]]
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "email_lists" ("created_at", "creator_id", "email", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2015-02-06 22:16:12.870993"], ["creator_id", 15], ["email", "sample@example.com"], ["name", "username"], ["updated_at", "2015-02-06 22:16:12.870993"]]
+  [1m[36m (0.4ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2015-02-06 17:16:12 -0500
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.7ms)[0m  [1mUPDATE "users" SET "current_sign_in_at" = $1, "current_sign_in_ip" = $2, "last_sign_in_at" = $3, "last_sign_in_ip" = $4, "sign_in_count" = $5 WHERE "users"."id" = 15[0m  [["current_sign_in_at", "2015-02-06 22:16:12.897505"], ["current_sign_in_ip", "127.0.0.1/32"], ["last_sign_in_at", "2015-02-06 22:16:12.897505"], ["last_sign_in_ip", "127.0.0.1/32"], ["sign_in_count", 1]]
+  [1m[35m (0.4ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by HomeController#index as HTML
+Redirected to http://www.example.com/houses
+Completed 302 Found in 6ms (ActiveRecord: 0.0ms)
+Started GET "/houses" for 127.0.0.1 at 2015-02-06 17:16:12 -0500
+Processing by HousesController#index as HTML
+  [1m[36mHouse Load (0.8ms)[0m  [1mSELECT "houses".* FROM "houses"[0m
+  Rendered houses/index.html.erb within layouts/application (2.1ms)
+  [1m[35mUser Load (1.6ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 15  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mEmailList Load (0.6ms)[0m  [1mSELECT "email_lists".* FROM "email_lists"[0m
+  Rendered layouts/_navigation.html.erb (13.0ms)
+  Rendered layouts/_messages.html.erb (1.1ms)
+Completed 200 OK in 77ms (Views: 64.5ms | ActiveRecord: 3.0ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (1.2ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'sample@example.com' LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "name") VALUES ($1, $2, $3) RETURNING "id"[0m  [["email", "sample@example.com"], ["encrypted_password", "$2a$04$F2oTvNrbU3mdTgkDlmurC.OI6a2l/OVO0Hysw5kOB3N/eW6aLtq.O"], ["name", "username"]]
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "email_lists" ("created_at", "creator_id", "email", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2015-02-06 22:16:37.812067"], ["creator_id", 16], ["email", "sample@example.com"], ["name", "username"], ["updated_at", "2015-02-06 22:16:37.812067"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (1.0ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'sample@example.com' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "name") VALUES ($1, $2, $3) RETURNING "id"[0m  [["email", "sample@example.com"], ["encrypted_password", "$2a$04$4XsWYfmRmjqe8ExYcOezhO2au.rH7P3Wsfn.ORpTmJXpEU5pWssXq"], ["name", "username"]]
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "email_lists" ("created_at", "creator_id", "email", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2015-02-06 22:17:35.732201"], ["creator_id", 17], ["email", "sample@example.com"], ["name", "username"], ["updated_at", "2015-02-06 22:17:35.732201"]]
+  [1m[36m (0.4ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (37.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (20.3ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'sample@example.com' LIMIT 1
+  [1m[36mSQL (11.8ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "name") VALUES ($1, $2, $3) RETURNING "id"[0m  [["email", "sample@example.com"], ["encrypted_password", "$2a$04$zb0/ds/N4J4VUtYgWbtUp.P3CFBKgGMTlF95R0e6bfErIcrUCwJAG"], ["name", "username"]]
+  [1m[35mSQL (1.8ms)[0m  INSERT INTO "email_lists" ("created_at", "creator_id", "email", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2015-02-09 02:47:02.471596"], ["creator_id", 18], ["email", "sample@example.com"], ["name", "username"], ["updated_at", "2015-02-09 02:47:02.471596"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'sample@example.com' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "name") VALUES ($1, $2, $3) RETURNING "id"  [["email", "sample@example.com"], ["encrypted_password", "$2a$04$FgrVUce/A13IQrG1UkX4r.um1PEhh./nPOgZi4ik.KgMaCRjZErqO"], ["name", "username"]]
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "email_lists" ("created_at", "creator_id", "email", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2015-02-09 02:47:02.563570"], ["creator_id", 19], ["email", "sample@example.com"], ["name", "username"], ["updated_at", "2015-02-09 02:47:02.563570"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/users/sign_in" for 127.0.0.1 at 2015-02-08 21:47:02 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (22.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (128.5ms)
+  Rendered layouts/_navigation.html.erb (2.2ms)
+  Rendered layouts/_messages.html.erb (1.0ms)
+Completed 200 OK in 379ms (Views: 356.9ms | ActiveRecord: 0.0ms)
+Started POST "/users/sign_in" for 127.0.0.1 at 2015-02-08 21:47:03 -0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"sample@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'sample@example.com'  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "users" SET "current_sign_in_at" = $1, "current_sign_in_ip" = $2, "last_sign_in_at" = $3, "last_sign_in_ip" = $4, "sign_in_count" = $5 WHERE "users"."id" = 19[0m  [["current_sign_in_at", "2015-02-09 02:47:03.400961"], ["current_sign_in_ip", "127.0.0.1/32"], ["last_sign_in_at", "2015-02-09 02:47:03.400961"], ["last_sign_in_ip", "127.0.0.1/32"], ["sign_in_count", 1]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/
+Completed 302 Found in 60ms (ActiveRecord: 1.9ms)
+Started GET "/" for 127.0.0.1 at 2015-02-08 21:47:03 -0500
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 19  ORDER BY "users"."id" ASC LIMIT 1[0m
+Redirected to http://www.example.com/houses
+Completed 302 Found in 5ms (ActiveRecord: 0.6ms)
+Started GET "/houses" for 127.0.0.1 at 2015-02-08 21:47:03 -0500
+Processing by HousesController#index as HTML
+  [1m[35mHouse Load (17.0ms)[0m  SELECT "houses".* FROM "houses"
+  Rendered houses/index.html.erb within layouts/application (0.9ms)
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 19  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mEmailList Load (0.6ms)[0m  SELECT "email_lists".* FROM "email_lists"
+  Rendered layouts/_navigation.html.erb (7.4ms)
+  Rendered layouts/_messages.html.erb (0.2ms)
+Completed 200 OK in 71ms (Views: 14.0ms | ActiveRecord: 18.4ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.7ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'sample@example.com' LIMIT 1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "name") VALUES ($1, $2, $3) RETURNING "id"[0m  [["email", "sample@example.com"], ["encrypted_password", "$2a$04$xgHb/DlhynKvOZ4dTkVj.u0gl.FLXszbWLgZLM5Pr5MLAdf/9Dxb2"], ["name", "username"]]
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "email_lists" ("created_at", "creator_id", "email", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2015-02-09 02:47:03.564389"], ["creator_id", 20], ["email", "sample@example.com"], ["name", "username"], ["updated_at", "2015-02-09 02:47:03.564389"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2015-02-08 21:47:03 -0500
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE "users" SET "current_sign_in_at" = $1, "current_sign_in_ip" = $2, "last_sign_in_at" = $3, "last_sign_in_ip" = $4, "sign_in_count" = $5 WHERE "users"."id" = 20[0m  [["current_sign_in_at", "2015-02-09 02:47:03.568830"], ["current_sign_in_ip", "127.0.0.1/32"], ["last_sign_in_at", "2015-02-09 02:47:03.568830"], ["last_sign_in_ip", "127.0.0.1/32"], ["sign_in_count", 1]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by HomeController#index as HTML
+Redirected to http://www.example.com/houses
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+Started GET "/houses" for 127.0.0.1 at 2015-02-08 21:47:03 -0500
+Processing by HousesController#index as HTML
+  [1m[36mHouse Load (0.5ms)[0m  [1mSELECT "houses".* FROM "houses"[0m
+  Rendered houses/index.html.erb within layouts/application (0.1ms)
+  [1m[35mUser Load (0.8ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 20  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mEmailList Load (0.5ms)[0m  [1mSELECT "email_lists".* FROM "email_lists"[0m
+  Rendered layouts/_navigation.html.erb (5.3ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 9ms (Views: 6.1ms | ActiveRecord: 1.8ms)
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2015-02-08 21:47:03 -0500
+Processing by Devise::SessionsController#destroy as HTML
+  [1m[35mUser Load (0.9ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 20  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/
+Completed 302 Found in 30ms (ActiveRecord: 1.6ms)
+Started GET "/" for 127.0.0.1 at 2015-02-08 21:47:03 -0500
+Processing by HomeController#index as HTML
+Redirected to http://www.example.com/users/sign_in
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+Started GET "/users/sign_in" for 127.0.0.1 at 2015-02-08 21:47:03 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (1.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (5.0ms)
+  Rendered layouts/_navigation.html.erb (0.6ms)
+  Rendered layouts/_messages.html.erb (0.3ms)
+Completed 200 OK in 9ms (Views: 7.7ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.5ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/" for 127.0.0.1 at 2015-02-08 21:47:03 -0500
+Processing by HomeController#index as HTML
+Redirected to http://www.example.com/users/sign_in
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+Started GET "/users/sign_in" for 127.0.0.1 at 2015-02-08 21:47:03 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (1.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (4.2ms)
+  Rendered layouts/_navigation.html.erb (0.5ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 8ms (Views: 6.3ms | ActiveRecord: 0.0ms)
+Started GET "/users/sign_up" for 127.0.0.1 at 2015-02-08 21:47:03 -0500
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (1.6ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (9.7ms)
+  Rendered layouts/_navigation.html.erb (0.5ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 31ms (Views: 29.2ms | ActiveRecord: 0.0ms)
+Started POST "/users" for 127.0.0.1 at 2015-02-08 21:47:03 -0500
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"name"=>"Full Name", "email"=>"sample@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.7ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'sample@example.com' LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "name") VALUES ($1, $2, $3) RETURNING "id"[0m  [["email", "sample@example.com"], ["encrypted_password", "$2a$04$XPOemBUtpw0lMzwQ4IGd7eUK33b6dyX9Wc9s2hcjpvTo4eOVbdnYO"], ["name", "Full Name"]]
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "email_lists" ("created_at", "creator_id", "email", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2015-02-09 02:47:03.771241"], ["creator_id", 21], ["email", "sample@example.com"], ["name", "Full Name"], ["updated_at", "2015-02-09 02:47:03.771241"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mUPDATE "users" SET "current_sign_in_at" = $1, "current_sign_in_ip" = $2, "last_sign_in_at" = $3, "last_sign_in_ip" = $4, "sign_in_count" = $5 WHERE "users"."id" = 21[0m  [["current_sign_in_at", "2015-02-09 02:47:03.775113"], ["current_sign_in_ip", "127.0.0.1/32"], ["last_sign_in_at", "2015-02-09 02:47:03.775113"], ["last_sign_in_ip", "127.0.0.1/32"], ["sign_in_count", 1]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/
+Completed 302 Found in 25ms (ActiveRecord: 3.5ms)
+Started GET "/" for 127.0.0.1 at 2015-02-08 21:47:03 -0500
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 21  ORDER BY "users"."id" ASC LIMIT 1[0m
+Redirected to http://www.example.com/houses
+Completed 302 Found in 5ms (ActiveRecord: 0.8ms)
+Started GET "/houses" for 127.0.0.1 at 2015-02-08 21:47:03 -0500
+Processing by HousesController#index as HTML
+  [1m[35mHouse Load (0.6ms)[0m  SELECT "houses".* FROM "houses"
+  Rendered houses/index.html.erb within layouts/application (0.1ms)
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 21  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mEmailList Load (0.4ms)[0m  SELECT "email_lists".* FROM "email_lists"
+  Rendered layouts/_navigation.html.erb (5.7ms)
+  Rendered layouts/_messages.html.erb (0.2ms)
+Completed 200 OK in 11ms (Views: 7.4ms | ActiveRecord: 1.8ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.9ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'sample@example.com' LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "name") VALUES ($1, $2, $3) RETURNING "id"[0m  [["email", "sample@example.com"], ["encrypted_password", "$2a$04$te5unlbaDxhh7xKl9UJwxOZYRpBanzMWJQaUvPDn8ka5bO5R96TMi"], ["name", "username"]]
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "email_lists" ("created_at", "creator_id", "email", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2015-02-09 02:48:22.028431"], ["creator_id", 22], ["email", "sample@example.com"], ["name", "username"], ["updated_at", "2015-02-09 02:48:22.028431"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36m (0.5ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (1.5ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'sample@example.com' LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "name") VALUES ($1, $2, $3) RETURNING "id"[0m  [["email", "sample@example.com"], ["encrypted_password", "$2a$04$S5jh1xJjo1HaP6cwHZIphOnd272nBOm1WWdFMeDXyC22ViSQ1/lQy"], ["name", "username"]]
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "email_lists" ("created_at", "creator_id", "email", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2015-02-09 02:49:24.341407"], ["creator_id", 23], ["email", "sample@example.com"], ["name", "username"], ["updated_at", "2015-02-09 02:49:24.341407"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (1.0ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'sample@example.com' LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "name") VALUES ($1, $2, $3) RETURNING "id"[0m  [["email", "sample@example.com"], ["encrypted_password", "$2a$04$44cQQ/.ZvsuY9dXmAH0Zk.bubjTLFakK/NjaLJjBWDJQFQjUfYXfO"], ["name", "username"]]
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "email_lists" ("created_at", "creator_id", "email", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2015-02-09 02:51:03.301016"], ["creator_id", 24], ["email", "sample@example.com"], ["name", "username"], ["updated_at", "2015-02-09 02:51:03.301016"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (1.4ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'sample@example.com' LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "name") VALUES ($1, $2, $3) RETURNING "id"[0m  [["email", "sample@example.com"], ["encrypted_password", "$2a$04$psXfEz9MQA/kjanzUoM.6uUGfUkywmLqk8MYRvWbkFvr.uVP7V5na"], ["name", "username"]]
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "email_lists" ("created_at", "creator_id", "email", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2015-02-09 02:51:27.694810"], ["creator_id", 25], ["email", "sample@example.com"], ["name", "username"], ["updated_at", "2015-02-09 02:51:27.694810"]]
+  [1m[36m (0.4ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (1.6ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'sample@example.com' LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "name") VALUES ($1, $2, $3) RETURNING "id"[0m  [["email", "sample@example.com"], ["encrypted_password", "$2a$04$WG7KaRRhGvNGxGpyZ..BmOyjAEmlx50gO8JyuxQuRm142TVLZISNW"], ["name", "username"]]
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "email_lists" ("created_at", "creator_id", "email", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2015-02-09 02:51:58.266818"], ["creator_id", 26], ["email", "sample@example.com"], ["name", "username"], ["updated_at", "2015-02-09 02:51:58.266818"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.5ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (1.5ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'sample@example.com' LIMIT 1
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "name") VALUES ($1, $2, $3) RETURNING "id"[0m  [["email", "sample@example.com"], ["encrypted_password", "$2a$04$UIgFWqzcw/gPvAV.0yNAdukKCasvEYHwOgUFc9S6C2vW3PG3naO5i"], ["name", "username"]]
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "email_lists" ("created_at", "creator_id", "email", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2015-02-09 02:54:45.564648"], ["creator_id", 27], ["email", "sample@example.com"], ["name", "username"], ["updated_at", "2015-02-09 02:54:45.564648"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.5ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (1.1ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'sample@example.com' LIMIT 1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "name") VALUES ($1, $2, $3) RETURNING "id"[0m  [["email", "sample@example.com"], ["encrypted_password", "$2a$04$5g8HGXZIH3digCdyWkrqneZistAS8m6UdQCH//QH1GVv5PCkWvNg."], ["name", "username"]]
+  [1m[35mSQL (1.6ms)[0m  INSERT INTO "email_lists" ("created_at", "creator_id", "email", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2015-02-09 02:55:20.999098"], ["creator_id", 28], ["email", "sample@example.com"], ["name", "username"], ["updated_at", "2015-02-09 02:55:20.999098"]]
+  [1m[36m (0.4ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (1.0ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'sample@example.com' LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "name") VALUES ($1, $2, $3) RETURNING "id"[0m  [["email", "sample@example.com"], ["encrypted_password", "$2a$04$xSqzI.YMF09zxS/jP3.5FOP5VNcicf6sY8L0VFABuL2UUCrBWZBpm"], ["name", "username"]]
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "email_lists" ("created_at", "creator_id", "email", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2015-02-09 03:01:58.816544"], ["creator_id", 29], ["email", "sample@example.com"], ["name", "username"], ["updated_at", "2015-02-09 03:01:58.816544"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.5ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (1.7ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'sample@example.com' LIMIT 1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "name") VALUES ($1, $2, $3) RETURNING "id"[0m  [["email", "sample@example.com"], ["encrypted_password", "$2a$04$tgvnRUeCsn9A7.aAQZggF.EkneUFIaWSa6LvZhZJJbdYx8SDvMjTC"], ["name", "username"]]
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "email_lists" ("created_at", "creator_id", "email", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2015-02-09 03:02:32.026727"], ["creator_id", 30], ["email", "sample@example.com"], ["name", "username"], ["updated_at", "2015-02-09 03:02:32.026727"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (1.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (1.4ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'sample@example.com' LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "name") VALUES ($1, $2, $3) RETURNING "id"[0m  [["email", "sample@example.com"], ["encrypted_password", "$2a$04$3k/xGHr15Tj1CXCQ98XEfOJeueAVQdpJBOsBvL3GaYziWJpYORiEa"], ["name", "username"]]
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "email_lists" ("created_at", "creator_id", "email", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2015-02-09 03:05:16.091916"], ["creator_id", 31], ["email", "sample@example.com"], ["name", "username"], ["updated_at", "2015-02-09 03:05:16.091916"]]
+  [1m[36m (0.4ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  ROLLBACK

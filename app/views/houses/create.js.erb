@@ -2,3 +2,4 @@ $("#houses").prepend("<%= escape_javascript render(@house) %>");
 $('#new_house')[0].reset();
 $('#form_block').remove();
 $('#add').fadeIn();
+$("#notice").html("<%= escape_javascript(render :partial => 'layouts/messages' , :locals => { :flash => flash }).html_safe %>");

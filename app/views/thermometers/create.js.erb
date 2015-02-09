@@ -2,3 +2,4 @@ $("#thermometers").prepend("<%= escape_javascript render(@thermometer) %>");
 $('#new_thermometer')[0].reset();
 $('#form_block').remove();
 $('#add').fadeIn();
+$("#notice").html("<%= escape_javascript(render :partial => 'layouts/messages' , :locals => { :flash => flash }).html_safe %>");

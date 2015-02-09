@@ -1,3 +1,24 @@
 <h2 style="margin-left: 50%;">Edit Home</h2>
 
-<%= render 'form' %>
+<%= render 'shared/errors', obj: @house %>
+
+<div class="well col-md-4" style="padding-top:30px; margin-left: 35%;">
+  <%= form_for @house,  class: "row col-md-6" do |f| %>
+
+  <div class="form-group">
+    <%= f.label 'Name of House', class: "control-label" %>
+    <%= f.text_field :name, autofocus: true, class: "form-control"%>
+  </div>
+  
+  <div class="form-group col-sm-4 field">
+    <%= f.label :time_zone, class: "control-label"%>
+    <%= f.time_zone_select :time_zone, ActiveSupport::TimeZone.us_zones, default: Time.zone.name %>
+  </div>
+  <br/>
+
+  <div class="form-group" style="margin-top: 50px;" >
+    <%= f.submit(@house.new_record? ? 'Add house' : 'Save changes', class: 'btn btn-small btn-success') %>
+    <%= link_to 'Cancel', houses_path, class: "btn btn-small btn-warning", style:"margin-left:20px;" %>
+  </div>
+  <% end %>
+</div>

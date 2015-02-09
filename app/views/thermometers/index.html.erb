@@ -2,7 +2,7 @@
   <%= render 'shared/content_title', title: "All thermometers for #{@house.name}", style: "padding-top: 50px;" %>
   <section style="padding-top:50px;" id="thermometers">
   <% if @thermometers.size == 0 %>
-    <h2 style="margin-left: 20%;" class="add">Click on "add thermometer" above...</h2>
+    <h2 style="margin-left: 20%;" class="add">Click on "Add New Thermometer" link above...</h2>
   <% else %>
     <%= render @thermometers %>
   <% end %>
