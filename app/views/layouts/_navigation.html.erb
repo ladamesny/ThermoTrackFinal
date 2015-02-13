@@ -1,15 +1,9 @@
     <div class="navbar-header">
-    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-      <span class="sr-only"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </button>
-    <strong><%= link_to "Thermotrack!", root_path, class: 'navbar-brand', title: "Click to go to home page", style: "font-size: 40px;" %></strong>
+      <strong><%= link_to "Thermotrack!", root_path, class: 'navbar-brand', title: "Click to go to home page", style: "font-size: 40px;" %></strong>
     </div>
 
     <%if user_signed_in? %>
     
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     <ul class="nav navbar-nav">
         <li class="dropdown navbar-btn">
         <%= link_to '#', class: 'btn btn-small navbar-btn dropdown-toggle', 'data-toggle' => 'dropdown', title: "These are names available to be added to a thermometer's notifications list.", style: "font-weight: bold;" do %>
@@ -34,10 +28,10 @@
         <% end %>
       </ul>
       
-      <ul class="nav navbar-nav" style="float: right;">
+      <ul class="nav navbar-nav navbar-right" >
 
-        <li style="margin-right: 50px;" class="navbar-btn">
-          <%= link_to "Add New House", new_house_path, title: "Click to add new House",id: "add", name: "Add New House", class: "btn btn-small navbar-btn", style: "font-weight: bold;",remote: true%>
+        <li>
+          <%= link_to "Add New House", new_house_path, title: "Click to add new House",id: "add", name: "Add New House", style: "font-weight: bold;",remote: true%>
         </li>
 
         <li class="dropdown pull-right">
@@ -61,4 +55,3 @@
             </ul>
         </li>
       <%end%>
-    </div>

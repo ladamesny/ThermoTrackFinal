@@ -1,7 +1,7 @@
 <%= div_for(thermometer) do %>
   <div class="row col-md-6" style="margin-right: 15px;">
   <%= link_to(image_tag("thermo.png", height: '160', width: '160', align: 'left'), edit_house_thermometer_path(thermometer.house,thermometer), title: "Click to edit this thermometer.", remote: true) %>
-  <%= link_to(image_tag("trash.png", height: '50', width: '50', align: 'right'), [thermometer.house,thermometer], title: "Click to delete this thermometer.", method: :delete,  data: {confirm: "Are you sure? Deleting this thermometer can not be reversed."}, remote: true) %>
+  <%= link_to(image_tag("trash.png", height: '50', width: '50', alt: 'delete' align: 'right'), [thermometer.house,thermometer], title: "Click to delete this thermometer.", method: :delete,  data: {confirm: "Are you sure? Deleting this thermometer can not be reversed."}, remote: true) %>
   <div class="span8 well">
     <h4><strong><%= link_to thermometer.name, house_thermometer_path(thermometer.house, thermometer), title: "Click to see temperature logs for #{thermometer.name}'s thermometer."%></strong> </h4>
     <strong>Current Temperature:</strong> 

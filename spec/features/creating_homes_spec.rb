@@ -8,8 +8,10 @@ RSpec.feature "Creating Houses" do
 	end
 	
 	scenario "A user can create a new House" do
-		within('nav') {click_link "Add New House"}
-		fill_in "Name of house", with: "Summer home"
+		visit "/"
+		click_link "Add New House"
+		fill_in 'house[name]', with: "Summer home"
+		click_button "Add house"
 
 		expect(page).to have_content("Summer home")
 	end

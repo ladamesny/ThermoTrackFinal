@@ -621,3 +621,2145 @@ Completed 200 OK in 11ms (Views: 7.4ms | ActiveRecord: 1.8ms)
   [1m[35mSQL (0.8ms)[0m  INSERT INTO "email_lists" ("created_at", "creator_id", "email", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2015-02-09 03:05:16.091916"], ["creator_id", 31], ["email", "sample@example.com"], ["name", "username"], ["updated_at", "2015-02-09 03:05:16.091916"]]
   [1m[36m (0.4ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
   [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (34.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (19.7ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'sample@example.com' LIMIT 1
+  [1m[36mSQL (12.7ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "name") VALUES ($1, $2, $3) RETURNING "id"[0m  [["email", "sample@example.com"], ["encrypted_password", "$2a$04$mLVNVUBN/S01E5UDP5aCV.oNzfKrOJatzVMQ2oRfk1.xZGAW3YaI."], ["name", "username"]]
+  [1m[35mSQL (2.1ms)[0m  INSERT INTO "email_lists" ("created_at", "creator_id", "email", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2015-02-09 14:51:24.665550"], ["creator_id", 32], ["email", "sample@example.com"], ["name", "username"], ["updated_at", "2015-02-09 14:51:24.665550"]]
+  [1m[36m (0.4ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.6ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (1.1ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'sample@example.com' LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "name") VALUES ($1, $2, $3) RETURNING "id"[0m  [["email", "sample@example.com"], ["encrypted_password", "$2a$04$pdk3aVB0smbyjyBFifCRVehgDekY2z6HoFDTWqbGgCjq.Dw3P/ZgK"], ["name", "username"]]
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "email_lists" ("created_at", "creator_id", "email", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2015-02-09 14:51:57.324931"], ["creator_id", 33], ["email", "sample@example.com"], ["name", "username"], ["updated_at", "2015-02-09 14:51:57.324931"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.5ms)[0m  BEGIN
+  [1m[36m (0.5ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (1.5ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'sample@example.com' LIMIT 1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "name") VALUES ($1, $2, $3) RETURNING "id"[0m  [["email", "sample@example.com"], ["encrypted_password", "$2a$04$5yYRwWfdv8.Re9XE8Wtl7uWcoYVDwmyIZT6AgE/UDEpjmqSSkvM8e"], ["name", "username"]]
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "email_lists" ("created_at", "creator_id", "email", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2015-02-09 14:52:39.690650"], ["creator_id", 34], ["email", "sample@example.com"], ["name", "username"], ["updated_at", "2015-02-09 14:52:39.690650"]]
+  [1m[36m (0.4ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2015-02-09 09:52:39 -0500
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.8ms)[0m  [1mUPDATE "users" SET "current_sign_in_at" = $1, "current_sign_in_ip" = $2, "last_sign_in_at" = $3, "last_sign_in_ip" = $4, "sign_in_count" = $5 WHERE "users"."id" = 34[0m  [["current_sign_in_at", "2015-02-09 14:52:39.719424"], ["current_sign_in_ip", "127.0.0.1/32"], ["last_sign_in_at", "2015-02-09 14:52:39.719424"], ["last_sign_in_ip", "127.0.0.1/32"], ["sign_in_count", 1]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by HomeController#index as HTML
+Redirected to http://www.example.com/houses
+Completed 302 Found in 6ms (ActiveRecord: 0.0ms)
+Started GET "/houses" for 127.0.0.1 at 2015-02-09 09:52:39 -0500
+Processing by HousesController#index as HTML
+  [1m[36mHouse Load (1.2ms)[0m  [1mSELECT "houses".* FROM "houses"[0m
+  Rendered houses/index.html.erb within layouts/application (2.0ms)
+  [1m[35mUser Load (1.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 34  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mEmailList Load (0.5ms)[0m  [1mSELECT "email_lists".* FROM "email_lists"[0m
+  Rendered layouts/_navigation.html.erb (13.7ms)
+  Rendered layouts/_messages.html.erb (0.8ms)
+Completed 200 OK in 143ms (Views: 131.3ms | ActiveRecord: 2.7ms)
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2015-02-09 09:52:39 -0500
+Processing by Devise::SessionsController#destroy as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 34  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/
+Completed 302 Found in 94ms (ActiveRecord: 1.1ms)
+Started GET "/" for 127.0.0.1 at 2015-02-09 09:52:40 -0500
+Processing by HomeController#index as HTML
+Redirected to http://www.example.com/users/sign_in
+Completed 302 Found in 8ms (ActiveRecord: 0.0ms)
+Started GET "/users/sign_in" for 127.0.0.1 at 2015-02-09 09:52:40 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (22.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (77.4ms)
+  Rendered layouts/_navigation.html.erb (0.8ms)
+  Rendered layouts/_messages.html.erb (0.2ms)
+Completed 200 OK in 89ms (Views: 87.6ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.6ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (1.0ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'sample@example.com' LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "name") VALUES ($1, $2, $3) RETURNING "id"[0m  [["email", "sample@example.com"], ["encrypted_password", "$2a$04$zvG0KmllzkuEe3IfGNoSFeQrf0xS0KPh5MUB.rirqwb1L6eXIgp7S"], ["name", "username"]]
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "email_lists" ("created_at", "creator_id", "email", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2015-02-09 14:53:17.382337"], ["creator_id", 35], ["email", "sample@example.com"], ["name", "username"], ["updated_at", "2015-02-09 14:53:17.382337"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2015-02-09 09:53:17 -0500
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "users" SET "current_sign_in_at" = $1, "current_sign_in_ip" = $2, "last_sign_in_at" = $3, "last_sign_in_ip" = $4, "sign_in_count" = $5 WHERE "users"."id" = 35[0m  [["current_sign_in_at", "2015-02-09 14:53:17.408375"], ["current_sign_in_ip", "127.0.0.1/32"], ["last_sign_in_at", "2015-02-09 14:53:17.408375"], ["last_sign_in_ip", "127.0.0.1/32"], ["sign_in_count", 1]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by HomeController#index as HTML
+Redirected to http://www.example.com/houses
+Completed 302 Found in 6ms (ActiveRecord: 0.0ms)
+Started GET "/houses" for 127.0.0.1 at 2015-02-09 09:53:17 -0500
+Processing by HousesController#index as HTML
+  [1m[36mHouse Load (0.6ms)[0m  [1mSELECT "houses".* FROM "houses"[0m
+  Rendered houses/index.html.erb within layouts/application (2.1ms)
+  [1m[35mUser Load (0.9ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 35  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mEmailList Load (0.5ms)[0m  [1mSELECT "email_lists".* FROM "email_lists"[0m
+  Rendered layouts/_navigation.html.erb (11.7ms)
+  Rendered layouts/_messages.html.erb (0.8ms)
+Completed 200 OK in 73ms (Views: 62.3ms | ActiveRecord: 1.9ms)
+Started GET "/houses/new" for 127.0.0.1 at 2015-02-09 09:53:17 -0500
+Processing by HousesController#new as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 35  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered shared/_errors.html.erb (1.0ms)
+  Rendered houses/_form.html.erb (460.3ms)
+  Rendered houses/new.html.erb within layouts/application (462.4ms)
+  [1m[36mEmailList Load (0.7ms)[0m  [1mSELECT "email_lists".* FROM "email_lists"[0m
+  Rendered layouts/_navigation.html.erb (3.4ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 545ms (Views: 486.3ms | ActiveRecord: 5.7ms)
+  [1m[35m (0.5ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (1.4ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'sample@example.com' LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "name") VALUES ($1, $2, $3) RETURNING "id"[0m  [["email", "sample@example.com"], ["encrypted_password", "$2a$04$dYloQq.KNcRoMEjUOe7zCegekPCEFmLRFCGEL95yUOt8V/fUz2Tmm"], ["name", "username"]]
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "email_lists" ("created_at", "creator_id", "email", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2015-02-09 14:54:03.217367"], ["creator_id", 36], ["email", "sample@example.com"], ["name", "username"], ["updated_at", "2015-02-09 14:54:03.217367"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2015-02-09 09:54:03 -0500
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.7ms)[0m  [1mUPDATE "users" SET "current_sign_in_at" = $1, "current_sign_in_ip" = $2, "last_sign_in_at" = $3, "last_sign_in_ip" = $4, "sign_in_count" = $5 WHERE "users"."id" = 36[0m  [["current_sign_in_at", "2015-02-09 14:54:03.248671"], ["current_sign_in_ip", "127.0.0.1/32"], ["last_sign_in_at", "2015-02-09 14:54:03.248671"], ["last_sign_in_ip", "127.0.0.1/32"], ["sign_in_count", 1]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by HomeController#index as HTML
+Redirected to http://www.example.com/houses
+Completed 302 Found in 6ms (ActiveRecord: 0.0ms)
+Started GET "/houses" for 127.0.0.1 at 2015-02-09 09:54:03 -0500
+Processing by HousesController#index as HTML
+  [1m[36mHouse Load (0.9ms)[0m  [1mSELECT "houses".* FROM "houses"[0m
+  Rendered houses/index.html.erb within layouts/application (2.4ms)
+  [1m[35mUser Load (1.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 36  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mEmailList Load (0.7ms)[0m  [1mSELECT "email_lists".* FROM "email_lists"[0m
+  Rendered layouts/_navigation.html.erb (13.2ms)
+  Rendered layouts/_messages.html.erb (0.9ms)
+Completed 200 OK in 83ms (Views: 70.3ms | ActiveRecord: 2.8ms)
+Started GET "/houses/new" for 127.0.0.1 at 2015-02-09 09:54:03 -0500
+Processing by HousesController#new as HTML
+  [1m[35mUser Load (0.8ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 36  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered shared/_errors.html.erb (0.6ms)
+  Rendered houses/_form.html.erb (336.3ms)
+  Rendered houses/new.html.erb within layouts/application (337.7ms)
+  [1m[36mEmailList Load (0.7ms)[0m  [1mSELECT "email_lists".* FROM "email_lists"[0m
+  Rendered layouts/_navigation.html.erb (3.4ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 375ms (Views: 343.3ms | ActiveRecord: 4.1ms)
+  [1m[35m (0.6ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (1.0ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'sample@example.com' LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "name") VALUES ($1, $2, $3) RETURNING "id"[0m  [["email", "sample@example.com"], ["encrypted_password", "$2a$04$J5FtRN7Y9zAG7Q22sVc7B.Z/YVzM0gFBcARenCe8QWFe55tKTY9tW"], ["name", "username"]]
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "email_lists" ("created_at", "creator_id", "email", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2015-02-09 14:54:56.305079"], ["creator_id", 37], ["email", "sample@example.com"], ["name", "username"], ["updated_at", "2015-02-09 14:54:56.305079"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2015-02-09 09:54:56 -0500
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "users" SET "current_sign_in_at" = $1, "current_sign_in_ip" = $2, "last_sign_in_at" = $3, "last_sign_in_ip" = $4, "sign_in_count" = $5 WHERE "users"."id" = 37[0m  [["current_sign_in_at", "2015-02-09 14:54:56.330712"], ["current_sign_in_ip", "127.0.0.1/32"], ["last_sign_in_at", "2015-02-09 14:54:56.330712"], ["last_sign_in_ip", "127.0.0.1/32"], ["sign_in_count", 1]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by HomeController#index as HTML
+Redirected to http://www.example.com/houses
+Completed 302 Found in 6ms (ActiveRecord: 0.0ms)
+Started GET "/houses" for 127.0.0.1 at 2015-02-09 09:54:56 -0500
+Processing by HousesController#index as HTML
+  [1m[36mHouse Load (0.7ms)[0m  [1mSELECT "houses".* FROM "houses"[0m
+  Rendered houses/index.html.erb within layouts/application (2.1ms)
+  [1m[35mUser Load (0.9ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 37  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mEmailList Load (0.4ms)[0m  [1mSELECT "email_lists".* FROM "email_lists"[0m
+  Rendered layouts/_navigation.html.erb (11.8ms)
+  Rendered layouts/_messages.html.erb (0.9ms)
+Completed 200 OK in 73ms (Views: 62.7ms | ActiveRecord: 2.0ms)
+Started GET "/houses/new" for 127.0.0.1 at 2015-02-09 09:54:56 -0500
+Processing by HousesController#new as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 37  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered shared/_errors.html.erb (0.7ms)
+  Rendered houses/_form.html.erb (298.6ms)
+  Rendered houses/new.html.erb within layouts/application (300.1ms)
+  [1m[36mEmailList Load (0.4ms)[0m  [1mSELECT "email_lists".* FROM "email_lists"[0m
+  Rendered layouts/_navigation.html.erb (3.0ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 334ms (Views: 305.5ms | ActiveRecord: 3.5ms)
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (1.0ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'sample@example.com' LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "name") VALUES ($1, $2, $3) RETURNING "id"[0m  [["email", "sample@example.com"], ["encrypted_password", "$2a$04$AEAwS6hN73iLp1YpRIYNo.L/6Bme9Ju78jMUxBOtcF/vsyQ0oO2Q2"], ["name", "username"]]
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "email_lists" ("created_at", "creator_id", "email", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2015-02-09 14:55:15.705183"], ["creator_id", 38], ["email", "sample@example.com"], ["name", "username"], ["updated_at", "2015-02-09 14:55:15.705183"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2015-02-09 09:55:15 -0500
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "users" SET "current_sign_in_at" = $1, "current_sign_in_ip" = $2, "last_sign_in_at" = $3, "last_sign_in_ip" = $4, "sign_in_count" = $5 WHERE "users"."id" = 38[0m  [["current_sign_in_at", "2015-02-09 14:55:15.731326"], ["current_sign_in_ip", "127.0.0.1/32"], ["last_sign_in_at", "2015-02-09 14:55:15.731326"], ["last_sign_in_ip", "127.0.0.1/32"], ["sign_in_count", 1]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by HomeController#index as HTML
+Redirected to http://www.example.com/houses
+Completed 302 Found in 6ms (ActiveRecord: 0.0ms)
+Started GET "/houses" for 127.0.0.1 at 2015-02-09 09:55:15 -0500
+Processing by HousesController#index as HTML
+  [1m[36mHouse Load (0.6ms)[0m  [1mSELECT "houses".* FROM "houses"[0m
+  Rendered houses/index.html.erb within layouts/application (2.2ms)
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 38  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mEmailList Load (0.5ms)[0m  [1mSELECT "email_lists".* FROM "email_lists"[0m
+  Rendered layouts/_navigation.html.erb (12.1ms)
+  Rendered layouts/_messages.html.erb (0.8ms)
+Completed 200 OK in 77ms (Views: 66.4ms | ActiveRecord: 2.0ms)
+Started GET "/houses/new" for 127.0.0.1 at 2015-02-09 09:55:15 -0500
+Processing by HousesController#new as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 38  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered shared/_errors.html.erb (0.7ms)
+  Rendered houses/_form.html.erb (335.2ms)
+  Rendered houses/new.html.erb within layouts/application (336.5ms)
+  [1m[36mEmailList Load (0.5ms)[0m  [1mSELECT "email_lists".* FROM "email_lists"[0m
+  Rendered layouts/_navigation.html.erb (3.2ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 373ms (Views: 342.0ms | ActiveRecord: 3.6ms)
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (1.5ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'sample@example.com' LIMIT 1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "name") VALUES ($1, $2, $3) RETURNING "id"[0m  [["email", "sample@example.com"], ["encrypted_password", "$2a$04$eT8vVDGfQfuzoGzewxM7g.8M.Skz2j6hz9Ka5UM2rv1jlKuWrRYyq"], ["name", "username"]]
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "email_lists" ("created_at", "creator_id", "email", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2015-02-09 14:56:11.290852"], ["creator_id", 39], ["email", "sample@example.com"], ["name", "username"], ["updated_at", "2015-02-09 14:56:11.290852"]]
+  [1m[36m (0.5ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2015-02-09 09:56:11 -0500
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.9ms)[0m  [1mUPDATE "users" SET "current_sign_in_at" = $1, "current_sign_in_ip" = $2, "last_sign_in_at" = $3, "last_sign_in_ip" = $4, "sign_in_count" = $5 WHERE "users"."id" = 39[0m  [["current_sign_in_at", "2015-02-09 14:56:11.319787"], ["current_sign_in_ip", "127.0.0.1/32"], ["last_sign_in_at", "2015-02-09 14:56:11.319787"], ["last_sign_in_ip", "127.0.0.1/32"], ["sign_in_count", 1]]
+  [1m[35m (0.4ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by HomeController#index as HTML
+Redirected to http://www.example.com/houses
+Completed 302 Found in 6ms (ActiveRecord: 0.0ms)
+Started GET "/houses" for 127.0.0.1 at 2015-02-09 09:56:11 -0500
+Processing by HousesController#index as HTML
+  [1m[36mHouse Load (0.9ms)[0m  [1mSELECT "houses".* FROM "houses"[0m
+  Rendered houses/index.html.erb within layouts/application (2.0ms)
+  [1m[35mUser Load (1.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 39  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mEmailList Load (0.8ms)[0m  [1mSELECT "email_lists".* FROM "email_lists"[0m
+  Rendered layouts/_navigation.html.erb (12.8ms)
+  Rendered layouts/_messages.html.erb (0.8ms)
+Completed 200 OK in 74ms (Views: 62.5ms | ActiveRecord: 3.0ms)
+Started GET "/houses/new" for 127.0.0.1 at 2015-02-09 09:56:11 -0500
+Processing by HousesController#new as HTML
+  [1m[35mUser Load (0.9ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 39  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered shared/_errors.html.erb (0.6ms)
+  Rendered houses/_form.html.erb (300.3ms)
+  Rendered houses/new.html.erb within layouts/application (301.7ms)
+  [1m[36mEmailList Load (0.5ms)[0m  [1mSELECT "email_lists".* FROM "email_lists"[0m
+  Rendered layouts/_navigation.html.erb (3.1ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 336ms (Views: 306.9ms | ActiveRecord: 4.0ms)
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (1.0ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'sample@example.com' LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "name") VALUES ($1, $2, $3) RETURNING "id"[0m  [["email", "sample@example.com"], ["encrypted_password", "$2a$04$E779915R.glVcpjwfrsHz.apA53mKbjkZY5F2Wa0hXFaPVXR.h8iW"], ["name", "username"]]
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "email_lists" ("created_at", "creator_id", "email", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2015-02-09 15:00:01.573289"], ["creator_id", 40], ["email", "sample@example.com"], ["name", "username"], ["updated_at", "2015-02-09 15:00:01.573289"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2015-02-09 10:00:01 -0500
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "users" SET "current_sign_in_at" = $1, "current_sign_in_ip" = $2, "last_sign_in_at" = $3, "last_sign_in_ip" = $4, "sign_in_count" = $5 WHERE "users"."id" = 40[0m  [["current_sign_in_at", "2015-02-09 15:00:01.599476"], ["current_sign_in_ip", "127.0.0.1/32"], ["last_sign_in_at", "2015-02-09 15:00:01.599476"], ["last_sign_in_ip", "127.0.0.1/32"], ["sign_in_count", 1]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by HomeController#index as HTML
+Redirected to http://www.example.com/houses
+Completed 302 Found in 6ms (ActiveRecord: 0.0ms)
+Started GET "/houses" for 127.0.0.1 at 2015-02-09 10:00:01 -0500
+Processing by HousesController#index as HTML
+  [1m[36mHouse Load (0.6ms)[0m  [1mSELECT "houses".* FROM "houses"[0m
+  Rendered houses/index.html.erb within layouts/application (2.1ms)
+  [1m[35mUser Load (0.9ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 40  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mEmailList Load (0.4ms)[0m  [1mSELECT "email_lists".* FROM "email_lists"[0m
+  Rendered layouts/_navigation.html.erb (11.7ms)
+  Rendered layouts/_messages.html.erb (0.8ms)
+Completed 200 OK in 73ms (Views: 62.1ms | ActiveRecord: 1.9ms)
+Started GET "/houses/new" for 127.0.0.1 at 2015-02-09 10:00:01 -0500
+Processing by HousesController#new as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 40  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered shared/_errors.html.erb (0.6ms)
+  Rendered houses/_form.html.erb (307.3ms)
+  Rendered houses/new.html.erb within layouts/application (308.7ms)
+  [1m[36mEmailList Load (0.5ms)[0m  [1mSELECT "email_lists".* FROM "email_lists"[0m
+  Rendered layouts/_navigation.html.erb (3.2ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 343ms (Views: 314.0ms | ActiveRecord: 3.6ms)
+Started POST "/houses" for 127.0.0.1 at 2015-02-09 10:00:02 -0500
+Processing by HousesController#create as HTML
+  Parameters: {"utf8"=>"✓", "house"=>{"name"=>"Summer home", "time_zone"=>"Eastern Time (US & Canada)"}, "commit"=>"Add house"}
+  [1m[35mUser Load (0.8ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 40  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (14.4ms)[0m  INSERT INTO "houses" ("created_at", "name", "time_zone", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2015-02-09 15:00:02.093774"], ["name", "Summer home"], ["time_zone", "Eastern Time (US & Canada)"], ["updated_at", "2015-02-09 15:00:02.093774"], ["user_id", 40]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/houses
+Completed 302 Found in 25ms (ActiveRecord: 15.8ms)
+Started GET "/houses" for 127.0.0.1 at 2015-02-09 10:00:02 -0500
+Processing by HousesController#index as HTML
+  [1m[35mHouse Load (0.8ms)[0m  SELECT "houses".* FROM "houses"
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 40]]
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 40  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (12.8ms)[0m  [1mSELECT COUNT(*) FROM "thermometers"  WHERE "thermometers"."house_id" = $1[0m  [["house_id", 1]]
+  Rendered houses/_house.html.erb (78.0ms)
+  Rendered houses/index.html.erb within layouts/application (79.9ms)
+  [1m[35mEmailList Load (0.7ms)[0m  SELECT "email_lists".* FROM "email_lists"
+  Rendered layouts/_navigation.html.erb (4.3ms)
+  Rendered layouts/_messages.html.erb (0.3ms)
+Completed 200 OK in 95ms (Views: 69.1ms | ActiveRecord: 19.9ms)
+  [1m[36m (0.6ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "houses" ("created_at", "name", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", "2015-02-09 15:17:52.720152"], ["name", "Example house"], ["updated_at", "2015-02-09 15:17:52.720152"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2015-02-09 10:17:52 -0500
+Processing by HomeController#index as HTML
+Redirected to http://www.example.com/users/sign_in
+Completed 302 Found in 24ms (ActiveRecord: 0.0ms)
+Started GET "/users/sign_in" for 127.0.0.1 at 2015-02-09 10:17:52 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (4.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (38.6ms)
+  Rendered layouts/_navigation.html.erb (2.2ms)
+  Rendered layouts/_messages.html.erb (0.8ms)
+Completed 200 OK in 108ms (Views: 89.9ms | ActiveRecord: 2.7ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "houses" ("created_at", "name", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", "2015-02-09 15:18:34.335918"], ["name", "Example house"], ["updated_at", "2015-02-09 15:18:34.335918"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2015-02-09 10:18:34 -0500
+Processing by HomeController#index as HTML
+Redirected to http://www.example.com/users/sign_in
+Completed 302 Found in 24ms (ActiveRecord: 0.0ms)
+Started GET "/users/sign_in" for 127.0.0.1 at 2015-02-09 10:18:34 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (4.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (37.7ms)
+  Rendered layouts/_navigation.html.erb (2.2ms)
+  Rendered layouts/_messages.html.erb (0.7ms)
+Completed 200 OK in 105ms (Views: 88.4ms | ActiveRecord: 2.5ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "houses" ("created_at", "name", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", "2015-02-09 15:18:53.996294"], ["name", "Example house"], ["updated_at", "2015-02-09 15:18:53.996294"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2015-02-09 10:18:54 -0500
+Processing by HomeController#index as HTML
+Redirected to http://www.example.com/users/sign_in
+Completed 302 Found in 24ms (ActiveRecord: 0.0ms)
+Started GET "/users/sign_in" for 127.0.0.1 at 2015-02-09 10:18:54 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (4.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (37.6ms)
+  Rendered layouts/_navigation.html.erb (2.2ms)
+  Rendered layouts/_messages.html.erb (0.8ms)
+Completed 200 OK in 105ms (Views: 88.0ms | ActiveRecord: 2.4ms)
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.2ms)[0m  INSERT INTO "houses" ("created_at", "name", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", "2015-02-09 15:20:59.301387"], ["name", "Example house"], ["updated_at", "2015-02-09 15:20:59.301387"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2015-02-09 10:20:59 -0500
+Processing by HomeController#index as HTML
+Redirected to http://www.example.com/users/sign_in
+Completed 302 Found in 24ms (ActiveRecord: 0.0ms)
+Started GET "/users/sign_in" for 127.0.0.1 at 2015-02-09 10:20:59 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (4.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (39.0ms)
+  Rendered layouts/_navigation.html.erb (2.3ms)
+  Rendered layouts/_messages.html.erb (0.8ms)
+Completed 200 OK in 112ms (Views: 89.9ms | ActiveRecord: 3.9ms)
+  [1m[35m (0.5ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "houses" ("created_at", "name", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", "2015-02-09 15:23:35.346527"], ["name", "Example house"], ["updated_at", "2015-02-09 15:23:35.346527"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2015-02-09 10:23:35 -0500
+Processing by HomeController#index as HTML
+Redirected to http://www.example.com/users/sign_in
+Completed 302 Found in 24ms (ActiveRecord: 0.0ms)
+Started GET "/users/sign_in" for 127.0.0.1 at 2015-02-09 10:23:35 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (4.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (38.8ms)
+  Rendered layouts/_navigation.html.erb (2.3ms)
+  Rendered layouts/_messages.html.erb (0.8ms)
+Completed 200 OK in 107ms (Views: 89.2ms | ActiveRecord: 2.5ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "houses" ("created_at", "name", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", "2015-02-09 15:25:15.921601"], ["name", "Example house"], ["updated_at", "2015-02-09 15:25:15.921601"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2015-02-09 10:25:15 -0500
+Processing by HomeController#index as HTML
+Redirected to http://www.example.com/users/sign_in
+Completed 302 Found in 23ms (ActiveRecord: 0.0ms)
+Started GET "/users/sign_in" for 127.0.0.1 at 2015-02-09 10:25:15 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (4.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (37.8ms)
+  Rendered layouts/_navigation.html.erb (2.2ms)
+  Rendered layouts/_messages.html.erb (0.8ms)
+Completed 200 OK in 105ms (Views: 87.8ms | ActiveRecord: 2.5ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.5ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.2ms)[0m  INSERT INTO "houses" ("created_at", "name", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", "2015-02-09 15:26:51.616214"], ["name", "Example house"], ["updated_at", "2015-02-09 15:26:51.616214"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2015-02-09 10:26:51 -0500
+Processing by HomeController#index as HTML
+Redirected to http://www.example.com/users/sign_in
+Completed 302 Found in 24ms (ActiveRecord: 0.0ms)
+Started GET "/users/sign_in" for 127.0.0.1 at 2015-02-09 10:26:51 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (4.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (38.0ms)
+  Rendered layouts/_navigation.html.erb (2.3ms)
+  Rendered layouts/_messages.html.erb (0.8ms)
+Completed 200 OK in 110ms (Views: 89.8ms | ActiveRecord: 4.2ms)
+  [1m[35m (0.5ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "houses" ("created_at", "name", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", "2015-02-09 15:27:48.674067"], ["name", "Example house"], ["updated_at", "2015-02-09 15:27:48.674067"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2015-02-09 10:27:48 -0500
+Processing by HomeController#index as HTML
+Redirected to http://www.example.com/users/sign_in
+Completed 302 Found in 24ms (ActiveRecord: 0.0ms)
+Started GET "/users/sign_in" for 127.0.0.1 at 2015-02-09 10:27:48 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (4.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (37.8ms)
+  Rendered layouts/_navigation.html.erb (2.2ms)
+  Rendered layouts/_messages.html.erb (0.8ms)
+Completed 200 OK in 106ms (Views: 89.2ms | ActiveRecord: 2.6ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "houses" ("created_at", "name", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", "2015-02-09 15:29:34.133822"], ["name", "Example house"], ["updated_at", "2015-02-09 15:29:34.133822"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2015-02-09 10:29:34 -0500
+Processing by HomeController#index as HTML
+Redirected to http://www.example.com/users/sign_in
+Completed 302 Found in 24ms (ActiveRecord: 0.0ms)
+Started GET "/users/sign_in" for 127.0.0.1 at 2015-02-09 10:29:34 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (4.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (38.3ms)
+  Rendered layouts/_navigation.html.erb (2.1ms)
+  Rendered layouts/_messages.html.erb (0.8ms)
+Completed 200 OK in 107ms (Views: 89.4ms | ActiveRecord: 2.6ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.5ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "houses" ("created_at", "name", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", "2015-02-09 15:30:28.151522"], ["name", "Example house"], ["updated_at", "2015-02-09 15:30:28.151522"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2015-02-09 10:30:28 -0500
+Processing by HomeController#index as HTML
+Redirected to http://www.example.com/users/sign_in
+Completed 302 Found in 25ms (ActiveRecord: 0.0ms)
+Started GET "/users/sign_in" for 127.0.0.1 at 2015-02-09 10:30:28 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (4.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (38.0ms)
+  Rendered layouts/_navigation.html.erb (2.3ms)
+  Rendered layouts/_messages.html.erb (0.7ms)
+Completed 200 OK in 109ms (Views: 88.4ms | ActiveRecord: 2.7ms)
+  [1m[35m (0.5ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "houses" ("created_at", "name", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", "2015-02-09 15:31:48.546988"], ["name", "Example house"], ["updated_at", "2015-02-09 15:31:48.546988"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2015-02-09 10:31:48 -0500
+Processing by HomeController#index as HTML
+Redirected to http://www.example.com/users/sign_in
+Completed 302 Found in 24ms (ActiveRecord: 0.0ms)
+Started GET "/users/sign_in" for 127.0.0.1 at 2015-02-09 10:31:48 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (4.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (38.2ms)
+  Rendered layouts/_navigation.html.erb (2.5ms)
+  Rendered layouts/_messages.html.erb (0.8ms)
+Completed 200 OK in 109ms (Views: 89.0ms | ActiveRecord: 3.2ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "houses" ("created_at", "name", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", "2015-02-09 15:32:15.130931"], ["name", "Example house"], ["updated_at", "2015-02-09 15:32:15.130931"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2015-02-09 10:32:15 -0500
+Processing by HomeController#index as HTML
+Redirected to http://www.example.com/users/sign_in
+Completed 302 Found in 24ms (ActiveRecord: 0.0ms)
+Started GET "/users/sign_in" for 127.0.0.1 at 2015-02-09 10:32:15 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (4.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (37.6ms)
+  Rendered layouts/_navigation.html.erb (2.1ms)
+  Rendered layouts/_messages.html.erb (0.8ms)
+Completed 200 OK in 105ms (Views: 87.5ms | ActiveRecord: 2.6ms)
+  [1m[35m (0.5ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "houses" ("created_at", "name", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", "2015-02-09 15:32:49.634985"], ["name", "Example house"], ["updated_at", "2015-02-09 15:32:49.634985"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (1.0ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'sample@example.com' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "name") VALUES ($1, $2, $3) RETURNING "id"  [["email", "sample@example.com"], ["encrypted_password", "$2a$04$hqJ1aNQOdBRvxn1xSjIxzuljSr6h37DPP3exs2f1kDtXzSDHB7va6"], ["name", "username"]]
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "email_lists" ("created_at", "creator_id", "email", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2015-02-09 15:32:49.691705"], ["creator_id", 41], ["email", "sample@example.com"], ["name", "username"], ["updated_at", "2015-02-09 15:32:49.691705"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/" for 127.0.0.1 at 2015-02-09 10:32:49 -0500
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "users" SET "current_sign_in_at" = $1, "current_sign_in_ip" = $2, "last_sign_in_at" = $3, "last_sign_in_ip" = $4, "sign_in_count" = $5 WHERE "users"."id" = 41  [["current_sign_in_at", "2015-02-09 15:32:49.714829"], ["current_sign_in_ip", "127.0.0.1/32"], ["last_sign_in_at", "2015-02-09 15:32:49.714829"], ["last_sign_in_ip", "127.0.0.1/32"], ["sign_in_count", 1]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by HomeController#index as HTML
+Redirected to http://www.example.com/houses
+Completed 302 Found in 6ms (ActiveRecord: 0.0ms)
+Started GET "/houses" for 127.0.0.1 at 2015-02-09 10:32:49 -0500
+Processing by HousesController#index as HTML
+  [1m[35mHouse Load (0.5ms)[0m  SELECT "houses".* FROM "houses"
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 41  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered houses/index.html.erb within layouts/application (2.1ms)
+  [1m[35mEmailList Load (0.5ms)[0m  SELECT "email_lists".* FROM "email_lists"
+  Rendered layouts/_navigation.html.erb (5.0ms)
+  Rendered layouts/_messages.html.erb (0.8ms)
+Completed 200 OK in 72ms (Views: 56.1ms | ActiveRecord: 1.8ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36m (0.5ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "houses" ("created_at", "name", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", "2015-02-09 15:33:06.415155"], ["name", "Example house"], ["updated_at", "2015-02-09 15:33:06.415155"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (1.4ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'sample@example.com' LIMIT 1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "name") VALUES ($1, $2, $3) RETURNING "id"  [["email", "sample@example.com"], ["encrypted_password", "$2a$04$QkFjs/1h3fMNPjZXJKz.FuFciQjH42MS3MNbJrM62lHFZeaY7nP5W"], ["name", "username"]]
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "email_lists" ("created_at", "creator_id", "email", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2015-02-09 15:33:06.477534"], ["creator_id", 42], ["email", "sample@example.com"], ["name", "username"], ["updated_at", "2015-02-09 15:33:06.477534"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/" for 127.0.0.1 at 2015-02-09 10:33:06 -0500
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "users" SET "current_sign_in_at" = $1, "current_sign_in_ip" = $2, "last_sign_in_at" = $3, "last_sign_in_ip" = $4, "sign_in_count" = $5 WHERE "users"."id" = 42  [["current_sign_in_at", "2015-02-09 15:33:06.500153"], ["current_sign_in_ip", "127.0.0.1/32"], ["last_sign_in_at", "2015-02-09 15:33:06.500153"], ["last_sign_in_ip", "127.0.0.1/32"], ["sign_in_count", 1]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by HomeController#index as HTML
+Redirected to http://www.example.com/houses
+Completed 302 Found in 6ms (ActiveRecord: 0.0ms)
+Started GET "/houses" for 127.0.0.1 at 2015-02-09 10:33:06 -0500
+Processing by HousesController#index as HTML
+  [1m[35mHouse Load (0.5ms)[0m  SELECT "houses".* FROM "houses"
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 42  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered houses/index.html.erb within layouts/application (2.1ms)
+  [1m[35mEmailList Load (0.5ms)[0m  SELECT "email_lists".* FROM "email_lists"
+  Rendered layouts/_navigation.html.erb (5.1ms)
+  Rendered layouts/_messages.html.erb (0.8ms)
+Completed 200 OK in 73ms (Views: 56.5ms | ActiveRecord: 1.8ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "houses" ("created_at", "name", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", "2015-02-09 15:33:23.416239"], ["name", "Example house"], ["updated_at", "2015-02-09 15:33:23.416239"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (1.0ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'sample@example.com' LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "name") VALUES ($1, $2, $3) RETURNING "id"  [["email", "sample@example.com"], ["encrypted_password", "$2a$04$vdwt18AoW.6Cefz.ZjcHeebQRSxNpqpYuzFC.RvTFFlf1fiW7dvwO"], ["name", "username"]]
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "email_lists" ("created_at", "creator_id", "email", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2015-02-09 15:33:23.474961"], ["creator_id", 43], ["email", "sample@example.com"], ["name", "username"], ["updated_at", "2015-02-09 15:33:23.474961"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/houses" for 127.0.0.1 at 2015-02-09 10:33:23 -0500
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE "users" SET "current_sign_in_at" = $1, "current_sign_in_ip" = $2, "last_sign_in_at" = $3, "last_sign_in_ip" = $4, "sign_in_count" = $5 WHERE "users"."id" = 43  [["current_sign_in_at", "2015-02-09 15:33:23.498968"], ["current_sign_in_ip", "127.0.0.1/32"], ["last_sign_in_at", "2015-02-09 15:33:23.498968"], ["last_sign_in_ip", "127.0.0.1/32"], ["sign_in_count", 1]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by HousesController#index as HTML
+  [1m[35mHouse Load (0.5ms)[0m  SELECT "houses".* FROM "houses"
+  Rendered houses/index.html.erb within layouts/application (2.1ms)
+  [1m[36mEmailList Load (0.5ms)[0m  [1mSELECT "email_lists".* FROM "email_lists"[0m
+  Rendered layouts/_navigation.html.erb (5.2ms)
+  Rendered layouts/_messages.html.erb (0.9ms)
+Completed 200 OK in 70ms (Views: 57.3ms | ActiveRecord: 1.0ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.8ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'sample@example.com' LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "name") VALUES ($1, $2, $3) RETURNING "id"[0m  [["email", "sample@example.com"], ["encrypted_password", "$2a$04$2BLxs/OEgUkTErFheaoExejkg7zR303B50kCZ5rn84bQSy8TCTCcm"], ["name", "username"]]
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "email_lists" ("created_at", "creator_id", "email", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2015-02-09 15:36:05.957511"], ["creator_id", 44], ["email", "sample@example.com"], ["name", "username"], ["updated_at", "2015-02-09 15:36:05.957511"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "houses" ("created_at", "name", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2015-02-09 15:36:05.992740"], ["name", "summer"], ["updated_at", "2015-02-09 15:36:05.992740"], ["user_id", 44]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/houses" for 127.0.0.1 at 2015-02-09 10:36:06 -0500
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.8ms)[0m  UPDATE "users" SET "current_sign_in_at" = $1, "current_sign_in_ip" = $2, "last_sign_in_at" = $3, "last_sign_in_ip" = $4, "sign_in_count" = $5 WHERE "users"."id" = 44  [["current_sign_in_at", "2015-02-09 15:36:06.018670"], ["current_sign_in_ip", "127.0.0.1/32"], ["last_sign_in_at", "2015-02-09 15:36:06.018670"], ["last_sign_in_ip", "127.0.0.1/32"], ["sign_in_count", 1]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by HousesController#index as HTML
+  [1m[35mHouse Load (0.7ms)[0m  SELECT "houses".* FROM "houses"
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 44]]
+  [1m[35m (0.7ms)[0m  SELECT COUNT(*) FROM "thermometers"  WHERE "thermometers"."house_id" = $1  [["house_id", 17]]
+  Rendered houses/_house.html.erb (30.5ms)
+  Rendered houses/index.html.erb within layouts/application (37.0ms)
+  [1m[36mEmailList Load (0.5ms)[0m  [1mSELECT "email_lists".* FROM "email_lists"[0m
+  Rendered layouts/_navigation.html.erb (5.1ms)
+  Rendered layouts/_messages.html.erb (0.9ms)
+Completed 200 OK in 110ms (Views: 93.8ms | ActiveRecord: 6.5ms)
+Started DELETE "/houses/17" for 127.0.0.1 at 2015-02-09 10:36:06 -0500
+Processing by HousesController#destroy as HTML
+  Parameters: {"id"=>"17"}
+  [1m[35mHouse Load (0.4ms)[0m  SELECT  "houses".* FROM "houses"  WHERE "houses"."id" = $1 LIMIT 1  [["id", 17]]
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 44  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 44]]
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mThermometer Load (0.3ms)[0m  SELECT "thermometers".* FROM "thermometers"  WHERE "thermometers"."house_id" = $1  [["house_id", 17]]
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM "houses" WHERE "houses"."id" = $1[0m  [["id", 17]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/houses/17
+Completed 302 Found in 19ms (ActiveRecord: 3.0ms)
+Started GET "/houses/17" for 127.0.0.1 at 2015-02-09 10:36:06 -0500
+Processing by HousesController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mHouse Load (0.4ms)[0m  [1mSELECT  "houses".* FROM "houses"  WHERE "houses"."id" = $1 LIMIT 1[0m  [["id", 17]]
+Completed 404 Not Found in 3ms
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (1.0ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'sample@example.com' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "name") VALUES ($1, $2, $3) RETURNING "id"[0m  [["email", "sample@example.com"], ["encrypted_password", "$2a$04$9daYIZjtxQHDzJUksAtMoepFAPqs3Qj/ySoPFGP8wVgMCLVEBsOB2"], ["name", "username"]]
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "email_lists" ("created_at", "creator_id", "email", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2015-02-09 15:41:20.897677"], ["creator_id", 45], ["email", "sample@example.com"], ["name", "username"], ["updated_at", "2015-02-09 15:41:20.897677"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "houses" ("created_at", "name", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2015-02-09 15:41:20.929377"], ["name", "summer"], ["updated_at", "2015-02-09 15:41:20.929377"], ["user_id", 45]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/houses" for 127.0.0.1 at 2015-02-09 10:41:20 -0500
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE "users" SET "current_sign_in_at" = $1, "current_sign_in_ip" = $2, "last_sign_in_at" = $3, "last_sign_in_ip" = $4, "sign_in_count" = $5 WHERE "users"."id" = 45  [["current_sign_in_at", "2015-02-09 15:41:20.951446"], ["current_sign_in_ip", "127.0.0.1/32"], ["last_sign_in_at", "2015-02-09 15:41:20.951446"], ["last_sign_in_ip", "127.0.0.1/32"], ["sign_in_count", 1]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by HousesController#index as HTML
+  [1m[35mHouse Load (0.8ms)[0m  SELECT "houses".* FROM "houses"
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 45]]
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "thermometers"  WHERE "thermometers"."house_id" = $1  [["house_id", 18]]
+  Rendered houses/_house.html.erb (26.4ms)
+  Rendered houses/index.html.erb within layouts/application (32.3ms)
+  [1m[36mEmailList Load (0.5ms)[0m  [1mSELECT "email_lists".* FROM "email_lists"[0m
+  Rendered layouts/_navigation.html.erb (4.9ms)
+  Rendered layouts/_messages.html.erb (0.9ms)
+Completed 200 OK in 96ms (Views: 81.8ms | ActiveRecord: 4.9ms)
+Started DELETE "/houses/18" for 127.0.0.1 at 2015-02-09 10:41:21 -0500
+Processing by HousesController#destroy as HTML
+  Parameters: {"id"=>"18"}
+  [1m[35mHouse Load (0.3ms)[0m  SELECT  "houses".* FROM "houses"  WHERE "houses"."id" = $1 LIMIT 1  [["id", 18]]
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 45  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 45]]
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mThermometer Load (0.2ms)[0m  SELECT "thermometers".* FROM "thermometers"  WHERE "thermometers"."house_id" = $1  [["house_id", 18]]
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "houses" WHERE "houses"."id" = $1[0m  [["id", 18]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/houses/18
+Completed 302 Found in 16ms (ActiveRecord: 2.4ms)
+Started GET "/houses/18" for 127.0.0.1 at 2015-02-09 10:41:21 -0500
+Processing by HousesController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mHouse Load (0.5ms)[0m  [1mSELECT  "houses".* FROM "houses"  WHERE "houses"."id" = $1 LIMIT 1[0m  [["id", 18]]
+Completed 404 Not Found in 3ms
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (1.0ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'sample@example.com' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "name") VALUES ($1, $2, $3) RETURNING "id"[0m  [["email", "sample@example.com"], ["encrypted_password", "$2a$04$6UF2v2RlnkvXkVAYa.nqT.YaaTFzgDQdLBpt7KH.uGnlbIP81KI6i"], ["name", "username"]]
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "email_lists" ("created_at", "creator_id", "email", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2015-02-09 15:42:54.442251"], ["creator_id", 46], ["email", "sample@example.com"], ["name", "username"], ["updated_at", "2015-02-09 15:42:54.442251"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "houses" ("created_at", "name", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2015-02-09 15:42:54.473767"], ["name", "summer"], ["updated_at", "2015-02-09 15:42:54.473767"], ["user_id", 46]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/houses" for 127.0.0.1 at 2015-02-09 10:42:54 -0500
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "users" SET "current_sign_in_at" = $1, "current_sign_in_ip" = $2, "last_sign_in_at" = $3, "last_sign_in_ip" = $4, "sign_in_count" = $5 WHERE "users"."id" = 46  [["current_sign_in_at", "2015-02-09 15:42:54.495652"], ["current_sign_in_ip", "127.0.0.1/32"], ["last_sign_in_at", "2015-02-09 15:42:54.495652"], ["last_sign_in_ip", "127.0.0.1/32"], ["sign_in_count", 1]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by HousesController#index as HTML
+  [1m[35mHouse Load (0.5ms)[0m  SELECT "houses".* FROM "houses"
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 46]]
+  Rendered houses/_house.html.erb (1.6ms)
+  Rendered houses/index.html.erb within layouts/application (7.7ms)
+Completed 500 Internal Server Error in 27ms
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (1.2ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'sample@example.com' LIMIT 1
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "name") VALUES ($1, $2, $3) RETURNING "id"[0m  [["email", "sample@example.com"], ["encrypted_password", "$2a$04$nZGP.RHIQx4KUeyGPIF8LO6Dhw0t1SmOEEGDUSyNmh9Y9hPxUtlb6"], ["name", "username"]]
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "email_lists" ("created_at", "creator_id", "email", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2015-02-09 15:43:22.526026"], ["creator_id", 47], ["email", "sample@example.com"], ["name", "username"], ["updated_at", "2015-02-09 15:43:22.526026"]]
+  [1m[36m (0.5ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "houses" ("created_at", "name", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2015-02-09 15:43:22.560963"], ["name", "summer"], ["updated_at", "2015-02-09 15:43:22.560963"], ["user_id", 47]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/houses" for 127.0.0.1 at 2015-02-09 10:43:22 -0500
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE "users" SET "current_sign_in_at" = $1, "current_sign_in_ip" = $2, "last_sign_in_at" = $3, "last_sign_in_ip" = $4, "sign_in_count" = $5 WHERE "users"."id" = 47  [["current_sign_in_at", "2015-02-09 15:43:22.584517"], ["current_sign_in_ip", "127.0.0.1/32"], ["last_sign_in_at", "2015-02-09 15:43:22.584517"], ["last_sign_in_ip", "127.0.0.1/32"], ["sign_in_count", 1]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by HousesController#index as HTML
+  [1m[35mHouse Load (0.5ms)[0m  SELECT "houses".* FROM "houses"
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 47]]
+  Rendered houses/_house.html.erb (1.5ms)
+  Rendered houses/index.html.erb within layouts/application (7.8ms)
+Completed 500 Internal Server Error in 28ms
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.5ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (1.4ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'sample@example.com' LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "name") VALUES ($1, $2, $3) RETURNING "id"[0m  [["email", "sample@example.com"], ["encrypted_password", "$2a$04$wDaOP/ci2X43t2BaiDX28OQ0HTX5gPQI7DYNa9PxP5ib3DeHTU0jW"], ["name", "username"]]
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "email_lists" ("created_at", "creator_id", "email", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2015-02-09 15:44:10.596687"], ["creator_id", 48], ["email", "sample@example.com"], ["name", "username"], ["updated_at", "2015-02-09 15:44:10.596687"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "houses" ("created_at", "name", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2015-02-09 15:44:10.630429"], ["name", "summer"], ["updated_at", "2015-02-09 15:44:10.630429"], ["user_id", 48]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/houses" for 127.0.0.1 at 2015-02-09 10:44:10 -0500
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  UPDATE "users" SET "current_sign_in_at" = $1, "current_sign_in_ip" = $2, "last_sign_in_at" = $3, "last_sign_in_ip" = $4, "sign_in_count" = $5 WHERE "users"."id" = 48  [["current_sign_in_at", "2015-02-09 15:44:10.653886"], ["current_sign_in_ip", "127.0.0.1/32"], ["last_sign_in_at", "2015-02-09 15:44:10.653886"], ["last_sign_in_ip", "127.0.0.1/32"], ["sign_in_count", 1]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by HousesController#index as HTML
+  [1m[35mHouse Load (0.7ms)[0m  SELECT "houses".* FROM "houses"
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 48]]
+  Rendered houses/_house.html.erb (1.6ms)
+  Rendered houses/index.html.erb within layouts/application (7.7ms)
+Completed 500 Internal Server Error in 27ms
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (1.0ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'sample@example.com' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "name") VALUES ($1, $2, $3) RETURNING "id"[0m  [["email", "sample@example.com"], ["encrypted_password", "$2a$04$N5W/VPzkJyEdNTRqVpEVgOMQnW/dm38zZzQ1gwAeuTzZ4dxUUr6bS"], ["name", "username"]]
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "email_lists" ("created_at", "creator_id", "email", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2015-02-09 15:45:48.763872"], ["creator_id", 49], ["email", "sample@example.com"], ["name", "username"], ["updated_at", "2015-02-09 15:45:48.763872"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "houses" ("created_at", "name", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2015-02-09 15:45:48.794279"], ["name", "summer"], ["updated_at", "2015-02-09 15:45:48.794279"], ["user_id", 49]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/houses" for 127.0.0.1 at 2015-02-09 10:45:48 -0500
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "users" SET "current_sign_in_at" = $1, "current_sign_in_ip" = $2, "last_sign_in_at" = $3, "last_sign_in_ip" = $4, "sign_in_count" = $5 WHERE "users"."id" = 49  [["current_sign_in_at", "2015-02-09 15:45:48.816271"], ["current_sign_in_ip", "127.0.0.1/32"], ["last_sign_in_at", "2015-02-09 15:45:48.816271"], ["last_sign_in_ip", "127.0.0.1/32"], ["sign_in_count", 1]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by HousesController#index as HTML
+  [1m[35mHouse Load (0.5ms)[0m  SELECT "houses".* FROM "houses"
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 49]]
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "thermometers"  WHERE "thermometers"."house_id" = $1  [["house_id", 22]]
+  Rendered houses/_house.html.erb (26.4ms)
+  Rendered houses/index.html.erb within layouts/application (32.4ms)
+  [1m[36mEmailList Load (0.5ms)[0m  [1mSELECT "email_lists".* FROM "email_lists"[0m
+  Rendered layouts/_navigation.html.erb (4.8ms)
+  Rendered layouts/_messages.html.erb (0.8ms)
+Completed 200 OK in 97ms (Views: 83.2ms | ActiveRecord: 4.4ms)
+Started DELETE "/houses/22" for 127.0.0.1 at 2015-02-09 10:45:48 -0500
+Processing by HousesController#destroy as HTML
+  Parameters: {"id"=>"22"}
+  [1m[35mHouse Load (0.3ms)[0m  SELECT  "houses".* FROM "houses"  WHERE "houses"."id" = $1 LIMIT 1  [["id", 22]]
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 49  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 49]]
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mThermometer Load (0.2ms)[0m  SELECT "thermometers".* FROM "thermometers"  WHERE "thermometers"."house_id" = $1  [["house_id", 22]]
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "houses" WHERE "houses"."id" = $1[0m  [["id", 22]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/houses/22
+Completed 302 Found in 16ms (ActiveRecord: 2.4ms)
+Started GET "/houses/22" for 127.0.0.1 at 2015-02-09 10:45:48 -0500
+Processing by HousesController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mHouse Load (0.4ms)[0m  [1mSELECT  "houses".* FROM "houses"  WHERE "houses"."id" = $1 LIMIT 1[0m  [["id", 22]]
+Completed 404 Not Found in 2ms
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (1.5ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'sample@example.com' LIMIT 1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "name") VALUES ($1, $2, $3) RETURNING "id"[0m  [["email", "sample@example.com"], ["encrypted_password", "$2a$04$TOMqiwgn0M1vL5C5FazRqu6YbgdSH6Nw1T5vn2y0hUO3RtBXcJIcG"], ["name", "username"]]
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "email_lists" ("created_at", "creator_id", "email", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2015-02-09 15:48:07.495647"], ["creator_id", 50], ["email", "sample@example.com"], ["name", "username"], ["updated_at", "2015-02-09 15:48:07.495647"]]
+  [1m[36m (0.4ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "houses" ("created_at", "name", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2015-02-09 15:48:07.531298"], ["name", "summer"], ["updated_at", "2015-02-09 15:48:07.531298"], ["user_id", 50]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/houses" for 127.0.0.1 at 2015-02-09 10:48:07 -0500
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.8ms)[0m  UPDATE "users" SET "current_sign_in_at" = $1, "current_sign_in_ip" = $2, "last_sign_in_at" = $3, "last_sign_in_ip" = $4, "sign_in_count" = $5 WHERE "users"."id" = 50  [["current_sign_in_at", "2015-02-09 15:48:07.554210"], ["current_sign_in_ip", "127.0.0.1/32"], ["last_sign_in_at", "2015-02-09 15:48:07.554210"], ["last_sign_in_ip", "127.0.0.1/32"], ["sign_in_count", 1]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by HousesController#index as HTML
+  [1m[35mHouse Load (0.7ms)[0m  SELECT "houses".* FROM "houses"
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 50]]
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "thermometers"  WHERE "thermometers"."house_id" = $1  [["house_id", 23]]
+  Rendered houses/_house.html.erb (28.2ms)
+  Rendered houses/index.html.erb within layouts/application (34.7ms)
+  [1m[36mEmailList Load (0.5ms)[0m  [1mSELECT "email_lists".* FROM "email_lists"[0m
+  Rendered layouts/_navigation.html.erb (5.1ms)
+  Rendered layouts/_messages.html.erb (0.8ms)
+Completed 200 OK in 101ms (Views: 84.5ms | ActiveRecord: 6.2ms)
+Started DELETE "/houses/23" for 127.0.0.1 at 2015-02-09 10:48:07 -0500
+Processing by HousesController#destroy as HTML
+  Parameters: {"id"=>"23"}
+  [1m[35mHouse Load (0.3ms)[0m  SELECT  "houses".* FROM "houses"  WHERE "houses"."id" = $1 LIMIT 1  [["id", 23]]
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 50  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 50]]
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mThermometer Load (0.2ms)[0m  SELECT "thermometers".* FROM "thermometers"  WHERE "thermometers"."house_id" = $1  [["house_id", 23]]
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "houses" WHERE "houses"."id" = $1[0m  [["id", 23]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/houses/23
+Completed 302 Found in 16ms (ActiveRecord: 2.4ms)
+Started GET "/houses/23" for 127.0.0.1 at 2015-02-09 10:48:07 -0500
+Processing by HousesController#show as HTML
+  Parameters: {"id"=>"23"}
+  [1m[36mHouse Load (0.4ms)[0m  [1mSELECT  "houses".* FROM "houses"  WHERE "houses"."id" = $1 LIMIT 1[0m  [["id", 23]]
+Completed 500 Internal Server Error in 8ms
+  [1m[35m (0.5ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (1.7ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'sample@example.com' LIMIT 1
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "name") VALUES ($1, $2, $3) RETURNING "id"[0m  [["email", "sample@example.com"], ["encrypted_password", "$2a$04$Jbd3psCPR35d75xq4bfSk.WJDh7eSXZGoMG31vWc0Fbq/5Lc3tEb."], ["name", "username"]]
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "email_lists" ("created_at", "creator_id", "email", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2015-02-09 15:48:42.618316"], ["creator_id", 51], ["email", "sample@example.com"], ["name", "username"], ["updated_at", "2015-02-09 15:48:42.618316"]]
+  [1m[36m (0.4ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "houses" ("created_at", "name", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2015-02-09 15:48:42.652609"], ["name", "summer"], ["updated_at", "2015-02-09 15:48:42.652609"], ["user_id", 51]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/houses" for 127.0.0.1 at 2015-02-09 10:48:42 -0500
+  [1m[36m (0.5ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.8ms)[0m  UPDATE "users" SET "current_sign_in_at" = $1, "current_sign_in_ip" = $2, "last_sign_in_at" = $3, "last_sign_in_ip" = $4, "sign_in_count" = $5 WHERE "users"."id" = 51  [["current_sign_in_at", "2015-02-09 15:48:42.674687"], ["current_sign_in_ip", "127.0.0.1/32"], ["last_sign_in_at", "2015-02-09 15:48:42.674687"], ["last_sign_in_ip", "127.0.0.1/32"], ["sign_in_count", 1]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by HousesController#index as HTML
+  [1m[35mHouse Load (0.8ms)[0m  SELECT "houses".* FROM "houses"
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 51]]
+  [1m[35m (0.8ms)[0m  SELECT COUNT(*) FROM "thermometers"  WHERE "thermometers"."house_id" = $1  [["house_id", 24]]
+  Rendered houses/_house.html.erb (28.8ms)
+  Rendered houses/index.html.erb within layouts/application (34.8ms)
+  [1m[36mEmailList Load (0.8ms)[0m  [1mSELECT "email_lists".* FROM "email_lists"[0m
+  Rendered layouts/_navigation.html.erb (5.3ms)
+  Rendered layouts/_messages.html.erb (0.8ms)
+Completed 200 OK in 100ms (Views: 84.1ms | ActiveRecord: 7.0ms)
+Started DELETE "/houses/24" for 127.0.0.1 at 2015-02-09 10:48:42 -0500
+Processing by HousesController#destroy as HTML
+  Parameters: {"id"=>"24"}
+  [1m[35mHouse Load (0.4ms)[0m  SELECT  "houses".* FROM "houses"  WHERE "houses"."id" = $1 LIMIT 1  [["id", 24]]
+  [1m[36mUser Load (1.7ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 51  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 51]]
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mThermometer Load (0.3ms)[0m  SELECT "thermometers".* FROM "thermometers"  WHERE "thermometers"."house_id" = $1  [["house_id", 24]]
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM "houses" WHERE "houses"."id" = $1[0m  [["id", 24]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/houses/24
+Completed 302 Found in 19ms (ActiveRecord: 3.9ms)
+Started GET "/houses/24" for 127.0.0.1 at 2015-02-09 10:48:42 -0500
+Processing by HousesController#show as HTML
+  Parameters: {"id"=>"24"}
+  [1m[36mHouse Load (0.5ms)[0m  [1mSELECT  "houses".* FROM "houses"  WHERE "houses"."id" = $1 LIMIT 1[0m  [["id", 24]]
+Redirected to http://www.example.com/houses
+Filter chain halted as :set_house rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.5ms)
+Started GET "/houses" for 127.0.0.1 at 2015-02-09 10:48:42 -0500
+Processing by HousesController#index as HTML
+  [1m[35mHouse Load (0.4ms)[0m  SELECT "houses".* FROM "houses"
+  Rendered houses/index.html.erb within layouts/application (0.1ms)
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 51  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mEmailList Load (0.3ms)[0m  SELECT "email_lists".* FROM "email_lists"
+  Rendered layouts/_navigation.html.erb (4.9ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 9ms (Views: 6.2ms | ActiveRecord: 1.3ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.9ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'sample@example.com' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "name") VALUES ($1, $2, $3) RETURNING "id"[0m  [["email", "sample@example.com"], ["encrypted_password", "$2a$04$rszO.bg8tltj6qEFnrQNbOJ.Z/bLtzKHlH6zm9CaaMlSQWwk9YeFO"], ["name", "username"]]
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "email_lists" ("created_at", "creator_id", "email", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2015-02-09 15:50:38.396144"], ["creator_id", 52], ["email", "sample@example.com"], ["name", "username"], ["updated_at", "2015-02-09 15:50:38.396144"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "houses" ("created_at", "name", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2015-02-09 15:50:38.426554"], ["name", "summer"], ["updated_at", "2015-02-09 15:50:38.426554"], ["user_id", 52]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/houses" for 127.0.0.1 at 2015-02-09 10:50:38 -0500
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "users" SET "current_sign_in_at" = $1, "current_sign_in_ip" = $2, "last_sign_in_at" = $3, "last_sign_in_ip" = $4, "sign_in_count" = $5 WHERE "users"."id" = 52  [["current_sign_in_at", "2015-02-09 15:50:38.448402"], ["current_sign_in_ip", "127.0.0.1/32"], ["last_sign_in_at", "2015-02-09 15:50:38.448402"], ["last_sign_in_ip", "127.0.0.1/32"], ["sign_in_count", 1]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by HousesController#index as HTML
+  [1m[35mHouse Load (0.4ms)[0m  SELECT "houses".* FROM "houses"
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 52]]
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "thermometers"  WHERE "thermometers"."house_id" = $1  [["house_id", 25]]
+  Rendered houses/_house.html.erb (28.7ms)
+  Rendered houses/index.html.erb within layouts/application (34.6ms)
+  [1m[36mEmailList Load (0.6ms)[0m  [1mSELECT "email_lists".* FROM "email_lists"[0m
+  Rendered layouts/_navigation.html.erb (5.3ms)
+  Rendered layouts/_messages.html.erb (0.9ms)
+Completed 200 OK in 98ms (Views: 83.4ms | ActiveRecord: 5.4ms)
+Started DELETE "/houses/25" for 127.0.0.1 at 2015-02-09 10:50:38 -0500
+Processing by HousesController#destroy as HTML
+  Parameters: {"id"=>"25"}
+  [1m[35mHouse Load (0.3ms)[0m  SELECT  "houses".* FROM "houses"  WHERE "houses"."id" = $1 LIMIT 1  [["id", 25]]
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 52  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 52]]
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mThermometer Load (0.3ms)[0m  SELECT "thermometers".* FROM "thermometers"  WHERE "thermometers"."house_id" = $1  [["house_id", 25]]
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM "houses" WHERE "houses"."id" = $1[0m  [["id", 25]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/houses/25
+Completed 302 Found in 18ms (ActiveRecord: 3.1ms)
+Started GET "/houses/25" for 127.0.0.1 at 2015-02-09 10:50:38 -0500
+Processing by HousesController#show as HTML
+  Parameters: {"id"=>"25"}
+  [1m[36mHouse Load (0.6ms)[0m  [1mSELECT  "houses".* FROM "houses"  WHERE "houses"."id" = $1 LIMIT 1[0m  [["id", 25]]
+Redirected to http://www.example.com/houses
+Filter chain halted as :set_house rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.6ms)
+Started GET "/houses" for 127.0.0.1 at 2015-02-09 10:50:38 -0500
+Processing by HousesController#index as HTML
+  [1m[35mHouse Load (0.5ms)[0m  SELECT "houses".* FROM "houses"
+  Rendered houses/index.html.erb within layouts/application (0.1ms)
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 52  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mEmailList Load (0.6ms)[0m  SELECT "email_lists".* FROM "email_lists"
+  Rendered layouts/_navigation.html.erb (5.8ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 10ms (Views: 6.5ms | ActiveRecord: 1.9ms)
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (35.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.6ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (28.6ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'sample@example.com' LIMIT 1
+  [1m[36mSQL (27.0ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "name") VALUES ($1, $2, $3) RETURNING "id"[0m  [["email", "sample@example.com"], ["encrypted_password", "$2a$04$IOya/e96TE86IDT4DXdobuaEpSkBke7JSeQ.dZv6Tx38cjmfsniy."], ["name", "username"]]
+  [1m[35mSQL (2.2ms)[0m  INSERT INTO "email_lists" ("created_at", "creator_id", "email", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2015-02-09 18:15:22.020811"], ["creator_id", 53], ["email", "sample@example.com"], ["name", "username"], ["updated_at", "2015-02-09 18:15:22.020811"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.3ms)[0m  [1mINSERT INTO "houses" ("created_at", "name", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2015-02-09 18:15:22.079149"], ["name", "summer"], ["updated_at", "2015-02-09 18:15:22.079149"], ["user_id", 53]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/houses" for 127.0.0.1 at 2015-02-09 13:15:22 -0500
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  UPDATE "users" SET "current_sign_in_at" = $1, "current_sign_in_ip" = $2, "last_sign_in_at" = $3, "last_sign_in_ip" = $4, "sign_in_count" = $5 WHERE "users"."id" = 53  [["current_sign_in_at", "2015-02-09 18:15:22.118462"], ["current_sign_in_ip", "127.0.0.1/32"], ["last_sign_in_at", "2015-02-09 18:15:22.118462"], ["last_sign_in_ip", "127.0.0.1/32"], ["sign_in_count", 1]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by HousesController#index as HTML
+  [1m[35mHouse Load (0.6ms)[0m  SELECT "houses".* FROM "houses"
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 53]]
+  [1m[35m (0.8ms)[0m  SELECT COUNT(*) FROM "thermometers"  WHERE "thermometers"."house_id" = $1  [["house_id", 26]]
+  Rendered houses/_house.html.erb (46.5ms)
+  Rendered houses/index.html.erb within layouts/application (55.2ms)
+  [1m[36mEmailList Load (0.5ms)[0m  [1mSELECT "email_lists".* FROM "email_lists"[0m
+  Rendered layouts/_navigation.html.erb (5.1ms)
+  Rendered layouts/_messages.html.erb (0.9ms)
+Completed 200 OK in 389ms (Views: 358.3ms | ActiveRecord: 5.1ms)
+Started DELETE "/houses/26" for 127.0.0.1 at 2015-02-09 13:15:22 -0500
+Processing by HousesController#destroy as HTML
+  Parameters: {"id"=>"26"}
+  [1m[35mHouse Load (0.5ms)[0m  SELECT  "houses".* FROM "houses"  WHERE "houses"."id" = $1 LIMIT 1  [["id", 26]]
+  [1m[36mUser Load (1.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 53  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 53]]
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mThermometer Load (0.3ms)[0m  SELECT "thermometers".* FROM "thermometers"  WHERE "thermometers"."house_id" = $1  [["house_id", 26]]
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "houses" WHERE "houses"."id" = $1[0m  [["id", 26]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/houses/26
+Completed 302 Found in 32ms (ActiveRecord: 3.3ms)
+Started GET "/houses/26" for 127.0.0.1 at 2015-02-09 13:15:22 -0500
+Processing by HousesController#show as HTML
+  Parameters: {"id"=>"26"}
+  [1m[36mHouse Load (0.5ms)[0m  [1mSELECT  "houses".* FROM "houses"  WHERE "houses"."id" = $1 LIMIT 1[0m  [["id", 26]]
+Redirected to http://www.example.com/houses
+Filter chain halted as :set_house rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.5ms)
+Started GET "/houses" for 127.0.0.1 at 2015-02-09 13:15:22 -0500
+Processing by HousesController#index as HTML
+  [1m[35mHouse Load (0.6ms)[0m  SELECT "houses".* FROM "houses"
+  Rendered houses/index.html.erb within layouts/application (0.1ms)
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 53  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mEmailList Load (0.5ms)[0m  SELECT "email_lists".* FROM "email_lists"
+  Rendered layouts/_navigation.html.erb (7.7ms)
+  Rendered layouts/_messages.html.erb (0.2ms)
+Completed 200 OK in 13ms (Views: 9.3ms | ActiveRecord: 2.0ms)
+  [1m[36m (1.1ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (1.0ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'sample@example.com' LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "name") VALUES ($1, $2, $3) RETURNING "id"[0m  [["email", "sample@example.com"], ["encrypted_password", "$2a$04$ZbjjehWDbWn1Z8g3kgjRjeqJhQmxWYQJJKKwLjFKguUmM.PlWXM9u"], ["name", "username"]]
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "email_lists" ("created_at", "creator_id", "email", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2015-02-09 18:50:50.493907"], ["creator_id", 54], ["email", "sample@example.com"], ["name", "username"], ["updated_at", "2015-02-09 18:50:50.493907"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "houses" ("created_at", "name", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2015-02-09 18:50:50.525847"], ["name", "summer"], ["updated_at", "2015-02-09 18:50:50.525847"], ["user_id", 54]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/houses" for 127.0.0.1 at 2015-02-09 13:50:50 -0500
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "users" SET "current_sign_in_at" = $1, "current_sign_in_ip" = $2, "last_sign_in_at" = $3, "last_sign_in_ip" = $4, "sign_in_count" = $5 WHERE "users"."id" = 54  [["current_sign_in_at", "2015-02-09 18:50:50.548022"], ["current_sign_in_ip", "127.0.0.1/32"], ["last_sign_in_at", "2015-02-09 18:50:50.548022"], ["last_sign_in_ip", "127.0.0.1/32"], ["sign_in_count", 1]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by HousesController#index as HTML
+  [1m[35mHouse Load (0.5ms)[0m  SELECT "houses".* FROM "houses"
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 54]]
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "thermometers"  WHERE "thermometers"."house_id" = $1  [["house_id", 27]]
+  Rendered houses/_house.html.erb (27.4ms)
+  Rendered houses/index.html.erb within layouts/application (33.8ms)
+  [1m[36mEmailList Load (0.6ms)[0m  [1mSELECT "email_lists".* FROM "email_lists"[0m
+  Rendered layouts/_navigation.html.erb (5.1ms)
+  Rendered layouts/_messages.html.erb (0.9ms)
+Completed 200 OK in 102ms (Views: 87.9ms | ActiveRecord: 4.5ms)
+  [1m[35m (0.5ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.8ms)[0m  BEGIN
+  [1m[36m (0.5ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (1.5ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'sample@example.com' LIMIT 1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "name") VALUES ($1, $2, $3) RETURNING "id"[0m  [["email", "sample@example.com"], ["encrypted_password", "$2a$04$nAZLQgVCD/y3R3.MlzH8m.XE1cgtwe5G2RhCQLZDIuc4/1Mmo7ViO"], ["name", "username"]]
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "email_lists" ("created_at", "creator_id", "email", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2015-02-09 19:53:44.922128"], ["creator_id", 55], ["email", "sample@example.com"], ["name", "username"], ["updated_at", "2015-02-09 19:53:44.922128"]]
+  [1m[36m (0.4ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "houses" ("created_at", "name", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2015-02-09 19:53:44.958563"], ["name", "summer"], ["updated_at", "2015-02-09 19:53:44.958563"], ["user_id", 55]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/houses" for 127.0.0.1 at 2015-02-09 14:53:44 -0500
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.8ms)[0m  UPDATE "users" SET "current_sign_in_at" = $1, "current_sign_in_ip" = $2, "last_sign_in_at" = $3, "last_sign_in_ip" = $4, "sign_in_count" = $5 WHERE "users"."id" = 55  [["current_sign_in_at", "2015-02-09 19:53:44.981001"], ["current_sign_in_ip", "127.0.0.1/32"], ["last_sign_in_at", "2015-02-09 19:53:44.981001"], ["last_sign_in_ip", "127.0.0.1/32"], ["sign_in_count", 1]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by HousesController#index as HTML
+  [1m[35mHouse Load (0.8ms)[0m  SELECT "houses".* FROM "houses"
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 55]]
+  [1m[35m (0.8ms)[0m  SELECT COUNT(*) FROM "thermometers"  WHERE "thermometers"."house_id" = $1  [["house_id", 28]]
+  Rendered houses/_house.html.erb (28.7ms)
+  Rendered houses/index.html.erb within layouts/application (35.0ms)
+  [1m[36mEmailList Load (0.8ms)[0m  [1mSELECT "email_lists".* FROM "email_lists"[0m
+  Rendered layouts/_navigation.html.erb (5.2ms)
+  Rendered layouts/_messages.html.erb (0.8ms)
+Completed 200 OK in 106ms (Views: 89.1ms | ActiveRecord: 6.9ms)
+  [1m[35m (0.5ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (1.0ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'sample@example.com' LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "name") VALUES ($1, $2, $3) RETURNING "id"[0m  [["email", "sample@example.com"], ["encrypted_password", "$2a$04$LDfD4FU57l66ixCIRcVBAuji4g1cwwSqu1/Nel32p/tHd03jWnV4S"], ["name", "username"]]
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "email_lists" ("created_at", "creator_id", "email", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2015-02-09 19:55:07.682711"], ["creator_id", 56], ["email", "sample@example.com"], ["name", "username"], ["updated_at", "2015-02-09 19:55:07.682711"]]
+  [1m[36m (0.4ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "houses" ("created_at", "name", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2015-02-09 19:55:07.716536"], ["name", "summer"], ["updated_at", "2015-02-09 19:55:07.716536"], ["user_id", 56]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/houses" for 127.0.0.1 at 2015-02-09 14:55:07 -0500
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  UPDATE "users" SET "current_sign_in_at" = $1, "current_sign_in_ip" = $2, "last_sign_in_at" = $3, "last_sign_in_ip" = $4, "sign_in_count" = $5 WHERE "users"."id" = 56  [["current_sign_in_at", "2015-02-09 19:55:07.739903"], ["current_sign_in_ip", "127.0.0.1/32"], ["last_sign_in_at", "2015-02-09 19:55:07.739903"], ["last_sign_in_ip", "127.0.0.1/32"], ["sign_in_count", 1]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by HousesController#index as HTML
+  [1m[35mHouse Load (0.8ms)[0m  SELECT "houses".* FROM "houses"
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 56]]
+  [1m[35m (0.8ms)[0m  SELECT COUNT(*) FROM "thermometers"  WHERE "thermometers"."house_id" = $1  [["house_id", 29]]
+  Rendered houses/_house.html.erb (29.6ms)
+  Rendered houses/index.html.erb within layouts/application (35.8ms)
+  [1m[36mEmailList Load (0.9ms)[0m  [1mSELECT "email_lists".* FROM "email_lists"[0m
+  Rendered layouts/_navigation.html.erb (5.3ms)
+  Rendered layouts/_messages.html.erb (0.8ms)
+Completed 200 OK in 106ms (Views: 88.3ms | ActiveRecord: 7.5ms)
+  [1m[35m (0.6ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (1.0ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'sample@example.com' LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "name") VALUES ($1, $2, $3) RETURNING "id"[0m  [["email", "sample@example.com"], ["encrypted_password", "$2a$04$QF2CxehUy7O/Hjv4eJ/zD.gbhVEJjME0n1WCOTF3hv5gudCVxAU1C"], ["name", "username"]]
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "email_lists" ("created_at", "creator_id", "email", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2015-02-09 19:56:04.440855"], ["creator_id", 57], ["email", "sample@example.com"], ["name", "username"], ["updated_at", "2015-02-09 19:56:04.440855"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "houses" ("created_at", "name", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2015-02-09 19:56:04.471598"], ["name", "summer"], ["updated_at", "2015-02-09 19:56:04.471598"], ["user_id", 57]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/houses" for 127.0.0.1 at 2015-02-09 14:56:04 -0500
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "users" SET "current_sign_in_at" = $1, "current_sign_in_ip" = $2, "last_sign_in_at" = $3, "last_sign_in_ip" = $4, "sign_in_count" = $5 WHERE "users"."id" = 57  [["current_sign_in_at", "2015-02-09 19:56:04.493273"], ["current_sign_in_ip", "127.0.0.1/32"], ["last_sign_in_at", "2015-02-09 19:56:04.493273"], ["last_sign_in_ip", "127.0.0.1/32"], ["sign_in_count", 1]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by HousesController#index as HTML
+  [1m[35mHouse Load (0.5ms)[0m  SELECT "houses".* FROM "houses"
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 57]]
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "thermometers"  WHERE "thermometers"."house_id" = $1  [["house_id", 30]]
+  Rendered houses/_house.html.erb (26.2ms)
+  Rendered houses/index.html.erb within layouts/application (32.4ms)
+  [1m[36mEmailList Load (0.5ms)[0m  [1mSELECT "email_lists".* FROM "email_lists"[0m
+  Rendered layouts/_navigation.html.erb (4.8ms)
+  Rendered layouts/_messages.html.erb (0.8ms)
+Completed 200 OK in 99ms (Views: 85.2ms | ActiveRecord: 4.4ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.5ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (1.4ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'sample@example.com' LIMIT 1
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "name") VALUES ($1, $2, $3) RETURNING "id"[0m  [["email", "sample@example.com"], ["encrypted_password", "$2a$04$JmplkTviK.N/paJs5veFPOq09cEoB69ljypBZhM5f1bApR4vQEvZW"], ["name", "username"]]
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "email_lists" ("created_at", "creator_id", "email", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2015-02-09 19:59:04.163395"], ["creator_id", 58], ["email", "sample@example.com"], ["name", "username"], ["updated_at", "2015-02-09 19:59:04.163395"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "houses" ("created_at", "name", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2015-02-09 19:59:04.198603"], ["name", "summer"], ["updated_at", "2015-02-09 19:59:04.198603"], ["user_id", 58]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/houses" for 127.0.0.1 at 2015-02-09 14:59:04 -0500
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "users" SET "current_sign_in_at" = $1, "current_sign_in_ip" = $2, "last_sign_in_at" = $3, "last_sign_in_ip" = $4, "sign_in_count" = $5 WHERE "users"."id" = 58  [["current_sign_in_at", "2015-02-09 19:59:04.220608"], ["current_sign_in_ip", "127.0.0.1/32"], ["last_sign_in_at", "2015-02-09 19:59:04.220608"], ["last_sign_in_ip", "127.0.0.1/32"], ["sign_in_count", 1]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by HousesController#index as HTML
+  [1m[35mHouse Load (0.5ms)[0m  SELECT "houses".* FROM "houses"
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 58]]
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "thermometers"  WHERE "thermometers"."house_id" = $1  [["house_id", 31]]
+  Rendered houses/_house.html.erb (26.1ms)
+  Rendered houses/index.html.erb within layouts/application (32.1ms)
+  [1m[36mEmailList Load (0.5ms)[0m  [1mSELECT "email_lists".* FROM "email_lists"[0m
+  Rendered layouts/_navigation.html.erb (4.8ms)
+  Rendered layouts/_messages.html.erb (0.8ms)
+Completed 200 OK in 99ms (Views: 85.8ms | ActiveRecord: 4.3ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.9ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'sample@example.com' LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "name") VALUES ($1, $2, $3) RETURNING "id"[0m  [["email", "sample@example.com"], ["encrypted_password", "$2a$04$6PpIjMpZXYIc3XLHlfs9/OOw6qUJeDOjvLFnbdkhFBb7kuCgK/fO2"], ["name", "username"]]
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "email_lists" ("created_at", "creator_id", "email", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2015-02-09 19:59:23.153609"], ["creator_id", 59], ["email", "sample@example.com"], ["name", "username"], ["updated_at", "2015-02-09 19:59:23.153609"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "houses" ("created_at", "name", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2015-02-09 19:59:23.183975"], ["name", "summer"], ["updated_at", "2015-02-09 19:59:23.183975"], ["user_id", 59]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/houses" for 127.0.0.1 at 2015-02-09 14:59:23 -0500
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "users" SET "current_sign_in_at" = $1, "current_sign_in_ip" = $2, "last_sign_in_at" = $3, "last_sign_in_ip" = $4, "sign_in_count" = $5 WHERE "users"."id" = 59  [["current_sign_in_at", "2015-02-09 19:59:23.206030"], ["current_sign_in_ip", "127.0.0.1/32"], ["last_sign_in_at", "2015-02-09 19:59:23.206030"], ["last_sign_in_ip", "127.0.0.1/32"], ["sign_in_count", 1]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by HousesController#index as HTML
+  [1m[35mHouse Load (0.5ms)[0m  SELECT "houses".* FROM "houses"
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 59]]
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "thermometers"  WHERE "thermometers"."house_id" = $1  [["house_id", 32]]
+  Rendered houses/_house.html.erb (26.2ms)
+  Rendered houses/index.html.erb within layouts/application (32.4ms)
+  [1m[36mEmailList Load (0.5ms)[0m  [1mSELECT "email_lists".* FROM "email_lists"[0m
+  Rendered layouts/_navigation.html.erb (4.8ms)
+  Rendered layouts/_messages.html.erb (0.8ms)
+Completed 200 OK in 100ms (Views: 86.2ms | ActiveRecord: 4.3ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (1.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.9ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'sample@example.com' LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "name") VALUES ($1, $2, $3) RETURNING "id"[0m  [["email", "sample@example.com"], ["encrypted_password", "$2a$04$dC6joNGCVjWmIrps4zaQ0OVoAMinx3gc/EoWsXBws9Ar0WGIKiQzK"], ["name", "username"]]
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "email_lists" ("created_at", "creator_id", "email", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2015-02-09 20:11:25.667723"], ["creator_id", 60], ["email", "sample@example.com"], ["name", "username"], ["updated_at", "2015-02-09 20:11:25.667723"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "houses" ("created_at", "name", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", "2015-02-09 20:11:25.692157"], ["name", "Brooklyn"], ["updated_at", "2015-02-09 20:11:25.692157"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/" for 127.0.0.1 at 2015-02-09 15:11:25 -0500
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE "users" SET "current_sign_in_at" = $1, "current_sign_in_ip" = $2, "last_sign_in_at" = $3, "last_sign_in_ip" = $4, "sign_in_count" = $5 WHERE "users"."id" = 60  [["current_sign_in_at", "2015-02-09 20:11:25.717783"], ["current_sign_in_ip", "127.0.0.1/32"], ["last_sign_in_at", "2015-02-09 20:11:25.717783"], ["last_sign_in_ip", "127.0.0.1/32"], ["sign_in_count", 1]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by HomeController#index as HTML
+Redirected to http://www.example.com/houses
+Completed 302 Found in 6ms (ActiveRecord: 0.0ms)
+Started GET "/houses" for 127.0.0.1 at 2015-02-09 15:11:25 -0500
+Processing by HousesController#index as HTML
+  [1m[35mHouse Load (0.5ms)[0m  SELECT "houses".* FROM "houses"
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 60  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered houses/index.html.erb within layouts/application (2.7ms)
+  [1m[35mEmailList Load (0.5ms)[0m  SELECT "email_lists".* FROM "email_lists"
+  Rendered layouts/_navigation.html.erb (5.0ms)
+  Rendered layouts/_messages.html.erb (0.8ms)
+Completed 200 OK in 79ms (Views: 62.2ms | ActiveRecord: 1.8ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.7ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'sample@example.com' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "name") VALUES ($1, $2, $3) RETURNING "id"[0m  [["email", "sample@example.com"], ["encrypted_password", "$2a$04$kCRZu7Uq33vNtjAtzwxI7O3O6T4KZp1EZgXX5nB6j5K53q74k6fPa"], ["name", "username"]]
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "email_lists" ("created_at", "creator_id", "email", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2015-02-09 20:11:25.892614"], ["creator_id", 61], ["email", "sample@example.com"], ["name", "username"], ["updated_at", "2015-02-09 20:11:25.892614"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "houses" ("created_at", "name", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", "2015-02-09 20:11:25.896046"], ["name", "Brooklyn"], ["updated_at", "2015-02-09 20:11:25.896046"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/" for 127.0.0.1 at 2015-02-09 15:11:25 -0500
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "users" SET "current_sign_in_at" = $1, "current_sign_in_ip" = $2, "last_sign_in_at" = $3, "last_sign_in_ip" = $4, "sign_in_count" = $5 WHERE "users"."id" = 61  [["current_sign_in_at", "2015-02-09 20:11:25.899509"], ["current_sign_in_ip", "127.0.0.1/32"], ["last_sign_in_at", "2015-02-09 20:11:25.899509"], ["last_sign_in_ip", "127.0.0.1/32"], ["sign_in_count", 1]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by HomeController#index as HTML
+Redirected to http://www.example.com/houses
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+Started GET "/houses" for 127.0.0.1 at 2015-02-09 15:11:25 -0500
+Processing by HousesController#index as HTML
+  [1m[35mHouse Load (0.5ms)[0m  SELECT "houses".* FROM "houses"
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 61  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered houses/index.html.erb within layouts/application (0.1ms)
+  [1m[35mEmailList Load (0.6ms)[0m  SELECT "email_lists".* FROM "email_lists"
+  Rendered layouts/_navigation.html.erb (4.1ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 12ms (Views: 6.3ms | ActiveRecord: 1.9ms)
+  [1m[36m (0.5ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36m (0.5ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (1.5ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'sample@example.com' LIMIT 1
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "name") VALUES ($1, $2, $3) RETURNING "id"[0m  [["email", "sample@example.com"], ["encrypted_password", "$2a$04$x/TQBDuJxBNqCw1hc5b5vOQM9TUXF9y8iviVCPgCyrQ/q3bhlcQka"], ["name", "username"]]
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "email_lists" ("created_at", "creator_id", "email", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2015-02-09 20:12:10.438365"], ["creator_id", 62], ["email", "sample@example.com"], ["name", "username"], ["updated_at", "2015-02-09 20:12:10.438365"]]
+  [1m[36m (0.4ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "houses" ("created_at", "name", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2015-02-09 20:12:10.475113"], ["name", "summer"], ["updated_at", "2015-02-09 20:12:10.475113"], ["user_id", 62]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/houses" for 127.0.0.1 at 2015-02-09 15:12:10 -0500
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  UPDATE "users" SET "current_sign_in_at" = $1, "current_sign_in_ip" = $2, "last_sign_in_at" = $3, "last_sign_in_ip" = $4, "sign_in_count" = $5 WHERE "users"."id" = 62  [["current_sign_in_at", "2015-02-09 20:12:10.502259"], ["current_sign_in_ip", "127.0.0.1/32"], ["last_sign_in_at", "2015-02-09 20:12:10.502259"], ["last_sign_in_ip", "127.0.0.1/32"], ["sign_in_count", 1]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by HousesController#index as HTML
+  [1m[35mHouse Load (0.7ms)[0m  SELECT "houses".* FROM "houses"
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 62]]
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "thermometers"  WHERE "thermometers"."house_id" = $1  [["house_id", 35]]
+  Rendered houses/_house.html.erb (29.7ms)
+  Rendered houses/index.html.erb within layouts/application (35.9ms)
+  [1m[36mEmailList Load (0.8ms)[0m  [1mSELECT "email_lists".* FROM "email_lists"[0m
+  Rendered layouts/_navigation.html.erb (5.3ms)
+  Rendered layouts/_messages.html.erb (0.8ms)
+Completed 200 OK in 101ms (Views: 84.4ms | ActiveRecord: 6.7ms)
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (1.0ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'sample@example.com' LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "name") VALUES ($1, $2, $3) RETURNING "id"[0m  [["email", "sample@example.com"], ["encrypted_password", "$2a$04$RPG3v5OJzpTWBvh/5683VeUtj8y9/l/osPCJLVNBggFf9aTw8RtJC"], ["name", "username"]]
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "email_lists" ("created_at", "creator_id", "email", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2015-02-09 20:12:28.758325"], ["creator_id", 63], ["email", "sample@example.com"], ["name", "username"], ["updated_at", "2015-02-09 20:12:28.758325"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "houses" ("created_at", "name", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2015-02-09 20:12:28.789114"], ["name", "summer"], ["updated_at", "2015-02-09 20:12:28.789114"], ["user_id", 63]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/houses" for 127.0.0.1 at 2015-02-09 15:12:28 -0500
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "users" SET "current_sign_in_at" = $1, "current_sign_in_ip" = $2, "last_sign_in_at" = $3, "last_sign_in_ip" = $4, "sign_in_count" = $5 WHERE "users"."id" = 63  [["current_sign_in_at", "2015-02-09 20:12:28.811414"], ["current_sign_in_ip", "127.0.0.1/32"], ["last_sign_in_at", "2015-02-09 20:12:28.811414"], ["last_sign_in_ip", "127.0.0.1/32"], ["sign_in_count", 1]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by HousesController#index as HTML
+  [1m[35mHouse Load (0.5ms)[0m  SELECT "houses".* FROM "houses"
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 63]]
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "thermometers"  WHERE "thermometers"."house_id" = $1  [["house_id", 36]]
+  Rendered houses/_house.html.erb (26.4ms)
+  Rendered houses/index.html.erb within layouts/application (32.5ms)
+  [1m[36mEmailList Load (0.5ms)[0m  [1mSELECT "email_lists".* FROM "email_lists"[0m
+  Rendered layouts/_navigation.html.erb (4.9ms)
+  Rendered layouts/_messages.html.erb (0.8ms)
+Completed 200 OK in 97ms (Views: 83.0ms | ActiveRecord: 4.3ms)
+Started DELETE "/houses/36" for 127.0.0.1 at 2015-02-09 15:12:28 -0500
+Processing by HousesController#destroy as HTML
+  Parameters: {"id"=>"36"}
+  [1m[35mHouse Load (0.3ms)[0m  SELECT  "houses".* FROM "houses"  WHERE "houses"."id" = $1 LIMIT 1  [["id", 36]]
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 63  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 63]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mThermometer Load (0.2ms)[0m  SELECT "thermometers".* FROM "thermometers"  WHERE "thermometers"."house_id" = $1  [["house_id", 36]]
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "houses" WHERE "houses"."id" = $1[0m  [["id", 36]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/houses/36
+Completed 302 Found in 16ms (ActiveRecord: 2.4ms)
+Started GET "/houses/36" for 127.0.0.1 at 2015-02-09 15:12:28 -0500
+Processing by HousesController#show as HTML
+  Parameters: {"id"=>"36"}
+  [1m[36mHouse Load (0.4ms)[0m  [1mSELECT  "houses".* FROM "houses"  WHERE "houses"."id" = $1 LIMIT 1[0m  [["id", 36]]
+Redirected to http://www.example.com/houses
+Filter chain halted as :set_house rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms)
+Started GET "/houses" for 127.0.0.1 at 2015-02-09 15:12:28 -0500
+Processing by HousesController#index as HTML
+  [1m[35mHouse Load (0.4ms)[0m  SELECT "houses".* FROM "houses"
+  Rendered houses/index.html.erb within layouts/application (0.1ms)
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 63  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mEmailList Load (0.3ms)[0m  SELECT "email_lists".* FROM "email_lists"
+  Rendered layouts/_navigation.html.erb (4.6ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 8ms (Views: 5.7ms | ActiveRecord: 1.3ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.9ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'sample@example.com' LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "name") VALUES ($1, $2, $3) RETURNING "id"[0m  [["email", "sample@example.com"], ["encrypted_password", "$2a$04$tWF2f8kIkrgxc6ZdG28T9./..kTYR957qjVWcYSjwnzrueXZysvK6"], ["name", "username"]]
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "email_lists" ("created_at", "creator_id", "email", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2015-02-09 20:25:20.602803"], ["creator_id", 64], ["email", "sample@example.com"], ["name", "username"], ["updated_at", "2015-02-09 20:25:20.602803"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "houses" ("created_at", "name", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2015-02-09 20:25:20.633671"], ["name", "summer"], ["updated_at", "2015-02-09 20:25:20.633671"], ["user_id", 64]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/houses" for 127.0.0.1 at 2015-02-09 15:25:20 -0500
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "users" SET "current_sign_in_at" = $1, "current_sign_in_ip" = $2, "last_sign_in_at" = $3, "last_sign_in_ip" = $4, "sign_in_count" = $5 WHERE "users"."id" = 64  [["current_sign_in_at", "2015-02-09 20:25:20.655427"], ["current_sign_in_ip", "127.0.0.1/32"], ["last_sign_in_at", "2015-02-09 20:25:20.655427"], ["last_sign_in_ip", "127.0.0.1/32"], ["sign_in_count", 1]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by HousesController#index as HTML
+  [1m[35mHouse Load (0.6ms)[0m  SELECT "houses".* FROM "houses"
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 64]]
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "thermometers"  WHERE "thermometers"."house_id" = $1  [["house_id", 37]]
+  Rendered houses/_house.html.erb (26.4ms)
+  Rendered houses/index.html.erb within layouts/application (32.5ms)
+  [1m[36mEmailList Load (0.5ms)[0m  [1mSELECT "email_lists".* FROM "email_lists"[0m
+  Rendered layouts/_navigation.html.erb (4.8ms)
+  Rendered layouts/_messages.html.erb (0.8ms)
+Completed 200 OK in 96ms (Views: 82.5ms | ActiveRecord: 4.5ms)
+Started DELETE "/houses/37" for 127.0.0.1 at 2015-02-09 15:25:20 -0500
+Processing by HousesController#destroy as HTML
+  Parameters: {"id"=>"37"}
+  [1m[35mHouse Load (0.3ms)[0m  SELECT  "houses".* FROM "houses"  WHERE "houses"."id" = $1 LIMIT 1  [["id", 37]]
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 64  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 64]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mThermometer Load (0.2ms)[0m  SELECT "thermometers".* FROM "thermometers"  WHERE "thermometers"."house_id" = $1  [["house_id", 37]]
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "houses" WHERE "houses"."id" = $1[0m  [["id", 37]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/houses/37
+Completed 302 Found in 16ms (ActiveRecord: 2.3ms)
+Started GET "/houses/37" for 127.0.0.1 at 2015-02-09 15:25:20 -0500
+Processing by HousesController#show as HTML
+  Parameters: {"id"=>"37"}
+  [1m[36mHouse Load (0.4ms)[0m  [1mSELECT  "houses".* FROM "houses"  WHERE "houses"."id" = $1 LIMIT 1[0m  [["id", 37]]
+Redirected to http://www.example.com/houses
+Filter chain halted as :set_house rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms)
+Started GET "/houses" for 127.0.0.1 at 2015-02-09 15:25:20 -0500
+Processing by HousesController#index as HTML
+  [1m[35mHouse Load (0.4ms)[0m  SELECT "houses".* FROM "houses"
+  Rendered houses/index.html.erb within layouts/application (0.1ms)
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 64  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mEmailList Load (0.3ms)[0m  SELECT "email_lists".* FROM "email_lists"
+  Rendered layouts/_navigation.html.erb (4.9ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 9ms (Views: 6.0ms | ActiveRecord: 1.3ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (1.5ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'sample@example.com' LIMIT 1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "name") VALUES ($1, $2, $3) RETURNING "id"[0m  [["email", "sample@example.com"], ["encrypted_password", "$2a$04$QBGbOlO9nNptqpCBLT9rjeobiGrKampK17PvCteEiNk8DxBBdA.Xe"], ["name", "username"]]
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "email_lists" ("created_at", "creator_id", "email", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2015-02-09 20:28:29.735040"], ["creator_id", 65], ["email", "sample@example.com"], ["name", "username"], ["updated_at", "2015-02-09 20:28:29.735040"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "houses" ("created_at", "name", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2015-02-09 20:28:29.768900"], ["name", "summer"], ["updated_at", "2015-02-09 20:28:29.768900"], ["user_id", 65]]
+  [1m[35m (0.4ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/houses" for 127.0.0.1 at 2015-02-09 15:28:29 -0500
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.9ms)[0m  UPDATE "users" SET "current_sign_in_at" = $1, "current_sign_in_ip" = $2, "last_sign_in_at" = $3, "last_sign_in_ip" = $4, "sign_in_count" = $5 WHERE "users"."id" = 65  [["current_sign_in_at", "2015-02-09 20:28:29.792876"], ["current_sign_in_ip", "127.0.0.1/32"], ["last_sign_in_at", "2015-02-09 20:28:29.792876"], ["last_sign_in_ip", "127.0.0.1/32"], ["sign_in_count", 1]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by HousesController#index as HTML
+  [1m[35mHouse Load (0.6ms)[0m  SELECT "houses".* FROM "houses"
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 65]]
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "thermometers"  WHERE "thermometers"."house_id" = $1  [["house_id", 38]]
+  Rendered houses/_house.html.erb (29.2ms)
+  Rendered houses/index.html.erb within layouts/application (35.6ms)
+  [1m[36mEmailList Load (0.8ms)[0m  [1mSELECT "email_lists".* FROM "email_lists"[0m
+  Rendered layouts/_navigation.html.erb (6.2ms)
+  Rendered layouts/_messages.html.erb (0.9ms)
+Completed 200 OK in 109ms (Views: 93.3ms | ActiveRecord: 6.2ms)
+Started DELETE "/houses/38" for 127.0.0.1 at 2015-02-09 15:28:29 -0500
+Processing by HousesController#destroy as HTML
+  Parameters: {"id"=>"38"}
+  [1m[35mHouse Load (0.5ms)[0m  SELECT  "houses".* FROM "houses"  WHERE "houses"."id" = $1 LIMIT 1  [["id", 38]]
+  [1m[36mUser Load (1.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 65  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 65]]
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mThermometer Load (0.4ms)[0m  SELECT "thermometers".* FROM "thermometers"  WHERE "thermometers"."house_id" = $1  [["house_id", 38]]
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM "houses" WHERE "houses"."id" = $1[0m  [["id", 38]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/houses/38
+Completed 302 Found in 21ms (ActiveRecord: 3.4ms)
+Started GET "/houses/38" for 127.0.0.1 at 2015-02-09 15:28:29 -0500
+Processing by HousesController#show as HTML
+  Parameters: {"id"=>"38"}
+  [1m[36mHouse Load (0.5ms)[0m  [1mSELECT  "houses".* FROM "houses"  WHERE "houses"."id" = $1 LIMIT 1[0m  [["id", 38]]
+Redirected to http://www.example.com/houses
+Filter chain halted as :set_house rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.5ms)
+Started GET "/houses" for 127.0.0.1 at 2015-02-09 15:28:29 -0500
+Processing by HousesController#index as HTML
+  [1m[35mHouse Load (0.6ms)[0m  SELECT "houses".* FROM "houses"
+  Rendered houses/index.html.erb within layouts/application (0.1ms)
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 65  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mEmailList Load (0.6ms)[0m  SELECT "email_lists".* FROM "email_lists"
+  Rendered layouts/_navigation.html.erb (6.7ms)
+  Rendered layouts/_messages.html.erb (0.2ms)
+Completed 200 OK in 11ms (Views: 7.9ms | ActiveRecord: 2.0ms)
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (1.0ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'sample@example.com' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "name") VALUES ($1, $2, $3) RETURNING "id"[0m  [["email", "sample@example.com"], ["encrypted_password", "$2a$04$bx5PAB7GDIoZWq7conT9QO1XU2oHCHkfZ8Ti2KMM4zxVq0Zz2sOLW"], ["name", "username"]]
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "email_lists" ("created_at", "creator_id", "email", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2015-02-09 20:31:03.301189"], ["creator_id", 66], ["email", "sample@example.com"], ["name", "username"], ["updated_at", "2015-02-09 20:31:03.301189"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "houses" ("created_at", "name", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2015-02-09 20:31:03.333163"], ["name", "summer"], ["updated_at", "2015-02-09 20:31:03.333163"], ["user_id", 66]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/houses" for 127.0.0.1 at 2015-02-09 15:31:03 -0500
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "users" SET "current_sign_in_at" = $1, "current_sign_in_ip" = $2, "last_sign_in_at" = $3, "last_sign_in_ip" = $4, "sign_in_count" = $5 WHERE "users"."id" = 66  [["current_sign_in_at", "2015-02-09 20:31:03.354778"], ["current_sign_in_ip", "127.0.0.1/32"], ["last_sign_in_at", "2015-02-09 20:31:03.354778"], ["last_sign_in_ip", "127.0.0.1/32"], ["sign_in_count", 1]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by HousesController#index as HTML
+  [1m[35mHouse Load (0.5ms)[0m  SELECT "houses".* FROM "houses"
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 66]]
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "thermometers"  WHERE "thermometers"."house_id" = $1  [["house_id", 39]]
+  Rendered houses/_house.html.erb (26.2ms)
+  Rendered houses/index.html.erb within layouts/application (32.2ms)
+  [1m[36mEmailList Load (0.5ms)[0m  [1mSELECT "email_lists".* FROM "email_lists"[0m
+  Rendered layouts/_navigation.html.erb (4.9ms)
+  Rendered layouts/_messages.html.erb (0.9ms)
+Completed 200 OK in 96ms (Views: 82.6ms | ActiveRecord: 4.3ms)
+Started DELETE "/houses/39" for 127.0.0.1 at 2015-02-09 15:31:03 -0500
+Processing by HousesController#destroy as HTML
+  Parameters: {"id"=>"39"}
+  [1m[35mHouse Load (0.3ms)[0m  SELECT  "houses".* FROM "houses"  WHERE "houses"."id" = $1 LIMIT 1  [["id", 39]]
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 66  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 66]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mThermometer Load (0.2ms)[0m  SELECT "thermometers".* FROM "thermometers"  WHERE "thermometers"."house_id" = $1  [["house_id", 39]]
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "houses" WHERE "houses"."id" = $1[0m  [["id", 39]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/houses/39
+Completed 302 Found in 16ms (ActiveRecord: 2.3ms)
+Started GET "/houses/39" for 127.0.0.1 at 2015-02-09 15:31:03 -0500
+Processing by HousesController#show as HTML
+  Parameters: {"id"=>"39"}
+  [1m[36mHouse Load (0.4ms)[0m  [1mSELECT  "houses".* FROM "houses"  WHERE "houses"."id" = $1 LIMIT 1[0m  [["id", 39]]
+Redirected to http://www.example.com/houses
+Filter chain halted as :set_house rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms)
+Started GET "/houses" for 127.0.0.1 at 2015-02-09 15:31:03 -0500
+Processing by HousesController#index as HTML
+  [1m[35mHouse Load (0.4ms)[0m  SELECT "houses".* FROM "houses"
+  Rendered houses/index.html.erb within layouts/application (0.1ms)
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 66  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mEmailList Load (0.3ms)[0m  SELECT "email_lists".* FROM "email_lists"
+  Rendered layouts/_navigation.html.erb (4.7ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 8ms (Views: 5.8ms | ActiveRecord: 1.2ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36m (0.5ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (1.4ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'sample@example.com' LIMIT 1
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "name") VALUES ($1, $2, $3) RETURNING "id"[0m  [["email", "sample@example.com"], ["encrypted_password", "$2a$04$XdQn0F7MgGbco5xQf9IoO.vM0E0JqhP.nC7ZQ2qstYKbQ0XpoHyW6"], ["name", "username"]]
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "email_lists" ("created_at", "creator_id", "email", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2015-02-09 20:34:29.684813"], ["creator_id", 67], ["email", "sample@example.com"], ["name", "username"], ["updated_at", "2015-02-09 20:34:29.684813"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "houses" ("created_at", "name", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2015-02-09 20:34:29.715534"], ["name", "summer"], ["updated_at", "2015-02-09 20:34:29.715534"], ["user_id", 67]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/houses" for 127.0.0.1 at 2015-02-09 15:34:29 -0500
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE "users" SET "current_sign_in_at" = $1, "current_sign_in_ip" = $2, "last_sign_in_at" = $3, "last_sign_in_ip" = $4, "sign_in_count" = $5 WHERE "users"."id" = 67  [["current_sign_in_at", "2015-02-09 20:34:29.738308"], ["current_sign_in_ip", "127.0.0.1/32"], ["last_sign_in_at", "2015-02-09 20:34:29.738308"], ["last_sign_in_ip", "127.0.0.1/32"], ["sign_in_count", 1]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by HousesController#index as HTML
+  [1m[35mHouse Load (0.5ms)[0m  SELECT "houses".* FROM "houses"
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 67]]
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "thermometers"  WHERE "thermometers"."house_id" = $1  [["house_id", 40]]
+  Rendered houses/_house.html.erb (27.2ms)
+  Rendered houses/index.html.erb within layouts/application (33.6ms)
+  [1m[36mEmailList Load (0.5ms)[0m  [1mSELECT "email_lists".* FROM "email_lists"[0m
+  Rendered layouts/_navigation.html.erb (5.1ms)
+  Rendered layouts/_messages.html.erb (0.8ms)
+Completed 200 OK in 101ms (Views: 87.1ms | ActiveRecord: 4.4ms)
+Started DELETE "/houses/40" for 127.0.0.1 at 2015-02-09 15:34:29 -0500
+Processing by HousesController#destroy as HTML
+  Parameters: {"id"=>"40"}
+  [1m[35mHouse Load (0.3ms)[0m  SELECT  "houses".* FROM "houses"  WHERE "houses"."id" = $1 LIMIT 1  [["id", 40]]
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 67  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 67]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mThermometer Load (0.2ms)[0m  SELECT "thermometers".* FROM "thermometers"  WHERE "thermometers"."house_id" = $1  [["house_id", 40]]
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "houses" WHERE "houses"."id" = $1[0m  [["id", 40]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/houses/40
+Completed 302 Found in 17ms (ActiveRecord: 2.4ms)
+Started GET "/houses/40" for 127.0.0.1 at 2015-02-09 15:34:29 -0500
+Processing by HousesController#show as HTML
+  Parameters: {"id"=>"40"}
+  [1m[36mHouse Load (0.4ms)[0m  [1mSELECT  "houses".* FROM "houses"  WHERE "houses"."id" = $1 LIMIT 1[0m  [["id", 40]]
+Redirected to http://www.example.com/houses
+Filter chain halted as :set_house rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms)
+Started GET "/houses" for 127.0.0.1 at 2015-02-09 15:34:29 -0500
+Processing by HousesController#index as HTML
+  [1m[35mHouse Load (0.4ms)[0m  SELECT "houses".* FROM "houses"
+  Rendered houses/index.html.erb within layouts/application (0.1ms)
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 67  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mEmailList Load (0.3ms)[0m  SELECT "email_lists".* FROM "email_lists"
+  Rendered layouts/_navigation.html.erb (5.0ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 9ms (Views: 6.2ms | ActiveRecord: 1.2ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.9ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'sample@example.com' LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "name") VALUES ($1, $2, $3) RETURNING "id"[0m  [["email", "sample@example.com"], ["encrypted_password", "$2a$04$LJi3WVsvuyMeFZD31wRs/.z.yGCrtYOTERLn31w94wmJfy354jKBq"], ["name", "username"]]
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "email_lists" ("created_at", "creator_id", "email", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2015-02-09 20:39:07.543516"], ["creator_id", 68], ["email", "sample@example.com"], ["name", "username"], ["updated_at", "2015-02-09 20:39:07.543516"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "houses" ("created_at", "name", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2015-02-09 20:39:07.573879"], ["name", "summer"], ["updated_at", "2015-02-09 20:39:07.573879"], ["user_id", 68]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/houses" for 127.0.0.1 at 2015-02-09 15:39:07 -0500
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.8ms)[0m  UPDATE "users" SET "current_sign_in_at" = $1, "current_sign_in_ip" = $2, "last_sign_in_at" = $3, "last_sign_in_ip" = $4, "sign_in_count" = $5 WHERE "users"."id" = 68  [["current_sign_in_at", "2015-02-09 20:39:07.598185"], ["current_sign_in_ip", "127.0.0.1/32"], ["last_sign_in_at", "2015-02-09 20:39:07.598185"], ["last_sign_in_ip", "127.0.0.1/32"], ["sign_in_count", 1]]
+  [1m[36m (0.4ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by HousesController#index as HTML
+  [1m[35mHouse Load (0.7ms)[0m  SELECT "houses".* FROM "houses"
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 68]]
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "thermometers"  WHERE "thermometers"."house_id" = $1  [["house_id", 41]]
+  Rendered houses/_house.html.erb (30.6ms)
+  Rendered houses/index.html.erb within layouts/application (36.9ms)
+  [1m[36mEmailList Load (0.8ms)[0m  [1mSELECT "email_lists".* FROM "email_lists"[0m
+  Rendered layouts/_navigation.html.erb (5.8ms)
+  Rendered layouts/_messages.html.erb (0.9ms)
+Completed 200 OK in 103ms (Views: 86.9ms | ActiveRecord: 6.4ms)
+Started DELETE "/houses/41" for 127.0.0.1 at 2015-02-09 15:39:07 -0500
+Processing by HousesController#destroy as HTML
+  Parameters: {"id"=>"41"}
+  [1m[35mHouse Load (0.6ms)[0m  SELECT  "houses".* FROM "houses"  WHERE "houses"."id" = $1 LIMIT 1  [["id", 41]]
+  [1m[36mUser Load (1.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 68  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 68]]
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mThermometer Load (0.3ms)[0m  SELECT "thermometers".* FROM "thermometers"  WHERE "thermometers"."house_id" = $1  [["house_id", 41]]
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM "houses" WHERE "houses"."id" = $1[0m  [["id", 41]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/houses/41
+Completed 302 Found in 23ms (ActiveRecord: 4.0ms)
+Started GET "/houses/41" for 127.0.0.1 at 2015-02-09 15:39:07 -0500
+Processing by HousesController#show as HTML
+  Parameters: {"id"=>"41"}
+  [1m[36mHouse Load (0.6ms)[0m  [1mSELECT  "houses".* FROM "houses"  WHERE "houses"."id" = $1 LIMIT 1[0m  [["id", 41]]
+Redirected to http://www.example.com/houses
+Filter chain halted as :set_house rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.6ms)
+Started GET "/houses" for 127.0.0.1 at 2015-02-09 15:39:07 -0500
+Processing by HousesController#index as HTML
+  [1m[35mHouse Load (0.6ms)[0m  SELECT "houses".* FROM "houses"
+  Rendered houses/index.html.erb within layouts/application (0.1ms)
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 68  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mEmailList Load (0.5ms)[0m  SELECT "email_lists".* FROM "email_lists"
+  Rendered layouts/_navigation.html.erb (5.4ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 10ms (Views: 6.4ms | ActiveRecord: 1.9ms)
+  [1m[36m (0.5ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.5ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (1.7ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'sample@example.com' LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "name") VALUES ($1, $2, $3) RETURNING "id"[0m  [["email", "sample@example.com"], ["encrypted_password", "$2a$04$2rsjFj4iK3a8inKpSJRw2.N5gfvOpcRrMF73K5goS6e6Hgt16M0dq"], ["name", "username"]]
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "email_lists" ("created_at", "creator_id", "email", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2015-02-09 21:54:38.000409"], ["creator_id", 69], ["email", "sample@example.com"], ["name", "username"], ["updated_at", "2015-02-09 21:54:38.000409"]]
+  [1m[36m (0.4ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "houses" ("created_at", "name", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2015-02-09 21:54:38.039532"], ["name", "summer"], ["updated_at", "2015-02-09 21:54:38.039532"], ["user_id", 69]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/houses" for 127.0.0.1 at 2015-02-09 16:54:38 -0500
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "users" SET "current_sign_in_at" = $1, "current_sign_in_ip" = $2, "last_sign_in_at" = $3, "last_sign_in_ip" = $4, "sign_in_count" = $5 WHERE "users"."id" = 69  [["current_sign_in_at", "2015-02-09 21:54:38.062343"], ["current_sign_in_ip", "127.0.0.1/32"], ["last_sign_in_at", "2015-02-09 21:54:38.062343"], ["last_sign_in_ip", "127.0.0.1/32"], ["sign_in_count", 1]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by HousesController#index as HTML
+  [1m[35mHouse Load (0.5ms)[0m  SELECT "houses".* FROM "houses"
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 69]]
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "thermometers"  WHERE "thermometers"."house_id" = $1  [["house_id", 42]]
+  Rendered houses/_house.html.erb (27.4ms)
+  Rendered houses/index.html.erb within layouts/application (34.6ms)
+  [1m[36mEmailList Load (0.5ms)[0m  [1mSELECT "email_lists".* FROM "email_lists"[0m
+  Rendered layouts/_navigation.html.erb (4.9ms)
+  Rendered layouts/_messages.html.erb (0.8ms)
+Completed 200 OK in 102ms (Views: 87.6ms | ActiveRecord: 4.5ms)
+Started DELETE "/houses/42" for 127.0.0.1 at 2015-02-09 16:54:38 -0500
+Processing by HousesController#destroy as HTML
+  Parameters: {"id"=>"42"}
+  [1m[35mHouse Load (0.3ms)[0m  SELECT  "houses".* FROM "houses"  WHERE "houses"."id" = $1 LIMIT 1  [["id", 42]]
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 69  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 69]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mThermometer Load (0.3ms)[0m  SELECT "thermometers".* FROM "thermometers"  WHERE "thermometers"."house_id" = $1  [["house_id", 42]]
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM "houses" WHERE "houses"."id" = $1[0m  [["id", 42]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/houses/42
+Completed 302 Found in 18ms (ActiveRecord: 2.5ms)
+Started GET "/houses/42" for 127.0.0.1 at 2015-02-09 16:54:38 -0500
+Processing by HousesController#show as HTML
+  Parameters: {"id"=>"42"}
+  [1m[36mHouse Load (0.5ms)[0m  [1mSELECT  "houses".* FROM "houses"  WHERE "houses"."id" = $1 LIMIT 1[0m  [["id", 42]]
+Redirected to http://www.example.com/houses
+Filter chain halted as :set_house rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.5ms)
+Started GET "/houses" for 127.0.0.1 at 2015-02-09 16:54:38 -0500
+Processing by HousesController#index as HTML
+  [1m[35mHouse Load (0.6ms)[0m  SELECT "houses".* FROM "houses"
+  Rendered houses/index.html.erb within layouts/application (0.1ms)
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 69  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mEmailList Load (0.4ms)[0m  SELECT "email_lists".* FROM "email_lists"
+  Rendered layouts/_navigation.html.erb (5.3ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 9ms (Views: 6.1ms | ActiveRecord: 1.8ms)
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (1.0ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'sample@example.com' LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "name") VALUES ($1, $2, $3) RETURNING "id"[0m  [["email", "sample@example.com"], ["encrypted_password", "$2a$04$xImtWmRUp3xRczR7YR8vSeoUfBT.MxCravpeYDSmsizjAT6ITeaHa"], ["name", "username"]]
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "email_lists" ("created_at", "creator_id", "email", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2015-02-09 21:58:36.218222"], ["creator_id", 70], ["email", "sample@example.com"], ["name", "username"], ["updated_at", "2015-02-09 21:58:36.218222"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "houses" ("created_at", "name", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2015-02-09 21:58:36.249273"], ["name", "summer"], ["updated_at", "2015-02-09 21:58:36.249273"], ["user_id", 70]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/houses" for 127.0.0.1 at 2015-02-09 16:58:36 -0500
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "users" SET "current_sign_in_at" = $1, "current_sign_in_ip" = $2, "last_sign_in_at" = $3, "last_sign_in_ip" = $4, "sign_in_count" = $5 WHERE "users"."id" = 70  [["current_sign_in_at", "2015-02-09 21:58:36.270930"], ["current_sign_in_ip", "127.0.0.1/32"], ["last_sign_in_at", "2015-02-09 21:58:36.270930"], ["last_sign_in_ip", "127.0.0.1/32"], ["sign_in_count", 1]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by HousesController#index as HTML
+  [1m[35mHouse Load (0.5ms)[0m  SELECT "houses".* FROM "houses"
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 70]]
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "thermometers"  WHERE "thermometers"."house_id" = $1  [["house_id", 43]]
+  Rendered houses/_house.html.erb (26.5ms)
+  Rendered houses/index.html.erb within layouts/application (32.6ms)
+  [1m[36mEmailList Load (0.6ms)[0m  [1mSELECT "email_lists".* FROM "email_lists"[0m
+  Rendered layouts/_navigation.html.erb (4.8ms)
+  Rendered layouts/_messages.html.erb (0.8ms)
+Completed 200 OK in 96ms (Views: 82.0ms | ActiveRecord: 4.6ms)
+Started DELETE "/houses/43" for 127.0.0.1 at 2015-02-09 16:58:36 -0500
+Processing by HousesController#destroy as HTML
+  Parameters: {"id"=>"43"}
+  [1m[35mHouse Load (0.4ms)[0m  SELECT  "houses".* FROM "houses"  WHERE "houses"."id" = $1 LIMIT 1  [["id", 43]]
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 70  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 70]]
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mThermometer Load (0.2ms)[0m  SELECT "thermometers".* FROM "thermometers"  WHERE "thermometers"."house_id" = $1  [["house_id", 43]]
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "houses" WHERE "houses"."id" = $1[0m  [["id", 43]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/houses/43
+Completed 302 Found in 16ms (ActiveRecord: 2.5ms)
+Started GET "/houses/43" for 127.0.0.1 at 2015-02-09 16:58:36 -0500
+Processing by HousesController#show as HTML
+  Parameters: {"id"=>"43"}
+  [1m[36mHouse Load (0.4ms)[0m  [1mSELECT  "houses".* FROM "houses"  WHERE "houses"."id" = $1 LIMIT 1[0m  [["id", 43]]
+Redirected to http://www.example.com/houses
+Filter chain halted as :set_house rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms)
+Started GET "/houses" for 127.0.0.1 at 2015-02-09 16:58:36 -0500
+Processing by HousesController#index as HTML
+  [1m[35mHouse Load (0.4ms)[0m  SELECT "houses".* FROM "houses"
+  Rendered houses/index.html.erb within layouts/application (0.1ms)
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 70  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mEmailList Load (0.3ms)[0m  SELECT "email_lists".* FROM "email_lists"
+  Rendered layouts/_navigation.html.erb (4.7ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 9ms (Views: 5.9ms | ActiveRecord: 1.4ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (1.5ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'sample@example.com' LIMIT 1
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "name") VALUES ($1, $2, $3) RETURNING "id"[0m  [["email", "sample@example.com"], ["encrypted_password", "$2a$04$2JtwfL0ZqJrDRcIMKQFraehPWhqdt43a3YhXxVTsz1snKGDQ3zsK."], ["name", "username"]]
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "email_lists" ("created_at", "creator_id", "email", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2015-02-09 22:01:59.298234"], ["creator_id", 71], ["email", "sample@example.com"], ["name", "username"], ["updated_at", "2015-02-09 22:01:59.298234"]]
+  [1m[36m (0.5ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "houses" ("created_at", "name", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2015-02-09 22:01:59.334806"], ["name", "summer"], ["updated_at", "2015-02-09 22:01:59.334806"], ["user_id", 71]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/houses" for 127.0.0.1 at 2015-02-09 17:01:59 -0500
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  UPDATE "users" SET "current_sign_in_at" = $1, "current_sign_in_ip" = $2, "last_sign_in_at" = $3, "last_sign_in_ip" = $4, "sign_in_count" = $5 WHERE "users"."id" = 71  [["current_sign_in_at", "2015-02-09 22:01:59.356878"], ["current_sign_in_ip", "127.0.0.1/32"], ["last_sign_in_at", "2015-02-09 22:01:59.356878"], ["last_sign_in_ip", "127.0.0.1/32"], ["sign_in_count", 1]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by HousesController#index as HTML
+  [1m[35mHouse Load (0.8ms)[0m  SELECT "houses".* FROM "houses"
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 71]]
+  [1m[35m (0.9ms)[0m  SELECT COUNT(*) FROM "thermometers"  WHERE "thermometers"."house_id" = $1  [["house_id", 44]]
+  Rendered houses/_house.html.erb (29.1ms)
+  Rendered houses/index.html.erb within layouts/application (35.9ms)
+  [1m[36mEmailList Load (0.8ms)[0m  [1mSELECT "email_lists".* FROM "email_lists"[0m
+  Rendered layouts/_navigation.html.erb (5.3ms)
+  Rendered layouts/_messages.html.erb (0.8ms)
+Completed 200 OK in 102ms (Views: 85.4ms | ActiveRecord: 7.3ms)
+Started DELETE "/houses/44" for 127.0.0.1 at 2015-02-09 17:01:59 -0500
+Processing by HousesController#destroy as HTML
+  Parameters: {"id"=>"44"}
+  [1m[35mHouse Load (0.4ms)[0m  SELECT  "houses".* FROM "houses"  WHERE "houses"."id" = $1 LIMIT 1  [["id", 44]]
+  [1m[36mUser Load (1.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 71  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 71]]
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mThermometer Load (0.3ms)[0m  SELECT "thermometers".* FROM "thermometers"  WHERE "thermometers"."house_id" = $1  [["house_id", 44]]
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM "houses" WHERE "houses"."id" = $1[0m  [["id", 44]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/houses/44
+Completed 302 Found in 18ms (ActiveRecord: 3.4ms)
+Started GET "/houses/44" for 127.0.0.1 at 2015-02-09 17:01:59 -0500
+Processing by HousesController#show as HTML
+  Parameters: {"id"=>"44"}
+  [1m[36mHouse Load (0.5ms)[0m  [1mSELECT  "houses".* FROM "houses"  WHERE "houses"."id" = $1 LIMIT 1[0m  [["id", 44]]
+Redirected to http://www.example.com/houses
+Filter chain halted as :set_house rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.5ms)
+Started GET "/houses" for 127.0.0.1 at 2015-02-09 17:01:59 -0500
+Processing by HousesController#index as HTML
+  [1m[35mHouse Load (0.6ms)[0m  SELECT "houses".* FROM "houses"
+  Rendered houses/index.html.erb within layouts/application (0.1ms)
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 71  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mEmailList Load (0.4ms)[0m  SELECT "email_lists".* FROM "email_lists"
+  Rendered layouts/_navigation.html.erb (5.4ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 9ms (Views: 6.2ms | ActiveRecord: 1.9ms)
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (1.0ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'sample@example.com' LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "name") VALUES ($1, $2, $3) RETURNING "id"[0m  [["email", "sample@example.com"], ["encrypted_password", "$2a$04$XV9.SynuW6iMrXLdCZAOgeAM5za66J6aBX9rCQWJcKSw4n0hGaEm2"], ["name", "username"]]
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "email_lists" ("created_at", "creator_id", "email", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2015-02-09 22:02:34.721218"], ["creator_id", 72], ["email", "sample@example.com"], ["name", "username"], ["updated_at", "2015-02-09 22:02:34.721218"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "houses" ("created_at", "name", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2015-02-09 22:02:34.755888"], ["name", "summer"], ["updated_at", "2015-02-09 22:02:34.755888"], ["user_id", 72]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/houses" for 127.0.0.1 at 2015-02-09 17:02:34 -0500
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE "users" SET "current_sign_in_at" = $1, "current_sign_in_ip" = $2, "last_sign_in_at" = $3, "last_sign_in_ip" = $4, "sign_in_count" = $5 WHERE "users"."id" = 72  [["current_sign_in_at", "2015-02-09 22:02:34.782701"], ["current_sign_in_ip", "127.0.0.1/32"], ["last_sign_in_at", "2015-02-09 22:02:34.782701"], ["last_sign_in_ip", "127.0.0.1/32"], ["sign_in_count", 1]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by HousesController#index as HTML
+  [1m[35mHouse Load (0.5ms)[0m  SELECT "houses".* FROM "houses"
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 72]]
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "thermometers"  WHERE "thermometers"."house_id" = $1  [["house_id", 45]]
+  Rendered houses/_house.html.erb (26.3ms)
+  Rendered houses/index.html.erb within layouts/application (32.4ms)
+  [1m[36mEmailList Load (0.5ms)[0m  [1mSELECT "email_lists".* FROM "email_lists"[0m
+  Rendered layouts/_navigation.html.erb (5.7ms)
+  Rendered layouts/_messages.html.erb (1.0ms)
+Completed 200 OK in 99ms (Views: 84.7ms | ActiveRecord: 4.5ms)
+Started DELETE "/houses/45" for 127.0.0.1 at 2015-02-09 17:02:34 -0500
+Processing by HousesController#destroy as HTML
+  Parameters: {"id"=>"45"}
+  [1m[35mHouse Load (0.5ms)[0m  SELECT  "houses".* FROM "houses"  WHERE "houses"."id" = $1 LIMIT 1  [["id", 45]]
+  [1m[36mUser Load (1.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 72  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 72]]
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mThermometer Load (0.3ms)[0m  SELECT "thermometers".* FROM "thermometers"  WHERE "thermometers"."house_id" = $1  [["house_id", 45]]
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "houses" WHERE "houses"."id" = $1[0m  [["id", 45]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/houses/45
+Completed 302 Found in 20ms (ActiveRecord: 3.5ms)
+Started GET "/houses/45" for 127.0.0.1 at 2015-02-09 17:02:34 -0500
+Processing by HousesController#show as HTML
+  Parameters: {"id"=>"45"}
+  [1m[36mHouse Load (0.6ms)[0m  [1mSELECT  "houses".* FROM "houses"  WHERE "houses"."id" = $1 LIMIT 1[0m  [["id", 45]]
+Redirected to http://www.example.com/houses
+Filter chain halted as :set_house rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.6ms)
+Started GET "/houses" for 127.0.0.1 at 2015-02-09 17:02:34 -0500
+Processing by HousesController#index as HTML
+  [1m[35mHouse Load (0.6ms)[0m  SELECT "houses".* FROM "houses"
+  Rendered houses/index.html.erb within layouts/application (0.1ms)
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 72  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mEmailList Load (0.6ms)[0m  SELECT "email_lists".* FROM "email_lists"
+  Rendered layouts/_navigation.html.erb (7.1ms)
+  Rendered layouts/_messages.html.erb (0.2ms)
+Completed 200 OK in 12ms (Views: 8.4ms | ActiveRecord: 2.0ms)
+  [1m[36m (0.5ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36m (0.5ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (1.5ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'sample@example.com' LIMIT 1
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "name") VALUES ($1, $2, $3) RETURNING "id"[0m  [["email", "sample@example.com"], ["encrypted_password", "$2a$04$m9soThhOPqEba3dZb0wP9uG4LyG5.oTJUr17D.hs4w77Tb6VxN/D2"], ["name", "username"]]
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "email_lists" ("created_at", "creator_id", "email", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2015-02-09 22:04:10.875229"], ["creator_id", 73], ["email", "sample@example.com"], ["name", "username"], ["updated_at", "2015-02-09 22:04:10.875229"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "houses" ("created_at", "name", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2015-02-09 22:04:10.913082"], ["name", "summer"], ["updated_at", "2015-02-09 22:04:10.913082"], ["user_id", 73]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/houses" for 127.0.0.1 at 2015-02-09 17:04:10 -0500
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.9ms)[0m  UPDATE "users" SET "current_sign_in_at" = $1, "current_sign_in_ip" = $2, "last_sign_in_at" = $3, "last_sign_in_ip" = $4, "sign_in_count" = $5 WHERE "users"."id" = 73  [["current_sign_in_at", "2015-02-09 22:04:10.935558"], ["current_sign_in_ip", "127.0.0.1/32"], ["last_sign_in_at", "2015-02-09 22:04:10.935558"], ["last_sign_in_ip", "127.0.0.1/32"], ["sign_in_count", 1]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by HousesController#index as HTML
+  [1m[35mHouse Load (0.7ms)[0m  SELECT "houses".* FROM "houses"
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 73]]
+  [1m[35m (0.7ms)[0m  SELECT COUNT(*) FROM "thermometers"  WHERE "thermometers"."house_id" = $1  [["house_id", 46]]
+  Rendered houses/_house.html.erb (29.1ms)
+  Rendered houses/index.html.erb within layouts/application (35.7ms)
+  [1m[36mEmailList Load (0.8ms)[0m  [1mSELECT "email_lists".* FROM "email_lists"[0m
+  Rendered layouts/_navigation.html.erb (5.3ms)
+  Rendered layouts/_messages.html.erb (0.9ms)
+Completed 200 OK in 101ms (Views: 84.3ms | ActiveRecord: 7.2ms)
+Started DELETE "/houses/46" for 127.0.0.1 at 2015-02-09 17:04:11 -0500
+Processing by HousesController#destroy as HTML
+  Parameters: {"id"=>"46"}
+  [1m[35mHouse Load (0.5ms)[0m  SELECT  "houses".* FROM "houses"  WHERE "houses"."id" = $1 LIMIT 1  [["id", 46]]
+  [1m[36mUser Load (1.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 73  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.8ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 73]]
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mThermometer Load (0.3ms)[0m  SELECT "thermometers".* FROM "thermometers"  WHERE "thermometers"."house_id" = $1  [["house_id", 46]]
+  [1m[36mSQL (0.5ms)[0m  [1mDELETE FROM "houses" WHERE "houses"."id" = $1[0m  [["id", 46]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/houses/46
+Completed 302 Found in 19ms (ActiveRecord: 3.7ms)
+Started GET "/houses/46" for 127.0.0.1 at 2015-02-09 17:04:11 -0500
+Processing by HousesController#show as HTML
+  Parameters: {"id"=>"46"}
+  [1m[36mHouse Load (0.7ms)[0m  [1mSELECT  "houses".* FROM "houses"  WHERE "houses"."id" = $1 LIMIT 1[0m  [["id", 46]]
+Redirected to http://www.example.com/houses
+Filter chain halted as :set_house rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.7ms)
+Started GET "/houses" for 127.0.0.1 at 2015-02-09 17:04:11 -0500
+Processing by HousesController#index as HTML
+  [1m[35mHouse Load (0.6ms)[0m  SELECT "houses".* FROM "houses"
+  Rendered houses/index.html.erb within layouts/application (0.1ms)
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 73  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mEmailList Load (0.6ms)[0m  SELECT "email_lists".* FROM "email_lists"
+  Rendered layouts/_navigation.html.erb (5.8ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 10ms (Views: 6.5ms | ActiveRecord: 2.0ms)
+  [1m[36m (0.5ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (1.5ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'sample@example.com' LIMIT 1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "name") VALUES ($1, $2, $3) RETURNING "id"[0m  [["email", "sample@example.com"], ["encrypted_password", "$2a$04$mRaz4iX7d.QWWQlQ6Spa1On3FD0PHahi.Ih6xk0Ulab62kB/7JbLu"], ["name", "username"]]
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "email_lists" ("created_at", "creator_id", "email", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2015-02-09 22:08:22.481243"], ["creator_id", 74], ["email", "sample@example.com"], ["name", "username"], ["updated_at", "2015-02-09 22:08:22.481243"]]
+  [1m[36m (0.4ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "houses" ("created_at", "name", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2015-02-09 22:08:22.513890"], ["name", "summer"], ["updated_at", "2015-02-09 22:08:22.513890"], ["user_id", 74]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/houses" for 127.0.0.1 at 2015-02-09 17:08:22 -0500
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.8ms)[0m  UPDATE "users" SET "current_sign_in_at" = $1, "current_sign_in_ip" = $2, "last_sign_in_at" = $3, "last_sign_in_ip" = $4, "sign_in_count" = $5 WHERE "users"."id" = 74  [["current_sign_in_at", "2015-02-09 22:08:22.537266"], ["current_sign_in_ip", "127.0.0.1/32"], ["last_sign_in_at", "2015-02-09 22:08:22.537266"], ["last_sign_in_ip", "127.0.0.1/32"], ["sign_in_count", 1]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by HousesController#index as HTML
+  [1m[35mHouse Load (0.8ms)[0m  SELECT "houses".* FROM "houses"
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 74]]
+  [1m[35m (0.8ms)[0m  SELECT COUNT(*) FROM "thermometers"  WHERE "thermometers"."house_id" = $1  [["house_id", 47]]
+  Rendered houses/_house.html.erb (29.2ms)
+  Rendered houses/index.html.erb within layouts/application (35.4ms)
+  [1m[36mEmailList Load (0.9ms)[0m  [1mSELECT "email_lists".* FROM "email_lists"[0m
+  Rendered layouts/_navigation.html.erb (6.1ms)
+  Rendered layouts/_messages.html.erb (1.0ms)
+Completed 200 OK in 104ms (Views: 86.4ms | ActiveRecord: 7.5ms)
+Started DELETE "/houses/47" for 127.0.0.1 at 2015-02-09 17:08:22 -0500
+Processing by HousesController#destroy as HTML
+  Parameters: {"id"=>"47"}
+  [1m[35mHouse Load (0.4ms)[0m  SELECT  "houses".* FROM "houses"  WHERE "houses"."id" = $1 LIMIT 1  [["id", 47]]
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 74  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 74]]
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mThermometer Load (0.3ms)[0m  SELECT "thermometers".* FROM "thermometers"  WHERE "thermometers"."house_id" = $1  [["house_id", 47]]
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM "houses" WHERE "houses"."id" = $1[0m  [["id", 47]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/houses/47
+Completed 302 Found in 17ms (ActiveRecord: 3.0ms)
+Started GET "/houses/47" for 127.0.0.1 at 2015-02-09 17:08:22 -0500
+Processing by HousesController#show as HTML
+  Parameters: {"id"=>"47"}
+  [1m[36mHouse Load (0.6ms)[0m  [1mSELECT  "houses".* FROM "houses"  WHERE "houses"."id" = $1 LIMIT 1[0m  [["id", 47]]
+Redirected to http://www.example.com/houses
+Filter chain halted as :set_house rendered or redirected
+Completed 302 Found in 5ms (ActiveRecord: 0.6ms)
+Started GET "/houses" for 127.0.0.1 at 2015-02-09 17:08:22 -0500
+Processing by HousesController#index as HTML
+  [1m[35mHouse Load (0.5ms)[0m  SELECT "houses".* FROM "houses"
+  Rendered houses/index.html.erb within layouts/application (0.1ms)
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 74  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mEmailList Load (0.6ms)[0m  SELECT "email_lists".* FROM "email_lists"
+  Rendered layouts/_navigation.html.erb (5.4ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 9ms (Views: 6.2ms | ActiveRecord: 1.8ms)
+  [1m[36m (0.5ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (1.6ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'sample@example.com' LIMIT 1
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "name") VALUES ($1, $2, $3) RETURNING "id"[0m  [["email", "sample@example.com"], ["encrypted_password", "$2a$04$pSgTqymwmpdVk0/0TtDrJOdifkzMMy2EDx3TElvK8mOIBg2UiV1ia"], ["name", "username"]]
+  [1m[35mSQL (1.1ms)[0m  INSERT INTO "email_lists" ("created_at", "creator_id", "email", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2015-02-09 22:09:12.196056"], ["creator_id", 75], ["email", "sample@example.com"], ["name", "username"], ["updated_at", "2015-02-09 22:09:12.196056"]]
+  [1m[36m (0.4ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "houses" ("created_at", "name", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2015-02-09 22:09:12.232975"], ["name", "summer"], ["updated_at", "2015-02-09 22:09:12.232975"], ["user_id", 75]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/houses" for 127.0.0.1 at 2015-02-09 17:09:12 -0500
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.9ms)[0m  UPDATE "users" SET "current_sign_in_at" = $1, "current_sign_in_ip" = $2, "last_sign_in_at" = $3, "last_sign_in_ip" = $4, "sign_in_count" = $5 WHERE "users"."id" = 75  [["current_sign_in_at", "2015-02-09 22:09:12.256605"], ["current_sign_in_ip", "127.0.0.1/32"], ["last_sign_in_at", "2015-02-09 22:09:12.256605"], ["last_sign_in_ip", "127.0.0.1/32"], ["sign_in_count", 1]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by HousesController#index as HTML
+  [1m[35mHouse Load (0.8ms)[0m  SELECT "houses".* FROM "houses"
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 75]]
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "thermometers"  WHERE "thermometers"."house_id" = $1  [["house_id", 48]]
+  Rendered houses/_house.html.erb (28.7ms)
+  Rendered houses/index.html.erb within layouts/application (35.6ms)
+  [1m[36mEmailList Load (0.8ms)[0m  [1mSELECT "email_lists".* FROM "email_lists"[0m
+  Rendered layouts/_navigation.html.erb (5.3ms)
+  Rendered layouts/_messages.html.erb (0.8ms)
+Completed 200 OK in 102ms (Views: 85.1ms | ActiveRecord: 7.0ms)
+Started DELETE "/houses/48" for 127.0.0.1 at 2015-02-09 17:09:12 -0500
+Processing by HousesController#destroy as HTML
+  Parameters: {"id"=>"48"}
+  [1m[35mHouse Load (0.4ms)[0m  SELECT  "houses".* FROM "houses"  WHERE "houses"."id" = $1 LIMIT 1  [["id", 48]]
+  [1m[36mUser Load (1.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 75  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 75]]
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mThermometer Load (0.3ms)[0m  SELECT "thermometers".* FROM "thermometers"  WHERE "thermometers"."house_id" = $1  [["house_id", 48]]
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "houses" WHERE "houses"."id" = $1[0m  [["id", 48]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/houses/48
+Completed 302 Found in 18ms (ActiveRecord: 3.3ms)
+Started GET "/houses/48" for 127.0.0.1 at 2015-02-09 17:09:12 -0500
+Processing by HousesController#show as HTML
+  Parameters: {"id"=>"48"}
+  [1m[36mHouse Load (0.6ms)[0m  [1mSELECT  "houses".* FROM "houses"  WHERE "houses"."id" = $1 LIMIT 1[0m  [["id", 48]]
+Redirected to http://www.example.com/houses
+Filter chain halted as :set_house rendered or redirected
+Completed 302 Found in 5ms (ActiveRecord: 0.6ms)
+Started GET "/houses" for 127.0.0.1 at 2015-02-09 17:09:12 -0500
+Processing by HousesController#index as HTML
+  [1m[35mHouse Load (0.7ms)[0m  SELECT "houses".* FROM "houses"
+  Rendered houses/index.html.erb within layouts/application (0.1ms)
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 75  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mEmailList Load (0.6ms)[0m  SELECT "email_lists".* FROM "email_lists"
+  Rendered layouts/_navigation.html.erb (5.5ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 10ms (Views: 6.3ms | ActiveRecord: 2.1ms)
+  [1m[36m (0.5ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.9ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'sample@example.com' LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "name") VALUES ($1, $2, $3) RETURNING "id"[0m  [["email", "sample@example.com"], ["encrypted_password", "$2a$04$b7Foif4.VsGnvaGauAShsuF98ajjPCtSwsy9wKsA4eLcZ6GlsL4CO"], ["name", "username"]]
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "email_lists" ("created_at", "creator_id", "email", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2015-02-09 22:12:27.151745"], ["creator_id", 76], ["email", "sample@example.com"], ["name", "username"], ["updated_at", "2015-02-09 22:12:27.151745"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "houses" ("created_at", "name", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2015-02-09 22:12:27.182251"], ["name", "summer"], ["updated_at", "2015-02-09 22:12:27.182251"], ["user_id", 76]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/houses" for 127.0.0.1 at 2015-02-09 17:12:27 -0500
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "users" SET "current_sign_in_at" = $1, "current_sign_in_ip" = $2, "last_sign_in_at" = $3, "last_sign_in_ip" = $4, "sign_in_count" = $5 WHERE "users"."id" = 76  [["current_sign_in_at", "2015-02-09 22:12:27.203939"], ["current_sign_in_ip", "127.0.0.1/32"], ["last_sign_in_at", "2015-02-09 22:12:27.203939"], ["last_sign_in_ip", "127.0.0.1/32"], ["sign_in_count", 1]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by HousesController#index as HTML
+  [1m[35mHouse Load (0.5ms)[0m  SELECT "houses".* FROM "houses"
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 76]]
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "thermometers"  WHERE "thermometers"."house_id" = $1  [["house_id", 49]]
+  Rendered houses/_house.html.erb (26.3ms)
+  Rendered houses/index.html.erb within layouts/application (32.4ms)
+  [1m[36mEmailList Load (0.5ms)[0m  [1mSELECT "email_lists".* FROM "email_lists"[0m
+  Rendered layouts/_navigation.html.erb (4.9ms)
+  Rendered layouts/_messages.html.erb (0.8ms)
+Completed 200 OK in 96ms (Views: 82.3ms | ActiveRecord: 4.6ms)
+Started DELETE "/houses/49" for 127.0.0.1 at 2015-02-09 17:12:27 -0500
+Processing by HousesController#destroy as HTML
+  Parameters: {"id"=>"49"}
+  [1m[35mHouse Load (0.3ms)[0m  SELECT  "houses".* FROM "houses"  WHERE "houses"."id" = $1 LIMIT 1  [["id", 49]]
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 76  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 76]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mThermometer Load (0.2ms)[0m  SELECT "thermometers".* FROM "thermometers"  WHERE "thermometers"."house_id" = $1  [["house_id", 49]]
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "houses" WHERE "houses"."id" = $1[0m  [["id", 49]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/houses/49
+Completed 302 Found in 16ms (ActiveRecord: 2.3ms)
+Started GET "/houses/49" for 127.0.0.1 at 2015-02-09 17:12:27 -0500
+Processing by HousesController#show as HTML
+  Parameters: {"id"=>"49"}
+  [1m[36mHouse Load (0.5ms)[0m  [1mSELECT  "houses".* FROM "houses"  WHERE "houses"."id" = $1 LIMIT 1[0m  [["id", 49]]
+Redirected to http://www.example.com/houses
+Filter chain halted as :set_house rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.5ms)
+Started GET "/houses" for 127.0.0.1 at 2015-02-09 17:12:27 -0500
+Processing by HousesController#index as HTML
+  [1m[35mHouse Load (0.4ms)[0m  SELECT "houses".* FROM "houses"
+  Rendered houses/index.html.erb within layouts/application (0.1ms)
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 76  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mEmailList Load (0.3ms)[0m  SELECT "email_lists".* FROM "email_lists"
+  Rendered layouts/_navigation.html.erb (4.7ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 8ms (Views: 5.9ms | ActiveRecord: 1.3ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (1.0ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'sample@example.com' LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "name") VALUES ($1, $2, $3) RETURNING "id"[0m  [["email", "sample@example.com"], ["encrypted_password", "$2a$04$yAr24iuXcIoYMHzbZjVlb.fPVrD5hz4bRhuxTuMCQQyKMaqtAb4yG"], ["name", "username"]]
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "email_lists" ("created_at", "creator_id", "email", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2015-02-09 22:15:19.733226"], ["creator_id", 77], ["email", "sample@example.com"], ["name", "username"], ["updated_at", "2015-02-09 22:15:19.733226"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "houses" ("created_at", "name", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2015-02-09 22:15:19.764680"], ["name", "summer"], ["updated_at", "2015-02-09 22:15:19.764680"], ["user_id", 77]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/houses" for 127.0.0.1 at 2015-02-09 17:15:19 -0500
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "users" SET "current_sign_in_at" = $1, "current_sign_in_ip" = $2, "last_sign_in_at" = $3, "last_sign_in_ip" = $4, "sign_in_count" = $5 WHERE "users"."id" = 77  [["current_sign_in_at", "2015-02-09 22:15:19.786472"], ["current_sign_in_ip", "127.0.0.1/32"], ["last_sign_in_at", "2015-02-09 22:15:19.786472"], ["last_sign_in_ip", "127.0.0.1/32"], ["sign_in_count", 1]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by HousesController#index as HTML
+  [1m[35mHouse Load (0.5ms)[0m  SELECT "houses".* FROM "houses"
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 77]]
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "thermometers"  WHERE "thermometers"."house_id" = $1  [["house_id", 50]]
+  Rendered houses/_house.html.erb (25.9ms)
+  Rendered houses/index.html.erb within layouts/application (32.0ms)
+  [1m[36mEmailList Load (0.5ms)[0m  [1mSELECT "email_lists".* FROM "email_lists"[0m
+  Rendered layouts/_navigation.html.erb (4.9ms)
+  Rendered layouts/_messages.html.erb (0.8ms)
+Completed 200 OK in 94ms (Views: 80.6ms | ActiveRecord: 4.4ms)
+Started DELETE "/houses/50" for 127.0.0.1 at 2015-02-09 17:15:19 -0500
+Processing by HousesController#destroy as HTML
+  Parameters: {"id"=>"50"}
+  [1m[35mHouse Load (0.3ms)[0m  SELECT  "houses".* FROM "houses"  WHERE "houses"."id" = $1 LIMIT 1  [["id", 50]]
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 77  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 77]]
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mThermometer Load (0.2ms)[0m  SELECT "thermometers".* FROM "thermometers"  WHERE "thermometers"."house_id" = $1  [["house_id", 50]]
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "houses" WHERE "houses"."id" = $1[0m  [["id", 50]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/houses/50
+Completed 302 Found in 16ms (ActiveRecord: 2.3ms)
+Started GET "/houses/50" for 127.0.0.1 at 2015-02-09 17:15:19 -0500
+Processing by HousesController#show as HTML
+  Parameters: {"id"=>"50"}
+  [1m[36mHouse Load (0.4ms)[0m  [1mSELECT  "houses".* FROM "houses"  WHERE "houses"."id" = $1 LIMIT 1[0m  [["id", 50]]
+Redirected to http://www.example.com/houses
+Filter chain halted as :set_house rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms)
+Started GET "/houses" for 127.0.0.1 at 2015-02-09 17:15:19 -0500
+Processing by HousesController#index as HTML
+  [1m[35mHouse Load (0.4ms)[0m  SELECT "houses".* FROM "houses"
+  Rendered houses/index.html.erb within layouts/application (0.1ms)
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 77  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mEmailList Load (0.3ms)[0m  SELECT "email_lists".* FROM "email_lists"
+  Rendered layouts/_navigation.html.erb (4.5ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 8ms (Views: 5.6ms | ActiveRecord: 1.2ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (1.8ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'sample@example.com' LIMIT 1
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "name") VALUES ($1, $2, $3) RETURNING "id"[0m  [["email", "sample@example.com"], ["encrypted_password", "$2a$04$M9sFX6vJBeuabkEL4nFg2uoqnPBNKvSbzt/C8yGIUvMFNaqJsSvba"], ["name", "username"]]
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "email_lists" ("created_at", "creator_id", "email", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2015-02-09 22:45:59.451788"], ["creator_id", 78], ["email", "sample@example.com"], ["name", "username"], ["updated_at", "2015-02-09 22:45:59.451788"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "houses" ("created_at", "name", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2015-02-09 22:45:59.487543"], ["name", "summer"], ["updated_at", "2015-02-09 22:45:59.487543"], ["user_id", 78]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/houses" for 127.0.0.1 at 2015-02-09 17:45:59 -0500
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE "users" SET "current_sign_in_at" = $1, "current_sign_in_ip" = $2, "last_sign_in_at" = $3, "last_sign_in_ip" = $4, "sign_in_count" = $5 WHERE "users"."id" = 78  [["current_sign_in_at", "2015-02-09 22:45:59.513734"], ["current_sign_in_ip", "127.0.0.1/32"], ["last_sign_in_at", "2015-02-09 22:45:59.513734"], ["last_sign_in_ip", "127.0.0.1/32"], ["sign_in_count", 1]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by HousesController#index as HTML
+  [1m[35mHouse Load (0.6ms)[0m  SELECT "houses".* FROM "houses"
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 78]]
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "thermometers"  WHERE "thermometers"."house_id" = $1  [["house_id", 51]]
+  Rendered houses/_house.html.erb (59.2ms)
+  Rendered houses/index.html.erb within layouts/application (65.4ms)
+  [1m[36mEmailList Load (0.6ms)[0m  [1mSELECT "email_lists".* FROM "email_lists"[0m
+  Rendered layouts/_navigation.html.erb (5.3ms)
+  Rendered layouts/_messages.html.erb (1.1ms)
+Completed 200 OK in 200ms (Views: 178.6ms | ActiveRecord: 6.1ms)
+Started DELETE "/houses/51" for 127.0.0.1 at 2015-02-09 17:45:59 -0500
+Processing by HousesController#destroy as HTML
+  Parameters: {"id"=>"51"}
+  [1m[35mHouse Load (0.4ms)[0m  SELECT  "houses".* FROM "houses"  WHERE "houses"."id" = $1 LIMIT 1  [["id", 51]]
+  [1m[36mUser Load (1.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 78  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 78]]
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mThermometer Load (0.4ms)[0m  SELECT "thermometers".* FROM "thermometers"  WHERE "thermometers"."house_id" = $1  [["house_id", 51]]
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM "houses" WHERE "houses"."id" = $1[0m  [["id", 51]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/houses/51
+Completed 302 Found in 102ms (ActiveRecord: 3.6ms)
+Started GET "/houses/51" for 127.0.0.1 at 2015-02-09 17:45:59 -0500
+Processing by HousesController#show as HTML
+  Parameters: {"id"=>"51"}
+  [1m[36mHouse Load (0.6ms)[0m  [1mSELECT  "houses".* FROM "houses"  WHERE "houses"."id" = $1 LIMIT 1[0m  [["id", 51]]
+Redirected to http://www.example.com/houses
+Filter chain halted as :set_house rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.6ms)
+Started GET "/houses" for 127.0.0.1 at 2015-02-09 17:45:59 -0500
+Processing by HousesController#index as HTML
+  [1m[35mHouse Load (0.5ms)[0m  SELECT "houses".* FROM "houses"
+  Rendered houses/index.html.erb within layouts/application (0.1ms)
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 78  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mEmailList Load (0.5ms)[0m  SELECT "email_lists".* FROM "email_lists"
+  Rendered layouts/_navigation.html.erb (6.0ms)
+  Rendered layouts/_messages.html.erb (0.2ms)
+Completed 200 OK in 10ms (Views: 7.2ms | ActiveRecord: 1.7ms)
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (1.2ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'sample@example.com' LIMIT 1
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "name") VALUES ($1, $2, $3) RETURNING "id"[0m  [["email", "sample@example.com"], ["encrypted_password", "$2a$04$pbvEp336Ns8r8T4AbHGh8eJwroQTXxHMgMCGjuiBs79VMVq6iMN.O"], ["name", "username"]]
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "email_lists" ("created_at", "creator_id", "email", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2015-02-09 22:46:25.581354"], ["creator_id", 79], ["email", "sample@example.com"], ["name", "username"], ["updated_at", "2015-02-09 22:46:25.581354"]]
+  [1m[36m (0.4ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "houses" ("created_at", "name", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2015-02-09 22:46:25.625376"], ["name", "summer"], ["updated_at", "2015-02-09 22:46:25.625376"], ["user_id", 79]]
+  [1m[35m (0.4ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/houses" for 127.0.0.1 at 2015-02-09 17:46:25 -0500
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE "users" SET "current_sign_in_at" = $1, "current_sign_in_ip" = $2, "last_sign_in_at" = $3, "last_sign_in_ip" = $4, "sign_in_count" = $5 WHERE "users"."id" = 79  [["current_sign_in_at", "2015-02-09 22:46:25.655049"], ["current_sign_in_ip", "127.0.0.1/32"], ["last_sign_in_at", "2015-02-09 22:46:25.655049"], ["last_sign_in_ip", "127.0.0.1/32"], ["sign_in_count", 1]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by HousesController#index as HTML
+  [1m[35mHouse Load (0.5ms)[0m  SELECT "houses".* FROM "houses"
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 79]]
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "thermometers"  WHERE "thermometers"."house_id" = $1  [["house_id", 52]]
+  Rendered houses/_house.html.erb (32.4ms)
+  Rendered houses/index.html.erb within layouts/application (39.9ms)
+  [1m[36mEmailList Load (0.6ms)[0m  [1mSELECT "email_lists".* FROM "email_lists"[0m
+  Rendered layouts/_navigation.html.erb (5.9ms)
+  Rendered layouts/_messages.html.erb (0.9ms)
+Completed 200 OK in 110ms (Views: 94.6ms | ActiveRecord: 4.8ms)
+Started DELETE "/houses/52" for 127.0.0.1 at 2015-02-09 17:46:25 -0500
+Processing by HousesController#destroy as HTML
+  Parameters: {"id"=>"52"}
+  [1m[35mHouse Load (0.4ms)[0m  SELECT  "houses".* FROM "houses"  WHERE "houses"."id" = $1 LIMIT 1  [["id", 52]]
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 79  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 79]]
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mThermometer Load (0.3ms)[0m  SELECT "thermometers".* FROM "thermometers"  WHERE "thermometers"."house_id" = $1  [["house_id", 52]]
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "houses" WHERE "houses"."id" = $1[0m  [["id", 52]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/houses/52
+Completed 302 Found in 21ms (ActiveRecord: 2.8ms)
+Started GET "/houses/52" for 127.0.0.1 at 2015-02-09 17:46:25 -0500
+Processing by HousesController#show as HTML
+  Parameters: {"id"=>"52"}
+  [1m[36mHouse Load (0.4ms)[0m  [1mSELECT  "houses".* FROM "houses"  WHERE "houses"."id" = $1 LIMIT 1[0m  [["id", 52]]
+Redirected to http://www.example.com/houses
+Filter chain halted as :set_house rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms)
+Started GET "/houses" for 127.0.0.1 at 2015-02-09 17:46:25 -0500
+Processing by HousesController#index as HTML
+  [1m[35mHouse Load (0.4ms)[0m  SELECT "houses".* FROM "houses"
+  Rendered houses/index.html.erb within layouts/application (0.1ms)
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 79  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mEmailList Load (0.4ms)[0m  SELECT "email_lists".* FROM "email_lists"
+  Rendered layouts/_navigation.html.erb (5.6ms)
+  Rendered layouts/_messages.html.erb (0.2ms)
+Completed 200 OK in 10ms (Views: 7.5ms | ActiveRecord: 1.4ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (1.4ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'sample@example.com' LIMIT 1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "name") VALUES ($1, $2, $3) RETURNING "id"[0m  [["email", "sample@example.com"], ["encrypted_password", "$2a$04$4uFxYLSCNfoWcGzQYMtcDehoQPeb/R9/PSL2rO2p8ke8aHGCTS0K2"], ["name", "username"]]
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "email_lists" ("created_at", "creator_id", "email", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2015-02-09 22:46:40.585483"], ["creator_id", 80], ["email", "sample@example.com"], ["name", "username"], ["updated_at", "2015-02-09 22:46:40.585483"]]
+  [1m[36m (1.7ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "houses" ("created_at", "name", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2015-02-09 22:46:40.620069"], ["name", "summer"], ["updated_at", "2015-02-09 22:46:40.620069"], ["user_id", 80]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/houses" for 127.0.0.1 at 2015-02-09 17:46:40 -0500
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE "users" SET "current_sign_in_at" = $1, "current_sign_in_ip" = $2, "last_sign_in_at" = $3, "last_sign_in_ip" = $4, "sign_in_count" = $5 WHERE "users"."id" = 80  [["current_sign_in_at", "2015-02-09 22:46:40.643322"], ["current_sign_in_ip", "127.0.0.1/32"], ["last_sign_in_at", "2015-02-09 22:46:40.643322"], ["last_sign_in_ip", "127.0.0.1/32"], ["sign_in_count", 1]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by HousesController#index as HTML
+  [1m[35mHouse Load (0.5ms)[0m  SELECT "houses".* FROM "houses"
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 80]]
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "thermometers"  WHERE "thermometers"."house_id" = $1  [["house_id", 53]]
+  Rendered houses/_house.html.erb (30.8ms)
+  Rendered houses/index.html.erb within layouts/application (37.4ms)
+  [1m[36mEmailList Load (0.7ms)[0m  [1mSELECT "email_lists".* FROM "email_lists"[0m
+  Rendered layouts/_navigation.html.erb (6.1ms)
+  Rendered layouts/_messages.html.erb (1.1ms)
+Completed 200 OK in 117ms (Views: 98.6ms | ActiveRecord: 5.2ms)
+Started DELETE "/houses/53" for 127.0.0.1 at 2015-02-09 17:46:40 -0500
+Processing by HousesController#destroy as HTML
+  Parameters: {"id"=>"53"}
+  [1m[35mHouse Load (0.4ms)[0m  SELECT  "houses".* FROM "houses"  WHERE "houses"."id" = $1 LIMIT 1  [["id", 53]]
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 80  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 80]]
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mThermometer Load (0.3ms)[0m  SELECT "thermometers".* FROM "thermometers"  WHERE "thermometers"."house_id" = $1  [["house_id", 53]]
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM "houses" WHERE "houses"."id" = $1[0m  [["id", 53]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/houses/53
+Completed 302 Found in 21ms (ActiveRecord: 2.8ms)
+Started GET "/houses/53" for 127.0.0.1 at 2015-02-09 17:46:40 -0500
+Processing by HousesController#show as HTML
+  Parameters: {"id"=>"53"}
+  [1m[36mHouse Load (0.5ms)[0m  [1mSELECT  "houses".* FROM "houses"  WHERE "houses"."id" = $1 LIMIT 1[0m  [["id", 53]]
+Redirected to http://www.example.com/houses
+Filter chain halted as :set_house rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.5ms)
+Started GET "/houses" for 127.0.0.1 at 2015-02-09 17:46:40 -0500
+Processing by HousesController#index as HTML
+  [1m[35mHouse Load (0.4ms)[0m  SELECT "houses".* FROM "houses"
+  Rendered houses/index.html.erb within layouts/application (0.1ms)
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 80  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mEmailList Load (0.4ms)[0m  SELECT "email_lists".* FROM "email_lists"
+  Rendered layouts/_navigation.html.erb (6.0ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 11ms (Views: 7.6ms | ActiveRecord: 1.5ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m

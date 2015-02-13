@@ -38,6 +38,7 @@ gem 'httparty'
 gem 'clockwork'
 gem 'delayed_job'
 gem 'gravtastic'
+gem 'noty-rails'
 
 gem 'omniauth-google-oauth2'
 # Use ActiveModel has_secure_password
@@ -51,11 +52,11 @@ gem 'capistrano-rails', group: :production
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
-group :test do
-	gem 'capybara', '~> 2.4'
-	gem "factory_girl_rails", "~> 4.5"
-end
 group :development, :test do 
+	gem 'capybara', '~> 2.4'
+	# gem 'capybara-webkit'
+	gem "factory_girl_rails", "~> 4.5"
 	gem 'rspec-rails', "~> 3.1.0"
-	
+  gem 'selenium-webdriver', '~> 2.44.0'
+  gem 'database_cleaner'
 end

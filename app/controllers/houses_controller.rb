@@ -70,6 +70,10 @@ class HousesController < ApplicationController
 
   def set_house
     @house = House.find(params[:id])
+    rescue ActiveRecord::RecordNotFound
+    flash[:alert] = "The house you were looking" + " for could not be found."
+
+    redirect_to houses_path
   end
 
   def requrie_same_user
